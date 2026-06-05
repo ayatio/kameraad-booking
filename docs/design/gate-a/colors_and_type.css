@@ -1,0 +1,162 @@
+/* ============================================================
+   KAMERAAD HAARSNIJDER — Colors & Type
+   A gentleman's retreat. Vintage barbershop, simplified.
+   Gold on ink, warm paper, black-&-white portraiture.
+   ============================================================ */
+
+/* Webfonts — all free Google Fonts (no upload needed). Playfair Display
+   is the editorial serif used for display & headings on the live site;
+   Oswald is the condensed label/eyebrow/UI face; Hanken Grotesk is body.
+   The custom gold KAMERAAD wordmark stays as image assets in /assets. */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Oswald:wght@300;400;500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+:root {
+  /* ---- Brand gold -------------------------------------------------- */
+  --gold:        #C9A24B;   /* primary — buttons, rules, accents       */
+  --gold-bright: #E1B34B;   /* lit highlight / hover on dark           */
+  --gold-pale:   #E8D29F;   /* shimmer / gold text on deep ink         */
+  --gold-deep:   #9A7B33;   /* bronze — pressed states, fine detail    */
+
+  /* ---- Ink / dark neutrals (warm black) ---------------------------- */
+  --ink:    #16140F;        /* primary dark surface + text on paper    */
+  --ink-2:  #211E18;        /* raised card on a dark ground            */
+  --ink-3:  #2E2A22;        /* hairlines / dividers on dark            */
+  --charcoal: #2C2E33;      /* signage slate (street banner)           */
+
+  /* ---- Paper / light neutrals (warm cream) ------------------------- */
+  --paper:   #F6F1E7;       /* primary light ground                    */
+  --paper-2: #EDE6D6;       /* sunk panel / alt rows                   */
+  --white:   #FFFFFF;
+  --smoke:   #8A857B;       /* muted ink — captions, meta              */
+  --stone:   #B8B2A6;       /* disabled / faint                        */
+
+  /* ---- Hairlines ---------------------------------------------------- */
+  --line-on-paper: rgba(22, 20, 15, 0.14);
+  --line-on-ink:   rgba(232, 210, 159, 0.18);
+
+  /* ---- Semantic (light context = default) -------------------------- */
+  --bg:        var(--paper);
+  --surface:   var(--white);
+  --fg1:       var(--ink);     /* headings / primary text             */
+  --fg2:       #4A453C;        /* body                                 */
+  --fg-muted:  var(--smoke);   /* captions, meta                       */
+  --accent:    var(--gold);
+  --accent-ink:var(--gold-deep);
+  --border:    var(--line-on-paper);
+
+  /* ---- Type families ----------------------------------------------- */
+  --font-serif:   'Playfair Display', Georgia, 'Times New Roman', serif; /* display + headings */
+  --font-display: 'Oswald', 'Arial Narrow', sans-serif;                  /* labels, eyebrows, nav, buttons */
+  --font-body:    'Hanken Grotesk', system-ui, sans-serif;              /* body */
+
+  /* ---- Type scale (fluid) ------------------------------------------ */
+  --step--1: clamp(0.78rem, 0.74rem + 0.2vw, 0.86rem); /* @kind spacing */ /* small/meta */
+  --step-0:  clamp(1rem, 0.96rem + 0.2vw, 1.08rem); /* @kind spacing */ /* body */
+  --step-1:  clamp(1.2rem, 1.1rem + 0.5vw, 1.4rem); /* @kind spacing */ /* lead */
+  --step-2:  clamp(1.6rem, 1.4rem + 1vw, 2.1rem); /* @kind spacing */ /* h3 */
+  --step-3:  clamp(2.1rem, 1.7rem + 2vw, 3.2rem); /* @kind spacing */ /* h2 */
+  --step-4:  clamp(3rem, 2.2rem + 4vw, 5.5rem); /* @kind spacing */ /* h1 */
+  --step-5:  clamp(4rem, 2.6rem + 7vw, 9rem); /* @kind spacing */ /* display */
+
+  /* ---- Tracking ----------------------------------------------------- */
+  --track-display: 0.04em;   /* Oswald caps want air                   */
+  --track-eyebrow: 0.32em;   /* spaced-out label                       */
+
+  /* ---- Radius / shadow / spacing (see Spacing cards) --------------- */
+  --r-sm: 2px;  --r-md: 4px;  --r-lg: 8px;  --r-pill: 999px;
+  --shadow-1: 0 1px 2px rgba(22,20,15,.08), 0 1px 1px rgba(22,20,15,.04);
+  --shadow-2: 0 6px 18px rgba(22,20,15,.12);
+  --shadow-3: 0 18px 50px rgba(22,20,15,.22);
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px;
+  --space-5: 24px; --space-6: 32px; --space-7: 48px; --space-8: 64px;
+  --space-9: 96px;
+}
+
+/* Dark context: drop this class/attr on a dark section */
+.on-ink, [data-theme="ink"] {
+  --bg: var(--ink);
+  --surface: var(--ink-2);
+  --fg1: var(--paper);
+  --fg2: #C8C1B2;
+  --fg-muted: #8F897C;
+  --accent: var(--gold-bright);
+  --accent-ink: var(--gold-pale);
+  --border: var(--line-on-ink);
+}
+
+/* ============================================================
+   Semantic element styles — opt in with .km-prose or use vars
+   ============================================================ */
+.km-eyebrow {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--step--1);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  color: var(--accent-ink);
+}
+/* Headings — editorial Playfair Display serif (matches the live site).
+   Sentence case, tight tracking; use <em> for the gold italic accent. */
+.km-h1, .km-h2, .km-h3 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.04;
+  color: var(--fg1);
+  text-wrap: balance;
+  margin: 0;
+}
+.km-h1 { font-size: var(--step-4); line-height: 0.98; }
+.km-h2 { font-size: var(--step-3); }
+.km-h3 { font-size: var(--step-2); }
+.km-h1 em, .km-h2 em, .km-h3 em, .km-display em { font-style: italic; color: var(--accent-ink); }
+.km-display {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 0.92;
+  font-size: var(--step-5);
+  color: var(--fg1);
+}
+/* Oswald label — the condensed all-caps UI/nav/button face */
+.km-label {
+  font-family: var(--font-display);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: var(--step--1);
+  color: var(--fg1);
+}
+.km-lead {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: var(--step-1);
+  line-height: 1.45;
+  color: var(--fg2);
+}
+.km-body, .km-prose p {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: var(--step-0);
+  line-height: 1.6;
+  color: var(--fg2);
+  text-wrap: pretty;
+}
+.km-small {
+  font-family: var(--font-body);
+  font-size: var(--step--1);
+  line-height: 1.5;
+  color: var(--fg-muted);
+}
+
+/* A signature motif: gold hairline ornament (echoes the
+   line flourishes above/below the original gold wordmarks) */
+.km-ornament {
+  display: flex; align-items: center; justify-content: center;
+  gap: 10px; color: var(--accent);
+}
+.km-ornament::before, .km-ornament::after {
+  content: ""; height: 1px; width: clamp(28px, 8vw, 90px);
+  background: linear-gradient(90deg, transparent, currentColor 40%, currentColor 60%, transparent);
+}
+.km-ornament > .dot { width: 5px; height: 5px; border-radius: 50%; background: currentColor; }

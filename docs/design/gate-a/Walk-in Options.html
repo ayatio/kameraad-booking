@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Kameraad — Walk-in opties</title>
+<link rel="stylesheet" href="colors_and_type.css" />
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<style>
+  html, body { margin: 0; height: 100%; background: #14110d; }
+  #root { height: 100vh; }
+
+  /* ---------- mini-hero ---------- */
+  .mh { position: relative; width: 100%; height: 100%; overflow: hidden; background: #16140f; font-family: var(--font-body); }
+  .mh-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 48%; }
+  .mh-scrim { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(16,14,11,.72) 0%, rgba(16,14,11,.26) 28%, rgba(16,14,11,.3) 55%, rgba(16,14,11,.86) 100%); }
+  .mh-logo { position: absolute; top: 28px; left: 50%; transform: translateX(-50%); height: 48px; width: auto; z-index: 3; filter: drop-shadow(0 3px 14px rgba(0,0,0,.5)); }
+  .mh-title { position: absolute; top: 49%; left: 50%; transform: translate(-50%,-50%); margin: 0; text-align: center; z-index: 2; color: #f6f1e7; font-family: 'Playfair Display', serif; font-weight: 500; font-size: 40px; line-height: 1.0; letter-spacing: -0.01em; white-space: nowrap; text-shadow: 0 2px 30px rgba(16,14,11,.5); }
+  .mh-title i { font-style: italic; color: #e8d29f; }
+
+  /* dock */
+  .mh-dock { position: absolute; left: 50%; bottom: 28px; transform: translateX(-50%); display: flex; align-items: center; gap: 8px; padding: 8px 8px 8px 14px; background: rgba(20,18,15,.6); border: 1px solid rgba(232,210,159,.22); border-radius: 999px; backdrop-filter: blur(12px) saturate(1.2); -webkit-backdrop-filter: blur(12px) saturate(1.2); box-shadow: 0 16px 40px rgba(0,0,0,.45); z-index: 4; white-space: nowrap; }
+  .mh-links { display: flex; align-items: center; gap: 2px; }
+  .mh-links a { font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.14em; font-size: 11px; color: rgba(246,241,231,.82); padding: 8px 11px; text-decoration: none; }
+  .mh-lang { font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.14em; font-size: 11px; color: rgba(246,241,231,.7); padding: 8px 9px; }
+  .mh-cta { font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.13em; font-size: 11px; font-weight: 500; background: var(--gold); color: #1a160c; border: none; border-radius: 999px; padding: 11px 19px; }
+  .mh-walk { font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.12em; font-size: 11px; font-weight: 500; color: var(--gold-pale); background: transparent; border: 1px solid var(--gold); border-radius: 999px; padding: 10px 15px; display: inline-flex; align-items: center; gap: 8px; }
+  .walknav { display: inline-flex; align-items: center; gap: 7px; color: var(--gold-pale) !important; }
+
+  /* corner badges */
+  .badge { position: absolute; z-index: 5; display: inline-flex; align-items: center; gap: 10px; padding: 9px 16px 9px 13px; border: 1.5px solid var(--gold); border-radius: 999px; background: rgba(20,18,15,.5); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.13em; font-size: 11px; color: var(--gold-pale); white-space: nowrap; box-shadow: 0 8px 24px rgba(16,14,11,.3); }
+  .badge.bl { left: 26px; bottom: 26px; }
+  .badge.br { right: 26px; bottom: 26px; }
+  .badge.tl { left: 26px; top: 26px; }
+  .badge .sep { color: var(--gold); opacity: .6; }
+  .badge b { color: #f6f1e7; font-weight: 600; }
+
+  /* status dot */
+  .sdot { width: 9px; height: 9px; border-radius: 50%; flex: none; }
+  .sdot.open { background: #6bbf73; box-shadow: 0 0 0 0 rgba(107,191,115,.5); animation: pulse 2.4s ease-in-out infinite; }
+  .sdot.closed { background: #c2705f; }
+  @keyframes pulse { 0%,100% { box-shadow: 0 0 0 0 rgba(107,191,115,.5); } 50% { box-shadow: 0 0 0 6px rgba(107,191,115,0); } }
+
+  /* the strolling gentleman */
+  .walker { position: relative; width: 14px; height: 21px; flex: none; color: var(--gold); }
+  .walker span { position: absolute; background: currentColor; }
+  .walker .hat { top: 0; left: 50%; width: 11px; height: 1.8px; border-radius: 2px; transform: translateX(-50%); }
+  .walker .hat::after { content: ""; position: absolute; left: 50%; bottom: 1.6px; width: 6px; height: 3px; background: currentColor; border-radius: 3px 3px 0 0; transform: translateX(-50%); }
+  .walker .head { top: 4.2px; left: 50%; width: 5px; height: 5px; border-radius: 50%; transform: translateX(-50%); }
+  .walker .body { top: 9.2px; left: 50%; width: 1.8px; height: 7.3px; border-radius: 2px; transform: translateX(-50%); }
+  .walker .arm { top: 10.2px; left: 50%; width: 1.6px; height: 5.6px; border-radius: 2px; transform: translateX(-50%) rotate(11deg); }
+  .walker .leg { top: 16px; left: 50%; width: 1.8px; height: 6.8px; border-radius: 2px; transform-origin: 50% 0; }
+  .walker .leg.a { transform: translateX(-50%) rotate(15deg); }
+  .walker .leg.b { transform: translateX(-50%) rotate(-15deg); }
+
+  /* caption note under a board */
+  .vnote { font-family: var(--font-body); font-size: 13px; line-height: 1.5; color: #b8b2a6; }
+  .vnote b { color: #e8d29f; font-weight: 600; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script type="text/babel" src="design-canvas.jsx"></script>
+<script type="text/babel">
+  const { DesignCanvas, DCSection, DCArtboard } = window;
+
+  const Walker = () => (
+    <span className="walker" aria-hidden="true">
+      <span className="hat"></span><span className="head"></span><span className="body"></span>
+      <span className="arm"></span><span className="leg a"></span><span className="leg b"></span>
+    </span>
+  );
+
+  // shared hero shell; `badge` and `dock` are slotted per variant
+  const Hero = ({ badge, dock }) => (
+    <div className="mh">
+      <img className="mh-bg" src="assets/chair-street.jpg" alt="" />
+      <div className="mh-scrim"></div>
+      <img className="mh-logo" src="assets/logo-gold.png" alt="Kameraad" />
+      <h1 className="mh-title"><i>Stille</i> klasse.<br />Tijdloos vakmanschap.</h1>
+      {badge}
+      {dock}
+    </div>
+  );
+
+  const Links = () => (
+    <div className="mh-links">
+      <a>Over ons</a><a>Diensten</a><a>Producten</a>
+    </div>
+  );
+
+  // ---- dock variants ----
+  const DockPlain = () => (
+    <nav className="mh-dock"><Links /><span className="mh-lang">NL ▾</span><button className="mh-cta">Boek nu</button></nav>
+  );
+  const DockWalkPill = () => (
+    <nav className="mh-dock">
+      <Links /><span className="mh-lang">NL ▾</span>
+      <span className="mh-walk">Walk-ins welkom</span>
+      <button className="mh-cta">Boek nu</button>
+    </nav>
+  );
+  const DockStatus = () => (
+    <nav className="mh-dock">
+      <Links /><span className="mh-lang">NL ▾</span>
+      <span className="mh-walk"><span className="sdot open"></span>Open · Walk-ins</span>
+      <button className="mh-cta">Boek nu</button>
+    </nav>
+  );
+  const DockNavLink = () => (
+    <nav className="mh-dock">
+      <div className="mh-links">
+        <a className="walknav"><span className="sdot open"></span>Walk-ins welkom</a>
+        <a>Over ons</a><a>Diensten</a><a>Producten</a>
+      </div>
+      <span className="mh-lang">NL ▾</span>
+      <button className="mh-cta">Boek nu</button>
+    </nav>
+  );
+
+  // ---- corner badges ----
+  const GentPill = (pos) => (
+    <div className={"badge " + pos}><Walker /> Walk-ins — altijd welkom</div>
+  );
+  const StatusBadge = (open) => (
+    <div className="badge tl">
+      <span className={"sdot " + (open ? "open" : "closed")}></span>
+      <b>{open ? "Open" : "Gesloten"}</b>
+      <span className="sep">·</span>
+      {open ? "Walk-ins altijd welkom" : "Di–Za vanaf 10:00"}
+    </div>
+  );
+
+  const W = 940, H = 540;
+
+  function App() {
+    return (
+      <DesignCanvas>
+        <DCSection id="dock" title="In de dock-pil" subtitle="De walk-in als knop in de zwevende navigatiebalk">
+          <DCArtboard id="a1" label="A · Pil naast “Boek nu”" width={W} height={H}>
+            <Hero dock={<DockWalkPill />} />
+          </DCArtboard>
+          <DCArtboard id="a2" label="B · Open-status + Walk-ins in de dock" width={W} height={H}>
+            <Hero dock={<DockStatus />} />
+          </DCArtboard>
+          <DCArtboard id="a3" label="C · Als nav-link naast “Over ons”" width={W} height={H}>
+            <Hero dock={<DockNavLink />} />
+          </DCArtboard>
+        </DCSection>
+
+        <DCSection id="corner" title="Zwevende badge (hoek)" subtitle="Los van de dock, in een hoek van het scherm">
+          <DCArtboard id="b1" label="D · Links onderaan (met heertje)" width={W} height={H}>
+            <Hero dock={<DockPlain />} badge={GentPill("bl")} />
+          </DCArtboard>
+          <DCArtboard id="b2" label="E · Rechts onderaan — huidige" width={W} height={H}>
+            <Hero dock={<DockPlain />} badge={GentPill("br")} />
+          </DCArtboard>
+        </DCSection>
+
+        <DCSection id="status" title="Permanente status-badge" subtitle="Toont automatisch Open / Gesloten op basis van de openingsuren">
+          <DCArtboard id="c1" label="F · Status “Open” (links boven)" width={W} height={H}>
+            <Hero dock={<DockPlain />} badge={StatusBadge(true)} />
+          </DCArtboard>
+          <DCArtboard id="c2" label="G · Zelfde badge wanneer gesloten" width={W} height={H}>
+            <Hero dock={<DockPlain />} badge={StatusBadge(false)} />
+          </DCArtboard>
+        </DCSection>
+      </DesignCanvas>
+    );
+  }
+
+  ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>

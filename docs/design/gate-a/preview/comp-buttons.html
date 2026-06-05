@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Brand" name="Buttons" subtitle="Primary + ghost, on paper and ink" viewport="700x160" -->
+<html lang="en"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0}
+  body{font-family:var(--font-body);display:grid;grid-template-columns:1fr 1fr}
+  .pane{padding:24px 26px;display:flex;flex-wrap:wrap;gap:14px;align-content:center}
+  .light{background:var(--paper)}
+  .dark{background:var(--ink)}
+  .btn{font-family:var(--font-display);text-transform:uppercase;letter-spacing:.14em;font-size:13px;font-weight:600;
+       padding:13px 22px;border-radius:var(--r-sm);border:1.5px solid transparent;cursor:pointer}
+  .primary{background:var(--gold);color:#1a160c;border-color:var(--gold)}
+  .ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
+  .primary-d{background:var(--gold);color:#1a160c;border-color:var(--gold)}
+  .ghost-d{background:transparent;color:var(--gold-pale);border-color:var(--gold)}
+  .lbl{width:100%;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--fg-muted);margin:0}
+  .dark .lbl{color:#8F897C}
+</style></head>
+<body>
+  <div class="pane light">
+    <p class="lbl">On paper</p>
+    <button class="btn primary">Boek een afspraak</button>
+    <button class="btn ghost">Bekijk team</button>
+  </div>
+  <div class="pane dark">
+    <p class="lbl">On ink</p>
+    <button class="btn primary-d">Book an appointment</button>
+    <button class="btn ghost-d">Call us</button>
+  </div>
+</body></html>
