@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Brand" name="Mobile Design" subtitle="Responsive homepage on iPhone — hero, booking, comforts, footer" viewport="1280x900" -->
+<html lang="nl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Kameraad — Mobile Design</title>
+<link rel="stylesheet" href="colors_and_type.css" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  body {
+    margin: 0; background: #0c0b0a;
+    background-image: radial-gradient(120% 80% at 50% -10%, rgba(201,162,75,.08), transparent 55%);
+    color: var(--paper); font-family: var(--font-body);
+    min-height: 100vh; padding: clamp(40px, 6vw, 80px) 24px 90px;
+  }
+  .head { text-align: center; max-width: 720px; margin: 0 auto clamp(40px, 6vw, 72px); }
+  .head .km-ornament { margin-bottom: 22px; }
+  .head h1 { font-family: 'Playfair Display', serif; font-weight: 500; letter-spacing: -0.01em; font-size: clamp(2.2rem, 5vw, 3.4rem); margin: 0 0 16px; color: var(--paper); }
+  .head h1 em { font-style: italic; color: var(--gold-pale); }
+  .head p { font-size: 1.02rem; line-height: 1.7; color: rgba(246,241,231,.72); margin: 0 auto; max-width: 52ch; }
+
+  .rail {
+    display: flex; gap: clamp(28px, 4vw, 56px); justify-content: center; align-items: flex-start;
+    flex-wrap: wrap; max-width: 1500px; margin: 0 auto;
+  }
+  .phone { width: 322px; flex: none; }
+  .phone__label { text-align: center; margin-bottom: 18px; }
+  .phone__label .n { font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.66rem; color: var(--gold-pale); }
+  .phone__label .t { display: block; font-family: 'Playfair Display', serif; font-size: 1.25rem; color: var(--paper); margin-top: 6px; }
+
+  /* device bezel */
+  .device {
+    position: relative; width: 322px; height: 665px;
+    background: #1b1916; border-radius: 46px;
+    padding: 11px;
+    box-shadow: 0 0 0 2px #2c281f, 0 30px 70px rgba(0,0,0,.6), inset 0 0 0 1px rgba(232,210,159,.08);
+  }
+  .device__screen {
+    position: relative; width: 100%; height: 100%; border-radius: 36px; overflow: hidden;
+    background: var(--ink-2, #1a1816);
+  }
+  .device__notch {
+    position: absolute; top: 10px; left: 50%; transform: translateX(-50%); z-index: 5;
+    width: 104px; height: 26px; background: #0a0908; border-radius: 999px;
+  }
+  .device iframe {
+    border: 0; width: 390px; height: 836px;
+    transform: scale(.7692); transform-origin: top left;
+    background: var(--ink-2, #1a1816);
+  }
+  /* clip wrapper so the scaled iframe fills the screen cleanly */
+  .device__view { position: absolute; inset: 0; overflow: hidden; }
+
+  .note { max-width: 720px; margin: clamp(48px,7vw,80px) auto 0; text-align: center; color: rgba(246,241,231,.6); font-size: 0.9rem; line-height: 1.7; }
+  .note code { font-family: ui-monospace, Menlo, monospace; color: var(--gold-pale); font-size: 0.84rem; }
+  @media (max-width: 720px) { .device, .phone { width: 290px; } .device { height: 596px; } .device iframe { transform: scale(.6872); } }
+</style>
+</head>
+<body>
+  <div class="head">
+    <div class="km-ornament"><span class="dot"></span></div>
+    <h1>Kameraad <em>op de zak</em></h1>
+    <p>Dezelfde site, één doorlopend responsive ontwerp. Hier getoond op iPhone-breedte (390 px) — de stoel-hero, het stap-voor-stap boeken, de comforts en de footer. Het wandelende heertje en de taalkiezer schalen mee.</p>
+  </div>
+
+  <div class="rail">
+    <div class="phone">
+      <div class="phone__label"><span class="n">01</span><span class="t">Hero</span></div>
+      <div class="device">
+        <div class="device__notch"></div>
+        <div class="device__screen"><div class="device__view">
+          <iframe data-scroll="0" title="Hero" src="Kameraad Homepage.html"></iframe>
+        </div></div>
+      </div>
+    </div>
+
+    <div class="phone">
+      <div class="phone__label"><span class="n">02</span><span class="t">Boeken</span></div>
+      <div class="device">
+        <div class="device__notch"></div>
+        <div class="device__screen"><div class="device__view">
+          <iframe data-target="#boeken" title="Boeken" src="Kameraad Homepage.html"></iframe>
+        </div></div>
+      </div>
+    </div>
+
+    <div class="phone">
+      <div class="phone__label"><span class="n">03</span><span class="t">Comforts</span></div>
+      <div class="device">
+        <div class="device__notch"></div>
+        <div class="device__screen"><div class="device__view">
+          <iframe data-target="#huis" title="Comforts" src="Kameraad Homepage.html"></iframe>
+        </div></div>
+      </div>
+    </div>
+
+    <div class="phone">
+      <div class="phone__label"><span class="n">04</span><span class="t">Footer</span></div>
+      <div class="device">
+        <div class="device__notch"></div>
+        <div class="device__screen"><div class="device__view">
+          <iframe data-target="#contact" title="Footer" src="Kameraad Homepage.html"></iframe>
+        </div></div>
+      </div>
+    </div>
+  </div>
+
+  <p class="note">Live previews van <code>Kameraad Homepage.html</code> op 390 px breedte. Op mobiel wordt de dock een menu met de <b style="color:#ce4b33">walk-in in het rood</b> + de taalkiezer; de ronde <code>Boek nu</code> en het wandelende heertje verdwijnen, en het boeken valt netjes terug naar één kolom.</p>
+
+  <script>
+    // Scroll each framed preview to its section once loaded.
+    document.querySelectorAll('.device iframe').forEach(function (f) {
+      f.addEventListener('load', function () {
+        try {
+          var doc = f.contentWindow.document;
+          var sel = f.getAttribute('data-target');
+          var run = function () {
+            // reveal entrance elements so the preview isn't blank
+            doc.querySelectorAll('.rise').forEach(function (el) { el.classList.add('in'); el.style.opacity = 1; el.style.transform = 'none'; });
+            if (sel) {
+              var t = doc.querySelector(sel);
+              if (t) t.scrollIntoView();
+            }
+          };
+          setTimeout(run, 350);
+        } catch (e) { /* cross-origin guard — same-origin here */ }
+      });
+    });
+  </script>
+</body>
+</html>

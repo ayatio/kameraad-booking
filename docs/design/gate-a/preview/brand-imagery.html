@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Brand" name="Imagery Treatment" subtitle="B&W people · warm-color place" viewport="700x210" -->
+<html lang="en"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0}
+  body{background:var(--ink);padding:0;font-family:var(--font-body)}
+  .grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0}
+  .fig{position:relative;aspect-ratio:4/3;overflow:hidden}
+  .fig img{width:100%;height:100%;object-fit:cover}
+  .bw img{filter:grayscale(1) contrast(1.06)}
+  .cap{position:absolute;left:0;right:0;bottom:0;padding:18px 12px 8px;
+    background:linear-gradient(transparent,rgba(22,20,15,.85));
+    font-family:var(--font-display);text-transform:uppercase;letter-spacing:.14em;font-size:11px;font-weight:600;color:var(--gold-pale)}
+</style></head>
+<body>
+  <div class="grid">
+    <div class="fig bw"><img src="../assets/team-adil.jpg" alt=""><div class="cap">B&amp;W · People</div></div>
+    <div class="fig"><img src="../assets/gallery-oldschool.jpg" alt=""><div class="cap">Warm · Place</div></div>
+    <div class="fig"><img src="../assets/gallery-shopfront.jpg" alt=""><div class="cap">Warm · Place</div></div>
+  </div>
+</body></html>
