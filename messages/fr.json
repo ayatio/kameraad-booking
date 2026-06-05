@@ -5,5 +5,50 @@
     "tagline": "L'artisanat à chaque coupe",
     "homeIntro": "Bienvenue chez Kameraad Haarsnijder. Réservez votre rendez-vous en ligne avec l'un de nos barbiers expérimentés.",
     "switchLanguage": "Changer de langue"
+  },
+  "booking": {
+    "title": "Réservez votre fauteuil.",
+    "lead": "D'abord votre service, puis le barbier qui l'exécute, puis un moment qui vous convient. Étape par étape — on s'occupe du reste.",
+    "step": {
+      "service": "Service",
+      "barber": "Barbier",
+      "date": "Date",
+      "time": "Heure"
+    },
+    "confirm": "Confirmer le rendez-vous",
+    "done": {
+      "heading": "À bientôt, kameraad."
+    },
+    "noPreference": "Sans préférence",
+    "noPreferenceLow": "sans préférence",
+    "reset": "Nouveau rendez-vous",
+    "barberNote": "Disponible pour votre service :",
+    "chooseMore": "Choisissez encore",
+    "summary": {
+      "start": "Choisissez un service pour commencer.",
+      "at": "avec",
+      "on": "le",
+      "atTime": "à",
+      "with": "avec",
+      "yourBarber": "votre barbier",
+      "confirmMessage": "Nous vous enverrons une confirmation."
+    },
+    "label": {
+      "barber": "un barbier",
+      "date": "une date",
+      "time": "une heure"
+    },
+    "service": {
+      "haircut": "Coupe",
+      "beard": "Barbe",
+      "combo": "Coupe + Barbe",
+      "child": "Enfant (–12 ans)"
+    },
+    "dow": ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam"],
+    "months": ["janv", "févr", "mars", "avr", "mai", "juin", "juil", "août", "sept", "oct", "nov", "déc"],
+    "validation": {
+      "cancellationPolicy": "J'accepte la politique d'annulation (annulation gratuite jusqu'à {hours} heures avant votre rendez-vous).",
+      "privacyConsent": "J'accepte le traitement de mes données personnelles pour la gestion de mon rendez-vous."
+    }
   }
 }

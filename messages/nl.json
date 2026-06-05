@@ -4,5 +4,50 @@
     "tagline": "Vakmanschap in elke knip",
     "homeIntro": "Welkom bij Kameraad Haarsnijder. Boek online uw afspraak bij een van onze ervaren barbiers.",
     "switchLanguage": "Taal wijzigen"
+  },
+  "booking": {
+    "title": "Boek je stoel.",
+    "lead": "Eerst je dienst, dan de barbier die ze uitvoert, dan een moment dat past. Stap voor stap — de rest doen wij.",
+    "step": {
+      "service": "Dienst",
+      "barber": "Barbier",
+      "date": "Datum",
+      "time": "Tijd"
+    },
+    "confirm": "Bevestig afspraak",
+    "done": {
+      "heading": "Tot snel, kameraad."
+    },
+    "noPreference": "Geen voorkeur",
+    "noPreferenceLow": "geen voorkeur",
+    "reset": "Nieuwe afspraak",
+    "barberNote": "Beschikbaar voor je dienst:",
+    "chooseMore": "Kies nog een",
+    "summary": {
+      "start": "Kies een dienst om te beginnen.",
+      "at": "bij",
+      "on": "op",
+      "atTime": "om",
+      "with": "met",
+      "yourBarber": "je barbier",
+      "confirmMessage": "We sturen je een bevestiging."
+    },
+    "label": {
+      "barber": "barbier",
+      "date": "datum",
+      "time": "tijd"
+    },
+    "service": {
+      "haircut": "Knippen",
+      "beard": "Baard",
+      "combo": "Knippen + Baard",
+      "child": "Kind (–12 j.)"
+    },
+    "dow": ["Zo", "Ma", "Di", "Wo", "Do", "Vr", "Za"],
+    "months": ["jan", "feb", "mrt", "apr", "mei", "jun", "jul", "aug", "sep", "okt", "nov", "dec"],
+    "validation": {
+      "cancellationPolicy": "Ik accepteer het annuleringsbeleid (tot {hours} uur voor je afspraak kosteloos annuleren).",
+      "privacyConsent": "Ik ga akkoord met de verwerking van mijn persoonsgegevens voor het beheer van mijn afspraak."
+    }
   }
 }

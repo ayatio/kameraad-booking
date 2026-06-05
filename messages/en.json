@@ -5,5 +5,50 @@
     "tagline": "Craftsmanship in every cut",
     "homeIntro": "Welcome to Kameraad Haarsnijder. Book your appointment online with one of our experienced barbers.",
     "switchLanguage": "Switch language"
+  },
+  "booking": {
+    "title": "Book your chair.",
+    "lead": "First your service, then the barber who performs it, then a moment that fits. Step by step — we handle the rest.",
+    "step": {
+      "service": "Service",
+      "barber": "Barber",
+      "date": "Date",
+      "time": "Time"
+    },
+    "confirm": "Confirm booking",
+    "done": {
+      "heading": "See you soon, kameraad."
+    },
+    "noPreference": "No preference",
+    "noPreferenceLow": "no preference",
+    "reset": "New booking",
+    "barberNote": "Available for your service:",
+    "chooseMore": "Still choose a",
+    "summary": {
+      "start": "Choose a service to begin.",
+      "at": "with",
+      "on": "on",
+      "atTime": "at",
+      "with": "with",
+      "yourBarber": "your barber",
+      "confirmMessage": "We'll send you a confirmation."
+    },
+    "label": {
+      "barber": "barber",
+      "date": "date",
+      "time": "time"
+    },
+    "service": {
+      "haircut": "Haircut",
+      "beard": "Beard",
+      "combo": "Cut + Beard",
+      "child": "Child (–12 yrs)"
+    },
+    "dow": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+    "months": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    "validation": {
+      "cancellationPolicy": "I accept the cancellation policy (free cancellation up to {hours} hours before your appointment).",
+      "privacyConsent": "I agree to the processing of my personal data for managing my appointment."
+    }
   }
 }

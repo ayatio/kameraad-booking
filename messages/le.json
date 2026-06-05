@@ -1,0 +1,54 @@
+{
+  "_comment": "DRAFT Leuvens — Adil levert de definitieve vertaling (alle strings DRAFT)",
+  "common": {
+    "appName": "Kameraad Haarsnijder",
+    "tagline": "Mêesterschap in iedere knip",
+    "homeIntro": "Welkom bij Kameraad Haarsnijder. Boekt online a afsprak bij ene van os ervare barbiers.",
+    "switchLanguage": "Taal wissel"
+  },
+  "booking": {
+    "title": "Boek a stoeleke.",
+    "lead": "Êest a dienst, dan de barbier dieje da doet, en dan een momentsje da past. Stap veu stap — de res doeme wij.",
+    "step": {
+      "service": "Dienst",
+      "barber": "Barbier",
+      "date": "Datum",
+      "time": "Ier"
+    },
+    "confirm": "Bevestig afsprak",
+    "done": {
+      "heading": "Tot subiet, kameraad."
+    },
+    "noPreference": "Maakt ni uit",
+    "noPreferenceLow": "maakt ni uit",
+    "reset": "Nieiw afsprak",
+    "barberNote": "Te kreige veu a dienst:",
+    "chooseMore": "Kiest nog ne",
+    "summary": {
+      "start": "Kiest êest a dienst.",
+      "at": "bij",
+      "on": "op",
+      "atTime": "om",
+      "with": "me",
+      "yourBarber": "a barbier",
+      "confirmMessage": "We sture a een bevestiging."
+    },
+    "label": {
+      "barber": "barbier",
+      "date": "datum",
+      "time": "ier"
+    },
+    "service": {
+      "haircut": "Knippe",
+      "beard": "Boord",
+      "combo": "Knippe + Boord",
+      "child": "Manneke (–12 j.)"
+    },
+    "dow": ["Zo", "Mo", "Di", "Wo", "Do", "Vr", "Za"],
+    "months": ["jan", "feb", "mrt", "apr", "mei", "jun", "jul", "aug", "sep", "okt", "nov", "dec"],
+    "validation": {
+      "cancellationPolicy": "Ik ga mee me het annuleringsbeleid (tot {hours} ier veu a afsprak kosteloos annulere).",
+      "privacyConsent": "Ik ga akkoord me de verwerking van mijn gegevens veu het beheir van mijn afsprak."
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "_comment": "PROVISIONAL: agent-drafted translations pending client review (FR-094)",
+  "common": {
+    "appName": "Kameraad Haarsnijder",
+    "tagline": "Artesanía en cada corte",
+    "homeIntro": "Bienvenido a Kameraad Haarsnijder. Reserva tu cita online con uno de nuestros barberos experimentados.",
+    "switchLanguage": "Cambiar idioma"
+  },
+  "booking": {
+    "title": "Reserva tu silla.",
+    "lead": "Primero tu servicio, luego el barbero que lo realiza, después un momento que te encaje. Paso a paso — del resto nos encargamos nosotros.",
+    "step": {
+      "service": "Servicio",
+      "barber": "Barbero",
+      "date": "Fecha",
+      "time": "Hora"
+    },
+    "confirm": "Confirmar cita",
+    "done": {
+      "heading": "Hasta pronto, kameraad."
+    },
+    "noPreference": "Sin preferencia",
+    "noPreferenceLow": "sin preferencia",
+    "reset": "Nueva cita",
+    "barberNote": "Disponible para tu servicio:",
+    "chooseMore": "Elige aún",
+    "summary": {
+      "start": "Elige un servicio para empezar.",
+      "at": "con",
+      "on": "el",
+      "atTime": "a las",
+      "with": "con",
+      "yourBarber": "tu barbero",
+      "confirmMessage": "Te enviaremos una confirmación."
+    },
+    "label": {
+      "barber": "un barbero",
+      "date": "una fecha",
+      "time": "una hora"
+    },
+    "service": {
+      "haircut": "Corte",
+      "beard": "Barba",
+      "combo": "Corte + Barba",
+      "child": "Niño (–12 años)"
+    },
+    "dow": ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"],
+    "months": ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"],
+    "validation": {
+      "cancellationPolicy": "Acepto la política de cancelación (cancelación gratuita hasta {hours} horas antes de tu cita).",
+      "privacyConsent": "Acepto el tratamiento de mis datos personales para la gestión de mi cita."
+    }
+  }
+}
