@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kameraad Haarsnijder — Interactive Wireframe Prototype</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Courier New', Courier, monospace; color: #222; background: #fff; padding: 20px; }
+  .container { max-width: 820px; margin: 0 auto; }
+
+  /* Header */
+  .proto-header { text-align: center; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 3px solid #333; }
+  .proto-header .eyebrow { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: #999; margin-bottom: 4px; }
+  .proto-header h1 { font-size: 26px; font-weight: 700; }
+  .proto-header .sub { font-size: 12px; color: #666; margin-top: 4px; }
+
+  /* Main nav */
+  .main-nav { display: flex; flex-wrap: wrap; margin-bottom: 22px; }
+  .main-nav button {
+    flex: 1; min-width: 120px; padding: 10px 6px;
+    border: 1.5px solid #333; border-right: none;
+    background: transparent; color: #555; font-family: inherit;
+    font-size: 11px; cursor: pointer; transition: all .15s;
+  }
+  .main-nav button:last-child { border-right: 1.5px solid #333; }
+  .main-nav button.active { background: #333; color: #fff; font-weight: 700; }
+
+  /* Wireframe box */
+  .box {
+    border: 1.5px solid #333; border-radius: 4px;
+    padding: 10px 14px; margin: 6px 0; position: relative;
+  }
+  .box.dashed { border-style: dashed; border-color: #999; }
+  .box.clickable { cursor: pointer; background: #fafafa; }
+  .box.clickable:hover { background: #f0f0f0; }
+  .box-label {
+    font-size: 9px; text-transform: uppercase; letter-spacing: 1.2px;
+    color: #888; margin-bottom: 4px;
+  }
+
+  /* Note */
+  .note { font-size: 11px; color: #777; font-style: italic; margin: 4px 0 2px 8px; line-height: 1.4; }
+  .note::before { content: '↳ '; }
+
+  /* Placeholder */
+  .placeholder {
+    border: 1.5px dashed #bbb; border-radius: 3px;
+    display: flex; align-items: center; justify-content: center;
+    color: #aaa; font-size: 11px;
+    background: repeating-linear-gradient(45deg, transparent, transparent 8px, #f5f5f5 8px, #f5f5f5 16px);
+  }
+
+  /* Grid */
+  .grid { display: grid; gap: 10px; }
+  .grid-2 { grid-template-columns: repeat(2, 1fr); }
+  .grid-3 { grid-template-columns: repeat(3, 1fr); }
+  .grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+  /* Wire button */
+  .wire-btn {
+    padding: 6px 14px; border: 1.5px solid #aaa; border-radius: 3px;
+    background: transparent; color: #555; font-size: 12px;
+    font-family: inherit; cursor: pointer; margin: 0 4px 4px 0;
+    transition: all .12s;
+  }
+  .wire-btn.active { border: 2px solid #333; background: #333; color: #fff; }
+
+  /* Section title */
+  .section-title { margin-bottom: 16px; }
+  .section-title .num { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #999; margin-bottom: 2px; }
+  .section-title h2 { font-size: 22px; font-weight: 700; border-bottom: 2px solid #333; padding-bottom: 6px; }
+
+  /* Progress bar */
+  .progress-bar { display: flex; margin-bottom: 16px; }
+  .progress-step {
+    flex: 1; padding: 8px 4px; text-align: center; font-size: 11px;
+    cursor: pointer; border: 1.5px solid #333; border-right: none;
+    transition: all .12s;
+  }
+  .progress-step:last-child { border-right: 1.5px solid #333; }
+  .progress-step.active { background: #333; color: #fff; }
+  .progress-step.done { background: #e0e0e0; }
+
+  /* Slot chip */
+  .slot-chip {
+    padding: 6px 8px; border: 1px solid #ccc; border-radius: 3px;
+    text-align: center; font-size: 11px;
+  }
+  .slot-chip.clickable { cursor: pointer; border-color: #bbb; }
+  .slot-chip.clickable:hover { background: #f0f0f0; }
+
+  /* Table rows */
+  .table-header {
+    display: grid; gap: 4px; font-weight: 700;
+    border-bottom: 1.5px solid #333; padding-bottom: 4px; font-size: 11px;
+  }
+  .table-row {
+    display: grid; gap: 4px; padding: 4px 0;
+    border-bottom: 1px dotted #ddd; font-size: 11px;
+  }
+
+  /* Service row */
+  .service-row {
+    display: flex; justify-content: space-between;
+    padding: 4px 0; border-bottom: 1px dotted #ddd; font-size: 12px;
+  }
+
+  /* CTA */
+  .cta-btn {
+    border: 2px solid #333; border-radius: 4px;
+    padding: 12px 20px; text-align: center; font-weight: 700;
+    font-size: 15px; font-family: inherit; cursor: pointer;
+    background: transparent;
+  }
+  .cta-btn:hover { background: #333; color: #fff; }
+
+  /* Calendar grid */
+  .cal-grid { display: grid; gap: 1px; }
+  .cal-cell {
+    border: 1px solid #e0e0e0; height: 28px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 9px; color: #666;
+  }
+  .cal-cell.booked { background: #e8e8e8; }
+  .cal-header { text-align: center; font-size: 10px; font-weight: 700; padding: 4px; border-bottom: 1.5px solid #333; }
+  .cal-time { font-size: 10px; color: #888; padding: 4px 2px; border-right: 1px solid #ddd; }
+
+  /* Form field */
+  .form-field { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+  .form-field label { width: 100px; font-size: 11px; color: #666; }
+  .form-field .line { flex: 1; border-bottom: 1.5px solid #bbb; height: 20px; }
+
+  /* Pre block */
+  .arch-pre { font-size: 11px; line-height: 1.5; white-space: pre; overflow-x: auto; padding: 8px 0; }
+
+  /* Legend table */
+  .legend-grid { display: grid; grid-template-columns: 180px 1fr; gap: 4px; font-size: 11px; line-height: 2; }
+
+  /* Pricing table */
+  .pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; font-size: 12px; line-height: 2; }
+
+  /* Footer */
+  .proto-footer {
+    margin-top: 20px; padding: 12px; text-align: center;
+    font-size: 10px; color: #aaa; border-top: 1px solid #ddd;
+  }
+
+  /* Section container */
+  .section { display: none; }
+  .section.visible { display: block; }
+
+  /* Booking step */
+  .booking-step { display: none; }
+  .booking-step.visible { display: block; }
+
+  /* Admin tab */
+  .admin-tab { display: none; }
+  .admin-tab.visible { display: block; }
+
+  /* Separator */
+  .legend-sep { margin-top: 24px; padding-top: 16px; border-top: 2px solid #333; }
+
+  /* Misc */
+  .flex-between { display: flex; justify-content: space-between; align-items: center; }
+  .flex-wrap { display: flex; flex-wrap: wrap; }
+  .text-center { text-align: center; }
+  .mt-8 { margin-top: 8px; }
+  .mt-12 { margin-top: 12px; }
+  .mb-6 { margin-bottom: 6px; }
+  .mb-8 { margin-bottom: 8px; }
+  .f11 { font-size: 11px; }
+  .f12 { font-size: 12px; }
+  .f13 { font-size: 13px; }
+  .c888 { color: #888; }
+  .c666 { color: #666; }
+  .c999 { color: #999; }
+  .bold { font-weight: 700; }
+
+  @media print {
+    .main-nav button { font-size: 9px; padding: 6px 2px; }
+    .section { display: block !important; page-break-before: always; }
+    .booking-step { display: block !important; }
+    .admin-tab { display: block !important; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- ═══ HEADER ═══ -->
+  <div class="proto-header">
+    <div class="eyebrow">Interactive Wireframe Prototype</div>
+    <h1>KAMERAAD HAARSNIJDER</h1>
+    <div class="sub">Custom Booking System · Full Architecture Overview</div>
+  </div>
+
+  <!-- ═══ NAV ═══ -->
+  <div class="main-nav" id="mainNav">
+    <button class="active" onclick="showSection(1)">1. Public Website</button>
+    <button onclick="showSection(2)">2. Booking Flow</button>
+    <button onclick="showSection(3)">3. Admin Dashboard</button>
+    <button onclick="showSection(4)">4. Infrastructure</button>
+    <button onclick="showSection(5)" style="border-right:1.5px solid #333">5. Phases &amp; Pricing</button>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- SECTION 1: PUBLIC WEBSITE                                   -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <div class="section visible" id="section-1">
+    <div class="section-title"><div class="num">Section 1</div><h2>Public Website</h2></div>
+
+    <!-- Nav bar -->
+    <div class="box">
+      <div class="box-label">Header / Navigation Bar</div>
+      <div class="flex-between">
+        <span class="bold">[ KAMERAAD LOGO ]</span>
+        <div class="f12" style="display:flex;gap:16px">
+          <span>Home</span><span>Barbers</span><span>Services</span><span>Book Now</span><span>Contact</span>
+          <span class="c999">NL | EN | FR</span>
+        </div>
+      </div>
+      <div class="note">Sticky nav, trilingual toggle, CTA button to booking flow</div>
+    </div>
+
+    <!-- Seasonal banner -->
+    <div class="box">
+      <div class="box-label">Seasonal Banner (Admin-Editable)</div>
+      <div class="placeholder" style="height:80px">[ SEASONAL HERO IMAGE — editable via admin CMS ]</div>
+      <div class="f13" style="margin-top:6px">"Summer Special — 20% off all haircuts in July"</div>
+      <div class="note">Content managed by admin dashboard seasonal editor. Supports image + text + CTA link.</div>
+    </div>
+
+    <!-- Barber showcase -->
+    <div class="box">
+      <div class="box-label">Barber Showcase</div>
+      <div class="grid grid-4">
+        <div class="text-center"><div class="placeholder" style="height:70px">[ Photo ]</div><div class="f12" style="margin-top:4px">Barber A</div><div class="f11 c999">Specialty tag</div></div>
+        <div class="text-center"><div class="placeholder" style="height:70px">[ Photo ]</div><div class="f12" style="margin-top:4px">Barber B</div><div class="f11 c999">Specialty tag</div></div>
+        <div class="text-center"><div class="placeholder" style="height:70px">[ Photo ]</div><div class="f12" style="margin-top:4px">Barber C</div><div class="f11 c999">Specialty tag</div></div>
+        <div class="text-center"><div class="placeholder" style="height:70px">[ Photo ]</div><div class="f12" style="margin-top:4px">Barber D</div><div class="f11 c999">Specialty tag</div></div>
+      </div>
+      <div class="note">Photos + name + specialty. Links to individual availability. Admin-managed profiles.</div>
+    </div>
+
+    <!-- Services & Pricing -->
+    <div class="box">
+      <div class="box-label">Services &amp; Pricing</div>
+      <div class="f12">
+        <div class="service-row"><span>Haircut</span><span>30 min — <strong>€25</strong></span></div>
+        <div class="service-row"><span>Beard Trim</span><span>15 min — <strong>€15</strong></span></div>
+        <div class="service-row"><span>Haircut + Beard</span><span>45 min — <strong>€35</strong></span></div>
+        <div class="service-row"><span>Kids Haircut</span><span>20 min — <strong>€18</strong></span></div>
+        <div class="service-row"><span>Head Shave</span><span>20 min — <strong>€20</strong></span></div>
+        <div class="service-row"><span>Styling Only</span><span>15 min — <strong>€12</strong></span></div>
+      </div>
+      <div class="note">In-person payment only. Prices managed in admin. Duration drives slot allocation.</div>
+    </div>
+
+    <!-- Available slots -->
+    <div class="box">
+      <div class="box-label">Available Slots Preview</div>
+      <div class="f12 mb-6">Next available appointments:</div>
+      <div class="grid grid-3">
+        <div class="slot-chip">Today 14:00</div>
+        <div class="slot-chip">Today 15:30</div>
+        <div class="slot-chip">Tomorrow 09:00</div>
+        <div class="slot-chip">Tomorrow 10:30</div>
+        <div class="slot-chip">Thu 11:00</div>
+        <div class="slot-chip">Thu 14:30</div>
+      </div>
+      <div class="note">Quick-glance availability. Clicking a slot enters booking flow at Step 3.</div>
+    </div>
+
+    <!-- Book now CTA -->
+    <div class="box">
+      <div class="box-label">Book Now CTA</div>
+      <button class="cta-btn" style="width:100%" onclick="showSection(2)">[ BOOK YOUR APPOINTMENT → ]</button>
+      <div class="note">Primary CTA. Routes to booking flow. Prominent on every page.</div>
+    </div>
+
+    <!-- Footer wireframe -->
+    <div class="box">
+      <div class="box-label">Footer</div>
+      <div class="f11 c888 flex-between">
+        <span>© Kameraad Haarsnijder · Leuven</span>
+        <span>Privacy Policy · Terms · Contact</span>
+      </div>
+      <div class="note">GDPR privacy policy link. Business address. Social links optional (out of scope v1).</div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- SECTION 2: BOOKING FLOW                                     -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <div class="section" id="section-2">
+    <div class="section-title"><div class="num">Section 2</div><h2>4-Step Booking Journey</h2></div>
+
+    <div class="progress-bar" id="bookingProgress">
+      <div class="progress-step active" onclick="showBookingStep(1)">1. Barber</div>
+      <div class="progress-step" onclick="showBookingStep(2)">2. Service</div>
+      <div class="progress-step" onclick="showBookingStep(3)">3. Time Slot</div>
+      <div class="progress-step" onclick="showBookingStep(4)">4. Details</div>
+    </div>
+
+    <!-- Step 1 -->
+    <div class="booking-step visible" id="bstep-1">
+      <div class="box">
+        <div class="box-label">Step 1 — Select Your Barber</div>
+        <div class="grid grid-2">
+          <div class="box clickable" onclick="showBookingStep(2)">
+            <div class="placeholder" style="height:50px">[ Photo ]</div>
+            <div class="f13 text-center" style="margin-top:4px">Barber A</div>
+            <div class="f11 c999 text-center">Next available: Today 14:00</div>
+          </div>
+          <div class="box clickable" onclick="showBookingStep(2)">
+            <div class="placeholder" style="height:50px">[ Photo ]</div>
+            <div class="f13 text-center" style="margin-top:4px">Barber B</div>
+            <div class="f11 c999 text-center">Next available: Today 15:30</div>
+          </div>
+          <div class="box clickable" onclick="showBookingStep(2)">
+            <div class="placeholder" style="height:50px">[ Photo ]</div>
+            <div class="f13 text-center" style="margin-top:4px">Barber C</div>
+            <div class="f11 c999 text-center">Next available: Tomorrow 09:00</div>
+          </div>
+          <div class="box clickable" onclick="showBookingStep(2)">
+            <div class="placeholder" style="height:50px">[ Photo ]</div>
+            <div class="f13 text-center" style="margin-top:4px">Barber D</div>
+            <div class="f11 c999 text-center">Next available: Tomorrow 10:30</div>
+          </div>
+          <div class="box dashed clickable" onclick="showBookingStep(2)" style="display:flex;align-items:center;justify-content:center;min-height:60px">
+            <div class="f12 c999">No preference — first available</div>
+          </div>
+        </div>
+        <div class="note">Shows each barber with next available slot. "No preference" option assigns first-available.</div>
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="booking-step" id="bstep-2">
+      <div class="box">
+        <div class="box-label">Step 2 — Select Service</div>
+        <div class="box clickable" onclick="showBookingStep(3)"><div class="flex-between f13"><span>Haircut</span><span>30 min · <strong>€25</strong></span></div></div>
+        <div class="box clickable" onclick="showBookingStep(3)"><div class="flex-between f13"><span>Beard Trim</span><span>15 min · <strong>€15</strong></span></div></div>
+        <div class="box clickable" onclick="showBookingStep(3)"><div class="flex-between f13"><span>Haircut + Beard</span><span>45 min · <strong>€35</strong></span></div></div>
+        <div class="box clickable" onclick="showBookingStep(3)"><div class="flex-between f13"><span>Kids Haircut</span><span>20 min · <strong>€18</strong></span></div></div>
+        <div class="box clickable" onclick="showBookingStep(3)"><div class="flex-between f13"><span>Head Shave</span><span>20 min · <strong>€20</strong></span></div></div>
+        <div class="box clickable" onclick="showBookingStep(3)"><div class="flex-between f13"><span>Styling Only</span><span>15 min · <strong>€12</strong></span></div></div>
+        <div class="note">Service selection drives time slot duration calculation. Price shown for transparency.</div>
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="booking-step" id="bstep-3">
+      <div class="box">
+        <div class="box-label">Step 3 — Pick a Time Slot</div>
+        <div class="f12 mb-8"><strong>Barber A</strong> · Haircut (30 min)</div>
+        <div style="display:flex;gap:8px;margin-bottom:8px">
+          <div class="slot-chip">Mon 14</div>
+          <div class="slot-chip">Tue 15</div>
+          <div class="slot-chip">Wed 16</div>
+          <div class="slot-chip">Thu 17</div>
+          <div class="slot-chip">Fri 18</div>
+        </div>
+        <div class="grid grid-4">
+          <div class="slot-chip clickable" onclick="showBookingStep(4)">09:00</div>
+          <div class="slot-chip clickable" onclick="showBookingStep(4)">09:30</div>
+          <div class="slot-chip clickable" onclick="showBookingStep(4)">10:00</div>
+          <div class="slot-chip clickable" onclick="showBookingStep(4)">10:30</div>
+          <div class="slot-chip clickable" onclick="showBookingStep(4)">11:00</div>
+          <div class="slot-chip clickable" onclick="showBookingStep(4)">14:00</div>
+          <div class="slot-chip clickable" onclick="showBookingStep(4)">14:30</div>
+          <div class="slot-chip clickable" onclick="showBookingStep(4)">15:00</div>
+        </div>
+        <div class="note">Slots generated from barber's template minus existing bookings. Only available slots shown. Respects service duration — no overlapping bookings.</div>
+      </div>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="booking-step" id="bstep-4">
+      <div class="box">
+        <div class="box-label">Step 4 — Your Details + Confirmation</div>
+        <div class="box dashed"><div class="box-label">Booking Summary</div>Barber A · Haircut · Wed 16 Apr · 14:00 — 14:30 · €25</div>
+        <div class="mt-8">
+          <div class="form-field"><label>First Name *</label><div class="line"></div></div>
+          <div class="form-field"><label>Last Name *</label><div class="line"></div></div>
+          <div class="form-field"><label>Email *</label><div class="line"></div></div>
+          <div class="form-field"><label>Phone *</label><div class="line"></div></div>
+        </div>
+        <div class="mt-8 f11 c888">
+          □ I agree to the 24-hour cancellation policy<br>
+          □ I consent to storing my data per privacy policy
+        </div>
+        <div class="mt-12">
+          <button class="cta-btn" style="width:100%;font-size:13px">[ CONFIRM BOOKING ]</button>
+        </div>
+        <div class="note">Sends confirmation email with calendar invite. Includes cancellation link (24h policy). Customer record created/updated in CRM. GDPR consent captured.</div>
+      </div>
+    </div>
+
+    <!-- Post-booking emails -->
+    <div class="box dashed mt-12">
+      <div class="box-label">Post-Booking Email Sequence (Calendly-Style)</div>
+      <div class="f11" style="line-height:1.8">
+        ✉ Instant: Confirmation email + calendar (.ics) attachment<br>
+        ✉ T-24h: Reminder email with reschedule/cancel link<br>
+        ✉ T-1h: Final reminder (optional, admin-configurable)<br>
+        ✉ On cancel: Cancellation confirmation + rebook CTA
+      </div>
+      <div class="note">All emails via Resend. Templates admin-editable. Trilingual.</div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- SECTION 3: ADMIN DASHBOARD                                  -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <div class="section" id="section-3">
+    <div class="section-title"><div class="num">Section 3</div><h2>Admin Dashboard</h2></div>
+
+    <div class="flex-wrap mb-8" id="adminTabs">
+      <button class="wire-btn active" onclick="showAdminTab('calendar')">Master Calendar</button>
+      <button class="wire-btn" onclick="showAdminTab('barber-cal')">Barber Calendars</button>
+      <button class="wire-btn" onclick="showAdminTab('bookings')">Bookings</button>
+      <button class="wire-btn" onclick="showAdminTab('customers')">Customer DB</button>
+      <button class="wire-btn" onclick="showAdminTab('content')">Content Editor</button>
+      <button class="wire-btn" onclick="showAdminTab('slots')">Slot Templates</button>
+    </div>
+
+    <!-- Master Calendar -->
+    <div class="admin-tab visible" id="atab-calendar">
+      <div class="box">
+        <div class="box-label">Master Calendar — All Barbers</div>
+        <div class="f11 mb-6">◀ Week of April 14, 2025 ▶ &nbsp;&nbsp; [Day] [Week] [Month]</div>
+        <div class="cal-grid" style="grid-template-columns: 60px repeat(4, 1fr)">
+          <div></div>
+          <div class="cal-header">Barber A</div>
+          <div class="cal-header">Barber B</div>
+          <div class="cal-header">Barber C</div>
+          <div class="cal-header">Barber D</div>
+
+          <div class="cal-time">09:00</div><div class="cal-cell"></div><div class="cal-cell"></div><div class="cal-cell"></div><div class="cal-cell"></div>
+          <div class="cal-time">10:00</div><div class="cal-cell booked">Haircut — Jan D.</div><div class="cal-cell"></div><div class="cal-cell"></div><div class="cal-cell"></div>
+          <div class="cal-time">11:00</div><div class="cal-cell"></div><div class="cal-cell"></div><div class="cal-cell"></div><div class="cal-cell"></div>
+          <div class="cal-time">14:00</div><div class="cal-cell"></div><div class="cal-cell"></div><div class="cal-cell booked">Beard — Pieter V.</div><div class="cal-cell"></div>
+          <div class="cal-time">15:00</div><div class="cal-cell"></div><div class="cal-cell"></div><div class="cal-cell"></div><div class="cal-cell"></div>
+          <div class="cal-time">16:00</div><div class="cal-cell"></div><div class="cal-cell"></div><div class="cal-cell"></div><div class="cal-cell"></div>
+        </div>
+        <div class="note">Drag-to-reschedule planned for v2. Click booking → detail panel. Color codes: booked/available/blocked.</div>
+      </div>
+    </div>
+
+    <!-- Barber Calendars -->
+    <div class="admin-tab" id="atab-barber-cal">
+      <div class="box">
+        <div class="box-label">Individual Barber Calendar</div>
+        <div style="display:flex;gap:8px;margin-bottom:8px">
+          <button class="wire-btn">Barber A</button>
+          <button class="wire-btn">Barber B</button>
+          <button class="wire-btn">Barber C</button>
+          <button class="wire-btn">Barber D</button>
+        </div>
+        <div class="placeholder" style="height:120px">[ Selected barber's weekly calendar — same grid as master but single-column ]</div>
+        <div class="box dashed mt-8">
+          <div class="box-label">Barber Availability Status</div>
+          <div class="f11">● Available &nbsp; ○ Booked &nbsp; ╳ Blocked &nbsp; ◐ Break/Lunch</div>
+        </div>
+        <div class="note">Admin can block time slots, set vacation days, manage individual schedules.</div>
+      </div>
+    </div>
+
+    <!-- Bookings -->
+    <div class="admin-tab" id="atab-bookings">
+      <div class="box">
+        <div class="box-label">Bookings Management</div>
+        <div class="f11 flex-between mb-8">
+          <span>Filter: [All] [Today] [This Week] [Pending] [Cancelled]</span>
+          <span>Search: [______________]</span>
+        </div>
+        <div class="table-header" style="grid-template-columns:1fr 1fr 1fr 1fr 80px">
+          <span>Customer</span><span>Service</span><span>Barber</span><span>Date/Time</span><span>Actions</span>
+        </div>
+        <div class="table-row" style="grid-template-columns:1fr 1fr 1fr 1fr 80px">
+          <span>Jan Devos</span><span>Haircut</span><span>Barber A</span><span>Apr 15 10:00</span><span class="c888">[✎] [✕]</span>
+        </div>
+        <div class="table-row" style="grid-template-columns:1fr 1fr 1fr 1fr 80px">
+          <span>Pieter Vermeer</span><span>Beard Trim</span><span>Barber C</span><span>Apr 15 14:00</span><span class="c888">[✎] [✕]</span>
+        </div>
+        <div class="table-row" style="grid-template-columns:1fr 1fr 1fr 1fr 80px">
+          <span>Sophie Laurent</span><span>Haircut+Beard</span><span>Barber B</span><span>Apr 16 09:30</span><span class="c888">[✎] [✕]</span>
+        </div>
+        <div class="note">Edit = reschedule/add notes. Cancel sends cancellation email. Bulk actions for multi-select.</div>
+      </div>
+    </div>
+
+    <!-- Customer DB -->
+    <div class="admin-tab" id="atab-customers">
+      <div class="box">
+        <div class="box-label">Customer Database (CRM)</div>
+        <div class="f11 mb-6">
+          Search: [__________________] &nbsp; Export: [CSV] &nbsp;
+          <span style="color:#c00">[⚠ GDPR Delete]</span>
+        </div>
+        <div class="table-header" style="grid-template-columns:1fr 1fr 60px 80px 80px">
+          <span>Name</span><span>Email</span><span>Visits</span><span>Last Visit</span><span>Actions</span>
+        </div>
+        <div class="table-row" style="grid-template-columns:1fr 1fr 60px 80px 80px">
+          <span>Jan Devos</span><span>jan@email.be</span><span>12</span><span>Apr 15</span><span class="c888">[View] [🗑]</span>
+        </div>
+        <div class="table-row" style="grid-template-columns:1fr 1fr 60px 80px 80px">
+          <span>Sophie Laurent</span><span>sophie@email.be</span><span>3</span><span>Apr 10</span><span class="c888">[View] [🗑]</span>
+        </div>
+        <div class="note">GDPR-compliant permanent deletion — removes all records, bookings, emails. No soft-delete; data is irrecoverably purged per client requirement.</div>
+      </div>
+    </div>
+
+    <!-- Content Editor -->
+    <div class="admin-tab" id="atab-content">
+      <div class="box">
+        <div class="box-label">Seasonal Content Editor</div>
+        <div class="grid grid-2">
+          <div class="box dashed">
+            <div class="box-label">Current Banner</div>
+            <div class="placeholder" style="height:60px">[ Current hero image ]</div>
+            <div class="f11" style="margin-top:4px">"Summer Special — 20% off"</div>
+          </div>
+          <div class="box dashed">
+            <div class="box-label">Edit Banner</div>
+            <div class="f11" style="line-height:2">
+              Title: [______________]<br>
+              Subtitle: [______________]<br>
+              Image: [Upload ▲]<br>
+              CTA Link: [______________]<br>
+              Active: [✓] / Schedule: [date picker]
+            </div>
+          </div>
+        </div>
+        <div class="note">Admin can schedule banners in advance. Supports image upload, text, and call-to-action link.</div>
+      </div>
+    </div>
+
+    <!-- Slot Templates -->
+    <div class="admin-tab" id="atab-slots">
+      <div class="box">
+        <div class="box-label">Slot Template Management</div>
+        <div class="f12 mb-8">Manage recurring availability patterns per barber:</div>
+        <div class="box dashed">
+          <div class="box-label">Template: Barber A — Default Week</div>
+          <div class="f11" style="line-height:1.8">
+            Mon: 09:00–12:00, 13:00–17:00<br>
+            Tue: 09:00–12:00, 13:00–17:00<br>
+            Wed: OFF<br>
+            Thu: 10:00–18:00<br>
+            Fri: 09:00–12:00, 13:00–17:00<br>
+            Sat: 09:00–14:00
+          </div>
+        </div>
+        <div class="box dashed mt-8">
+          <div class="box-label">Exclusions / Overrides</div>
+          <div class="f11">
+            + Add holiday: [date picker] [All barbers ▾]<br>
+            + Add vacation: [start] → [end] [Barber ▾]<br>
+            + One-off block: [date] [time] [Barber ▾]
+          </div>
+        </div>
+        <div class="note">Templates generate available slots. Exclusions override templates. Changes propagate to booking flow instantly.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- SECTION 4: INFRASTRUCTURE                                   -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <div class="section" id="section-4">
+    <div class="section-title"><div class="num">Section 4</div><h2>Infrastructure &amp; Architecture</h2></div>
+
+    <div class="box">
+      <div class="box-label">System Architecture Diagram</div>
+      <pre class="arch-pre">
+┌──────────────────────────────────────────────────────────────────┐
+│                        VERCEL (Frontend)                         │
+│  ┌─────────────────┐  ┌──────────────────┐  ┌────────────────┐  │
+│  │  Public Website  │  │  Booking App     │  │ Admin Dashboard │  │
+│  │  (Next.js SSG)   │  │  (Next.js CSR)   │  │ (Next.js SSR)  │  │
+│  └────────┬────────┘  └────────┬─────────┘  └───────┬────────┘  │
+│           │                    │                     │           │
+│           └────────────────────┼─────────────────────┘           │
+│                                │                                 │
+│                    ┌───────────▼──────────┐                      │
+│                    │  API Routes / Edge   │                      │
+│                    │  (Serverless Fns)    │                      │
+│                    └───────────┬──────────┘                      │
+└────────────────────────────────┼─────────────────────────────────┘
+                                 │ HTTPS
+                    ┌────────────▼─────────────┐
+                    │    RAILWAY (Backend)      │
+                    │  ┌─────────────────────┐  │
+                    │  │   PostgreSQL DB      │  │
+                    │  │  ┌───────────────┐   │  │
+                    │  │  │ bookings      │   │  │
+                    │  │  │ customers     │   │  │
+                    │  │  │ barbers       │   │  │
+                    │  │  │ services      │   │  │
+                    │  │  │ slots         │   │  │
+                    │  │  │ templates     │   │  │
+                    │  │  │ content       │   │  │
+                    │  │  └───────────────┘   │  │
+                    │  └─────────────────────┘  │
+                    └──────────────────────────┘
+                                 │
+                    ┌────────────▼─────────────┐
+                    │      RESEND (Email)       │
+                    │  Confirmation / Reminders │
+                    │  Cancellation / Rebook    │
+                    └──────────────────────────┘
+
+  CI/CD: GitHub Actions → Lint → Test → Preview Deploy → Prod Deploy</pre>
+    </div>
+
+    <div class="box">
+      <div class="box-label">Privacy &amp; Data Sovereignty</div>
+      <div class="f12"><strong>Principles:</strong></div>
+      <div class="f11" style="line-height:1.8;margin-left:8px">
+        • Own database — no third-party booking platform stores customer data<br>
+        • GDPR Article 17 "Right to Erasure" — permanent deletion capability<br>
+        • No analytics tracking beyond server logs<br>
+        • All data hosted on Railway EU region<br>
+        • Email processing via Resend (GDPR-compliant, data processing agreement)<br>
+        • No cookies beyond essential session management<br>
+        • Admin has full control: can export, delete, or modify any record<br>
+        • Cancellation of Calendly eliminates third-party data dependency
+      </div>
+      <div class="note">Core differentiator: complete data sovereignty. Client owns 100% of customer data with no vendor lock-in.</div>
+    </div>
+
+    <div class="box">
+      <div class="box-label">Secure Deletion Architecture</div>
+      <pre class="arch-pre">Admin triggers "Delete Customer" →
+  1. DELETE FROM bookings WHERE customer_id = ?
+  2. DELETE FROM email_log WHERE customer_id = ?
+  3. DELETE FROM customers WHERE id = ?
+  4. Confirmation: "All records permanently removed"
+
+  → No soft delete. No recycle bin. No recovery.
+  → Audit log records deletion event (not deleted data).</pre>
+      <div class="note">Hard delete cascade. Meets client requirement for irrecoverable purge.</div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- SECTION 5: PHASES & PRICING                                 -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <div class="section" id="section-5">
+    <div class="section-title"><div class="num">Section 5</div><h2>Project Phases &amp; Pricing</h2></div>
+
+    <!-- Phase 1 -->
+    <div class="box">
+      <div class="box-label">Phase 1 — Foundation</div>
+      <div class="f11 c666 mb-6">Weeks 1–3 · 1.2 FTE</div>
+      <div class="f11" style="line-height:1.8">
+        ☐ Next.js project bootstrap + Tailwind config<br>
+        ☐ PostgreSQL schema + migrations on Railway<br>
+        ☐ GitHub repo + CI/CD pipeline (GitHub Actions)<br>
+        ☐ Vercel deployment (preview + production)<br>
+        ☐ Authentication scaffold (admin)
+      </div>
+      <div class="mt-8 f11"><strong>Milestone:</strong> Infrastructure operational, admin login working</div>
+      <div class="f11" style="color:#555"><strong>Invoice trigger:</strong> 25% of project total</div>
+    </div>
+
+    <!-- Phase 2 -->
+    <div class="box">
+      <div class="box-label">Phase 2 — Booking Engine</div>
+      <div class="f11 c666 mb-6">Weeks 4–6 · 1.5 FTE</div>
+      <div class="f11" style="line-height:1.8">
+        ☐ 4-step booking flow (barber → service → slot → details)<br>
+        ☐ Availability engine (slot templates, exclusions)<br>
+        ☐ Confirmation + reminder emails via Resend<br>
+        ☐ Cancellation flow with 24h policy enforcement<br>
+        ☐ Trilingual support (NL / EN / FR)
+      </div>
+      <div class="mt-8 f11"><strong>Milestone:</strong> End-to-end booking functional in staging</div>
+      <div class="f11" style="color:#555"><strong>Invoice trigger:</strong> 30% of project total</div>
+    </div>
+
+    <!-- Phase 3 -->
+    <div class="box">
+      <div class="box-label">Phase 3 — Admin + CRM</div>
+      <div class="f11 c666 mb-6">Weeks 7–9 · 1.5 FTE</div>
+      <div class="f11" style="line-height:1.8">
+        ☐ Admin dashboard with master calendar<br>
+        ☐ Per-barber calendar views<br>
+        ☐ Customer database with search + GDPR delete<br>
+        ☐ Booking management (reschedule, cancel, notes)<br>
+        ☐ Slot template editor (recurring availability)<br>
+        ☐ Seasonal banner / content editor
+      </div>
+      <div class="mt-8 f11"><strong>Milestone:</strong> Admin dashboard fully operational</div>
+      <div class="f11" style="color:#555"><strong>Invoice trigger:</strong> 25% of project total</div>
+    </div>
+
+    <!-- Phase 4 -->
+    <div class="box">
+      <div class="box-label">Phase 4 — Polish + Launch</div>
+      <div class="f11 c666 mb-6">Weeks 10–12 · 1.0 FTE</div>
+      <div class="f11" style="line-height:1.8">
+        ☐ Public website pages (home, about, services, contact)<br>
+        ☐ SEO + performance optimization<br>
+        ☐ End-to-end testing suite<br>
+        ☐ Client UAT + feedback incorporation<br>
+        ☐ Production launch + monitoring setup<br>
+        ☐ Handover documentation
+      </div>
+      <div class="mt-8 f11"><strong>Milestone:</strong> Production launch, retainer begins</div>
+      <div class="f11" style="color:#555"><strong>Invoice trigger:</strong> 20% of project total</div>
+    </div>
+
+    <!-- Pricing -->
+    <div class="box">
+      <div class="box-label">Service Rates &amp; Project Cost</div>
+      <div class="pricing-grid">
+        <span class="bold">Item</span><span class="bold">Rate / Cost</span>
+        <span>Senior Dev (Ayat)</span><span>€[rate]/hr</span>
+        <span>DevOps / QA (Collaborator)</span><span>€[rate]/hr</span>
+        <span>Phase 1 — Foundation (25%)</span><span>€[amount]</span>
+        <span>Phase 2 — Booking Engine (30%)</span><span>€[amount]</span>
+        <span>Phase 3 — Admin + CRM (25%)</span><span>€[amount]</span>
+        <span>Phase 4 — Polish + Launch (20%)</span><span>€[amount]</span>
+        <span>───────────────────────</span><span>──────────</span>
+        <span class="bold">Total Project</span><span class="bold">€[total]</span>
+        <span>Monthly Retainer (post-launch)</span><span>€[amount]/mo</span>
+      </div>
+      <div class="note">Milestone-based invoicing. No payment until acceptance criteria met per phase. Retainer covers hosting, maintenance, minor updates.</div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- LEGEND (always visible)                                     -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <div class="legend-sep">
+    <div class="box">
+      <div class="box-label">Legend — Calendly-Style Features Being Implemented</div>
+      <div class="legend-grid">
+        <strong>Feature</strong><strong>Implementation</strong>
+        <span>Availability Sync</span><span>Slot templates + real-time availability engine — no double bookings</span>
+        <span>Reminder Emails</span><span>Automated T-24h and T-1h reminders via Resend</span>
+        <span>Cancellation Links</span><span>Unique token per booking, 24h policy enforced server-side</span>
+        <span>Calendar Invites</span><span>.ics attachment in confirmation email</span>
+        <span>Rescheduling</span><span>Customer can reschedule via email link (subject to availability)</span>
+        <span>Buffer Time</span><span>Configurable padding between appointments in slot templates</span>
+        <span>Timezone Handling</span><span>Europe/Brussels default — all times in local TZ</span>
+        <span>Booking Confirmations</span><span>Instant email with all booking details + manage link</span>
+        <span>Admin Overrides</span><span>Block slots, add breaks, vacation days, one-off closures</span>
+        <span>Round-Robin / Any</span><span>"No preference" option assigns first-available barber</span>
+        <span>Custom Questions</span><span>Out of scope v1 — planned for future iteration</span>
+        <span>Webhook Notifications</span><span>Out of scope v1 — admin dashboard is primary interface</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="proto-footer">Kameraad Wireframe Prototype · Stakeholder Review Document · Confidential</div>
+
+</div>
+
+<script>
+  /* ─── Section navigation ─── */
+  function showSection(num) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('visible'));
+    document.getElementById('section-' + num).classList.add('visible');
+    const btns = document.querySelectorAll('#mainNav button');
+    btns.forEach((b, i) => b.classList.toggle('active', i === num - 1));
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  /* ─── Booking step navigation ─── */
+  function showBookingStep(step) {
+    document.querySelectorAll('.booking-step').forEach(s => s.classList.remove('visible'));
+    document.getElementById('bstep-' + step).classList.add('visible');
+    const steps = document.querySelectorAll('#bookingProgress .progress-step');
+    steps.forEach((s, i) => {
+      s.classList.remove('active', 'done');
+      if (i === step - 1) s.classList.add('active');
+      else if (i < step - 1) s.classList.add('done');
+    });
+  }
+
+  /* ─── Admin tab navigation ─── */
+  function showAdminTab(tab) {
+    document.querySelectorAll('.admin-tab').forEach(t => t.classList.remove('visible'));
+    document.getElementById('atab-' + tab).classList.add('visible');
+    const btns = document.querySelectorAll('#adminTabs .wire-btn');
+    const tabOrder = ['calendar', 'barber-cal', 'bookings', 'customers', 'content', 'slots'];
+    btns.forEach((b, i) => b.classList.toggle('active', tabOrder[i] === tab));
+  }
+</script>
+</body>
+</html>
