@@ -1,0 +1,19 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: kameraad
+      POSTGRES_PASSWORD: kameraad_dev
+      POSTGRES_DB: kameraad
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U kameraad -d kameraad"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - kameraad_pgdata:/var/lib/postgresql/data
+
+volumes:
+  kameraad_pgdata:
