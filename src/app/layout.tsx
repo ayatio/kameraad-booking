@@ -1,16 +1,7 @@
-import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
-import './globals.css'
 
-export const metadata: Metadata = {
-  title: 'Kameraad Haarsnijder',
-  description: 'Online afsprakensysteem voor Kameraad Haarsnijder',
-}
-
+// The [locale] layout provides the <html> and <body> shell.
+// This root layout is required by Next.js but acts as a passthrough.
 export default function RootLayout({ children }: { children: ReactNode }) {
-  return (
-    <html lang="nl">
-      <body className="bg-dark-950 text-gold-400">{children}</body>
-    </html>
-  )
+  return children as React.JSX.Element
 }
