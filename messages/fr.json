@@ -1,0 +1,9 @@
+{
+  "_comment": "PROVISIONAL: agent-drafted translations pending client review (FR-094)",
+  "common": {
+    "appName": "Kameraad Haarsnijder",
+    "tagline": "L'artisanat à chaque coupe",
+    "homeIntro": "Bienvenue chez Kameraad Haarsnijder. Réservez votre rendez-vous en ligne avec l'un de nos barbiers expérimentés.",
+    "switchLanguage": "Changer de langue"
+  }
+}
