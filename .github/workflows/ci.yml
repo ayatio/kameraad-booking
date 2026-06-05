@@ -1,0 +1,75 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - develop
+      - 'phase-*'
+  pull_request:
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: kameraad
+          POSTGRES_PASSWORD: kameraad_dev
+          POSTGRES_DB: kameraad
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Run migrations
+        run: npm run db:migrate
+        env:
+          DATABASE_URL: postgresql://kameraad:kameraad_dev@localhost:5432/kameraad
+
+      - name: Verify idempotency (re-run migrations)
+        run: npm run db:migrate
+        env:
+          DATABASE_URL: postgresql://kameraad:kameraad_dev@localhost:5432/kameraad
+
+      - name: Seed database
+        run: npm run db:seed
+        env:
+          DATABASE_URL: postgresql://kameraad:kameraad_dev@localhost:5432/kameraad
+
+      - name: Unit tests
+        run: npm run test
+
+      - name: Build
+        run: npm run build
+
+  gitleaks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
