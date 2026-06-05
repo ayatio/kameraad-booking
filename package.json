@@ -9,10 +9,14 @@
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
     "format": "prettier --write .",
-    "test": "vitest run"
+    "test": "vitest run",
+    "db:migrate": "node scripts/db-migrate.mjs",
+    "db:seed": "node scripts/db-seed.mjs"
   },
   "dependencies": {
     "next": "14",
+    "next-intl": "^4.13.0",
+    "postgres": "^3.4.9",
     "react": "^18",
     "react-dom": "^18"
   },
