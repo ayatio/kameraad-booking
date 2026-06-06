@@ -7,23 +7,45 @@
     "switchLanguage": "Cambiar idioma"
   },
   "booking": {
+    "eyebrow": "Reservar",
     "title": "Reserva tu silla.",
     "lead": "Primero tu servicio, luego el barbero que lo realiza, después un momento que te encaje. Paso a paso — del resto nos encargamos nosotros.",
+    "openButton": "Reserva tu silla →",
+    "hoursLabel": "Horario",
+    "hours": "Mar–Dom · 10:00–20:00",
+    "placeLabel": "Lugar",
     "step": {
-      "service": "Servicio",
       "barber": "Barbero",
+      "service": "Servicio",
+      "slot": "Horario",
+      "details": "Datos",
       "date": "Fecha",
       "time": "Hora"
     },
     "confirm": "Confirmar cita",
     "done": {
-      "heading": "Hasta pronto, kameraad."
+      "heading": "Hasta pronto, kameraad.",
+      "summary": "Confirmado: {service} con {barber} el {date} a las {time}.",
+      "emailInfo": "Gestiona tu cita desde el correo de confirmación."
     },
     "noPreference": "Sin preferencia",
     "noPreferenceLow": "sin preferencia",
+    "noPreferenceHint": "Se te asignará el barbero más disponible.",
     "reset": "Nueva cita",
     "barberNote": "Disponible para tu servicio:",
     "chooseMore": "Elige aún",
+    "back": "Atrás",
+    "close": "Cerrar",
+    "stepOf": "Paso {current} de {total}",
+    "loading": "Cargando…",
+    "submitting": "Confirmando…",
+    "noSlots": "No hay horarios disponibles para este día.",
+    "nextAvailableDay": "Ir al primer día disponible",
+    "walkInBand": "Walk-ins también bienvenidos — entra directamente.",
+    "walkIn": {
+      "title": "Walk-in",
+      "description": "También bienvenido sin cita — entra directamente. Primero disponible si hay sitio."
+    },
     "summary": {
       "start": "Elige un servicio para empezar.",
       "at": "con",
@@ -46,9 +68,27 @@
     },
     "dow": ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"],
     "months": ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"],
+    "form": {
+      "firstName": "Nombre",
+      "lastName": "Apellido",
+      "email": "Correo electrónico",
+      "phone": "Número de teléfono",
+      "note": "Nota (opcional)",
+      "notePlaceholder": "Mensaje para tu barbero, máx. 500 caracteres",
+      "phoneHelp": "Ej. 0479 12 34 56 o +32 2 123 45 67",
+      "required": "Campo obligatorio",
+      "emailInvalid": "Dirección de correo inválida",
+      "phoneInvalid": "Número de teléfono inválido — usa formato belga o internacional",
+      "noteMaxLength": "Máximo 500 caracteres"
+    },
     "validation": {
       "cancellationPolicy": "Acepto la política de cancelación (cancelación gratuita hasta {hours} horas antes de tu cita).",
       "privacyConsent": "Acepto el tratamiento de mis datos personales para la gestión de mi cita."
+    },
+    "privacyLinkText": "política de privacidad",
+    "error": {
+      "slotTaken": "Este horario acaba de ser reservado. Elige otro momento.",
+      "generic": "Algo ha salido mal. Por favor, inténtalo de nuevo."
     }
   },
   "emails": {

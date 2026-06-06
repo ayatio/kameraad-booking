@@ -1,3 +1,90 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* =====================================================================
+   BOOKING FLOW — gate-a interaction patterns
+   Mirrors Kameraad Homepage.html §booking CSS approach.
+   ===================================================================== */
+
+/* Accordion step states */
+.bk-step { border-bottom: 1px solid rgba(22,20,15,.14); }
+.bk-h {
+  display: flex; align-items: center; gap: 14px;
+  font-family: var(--font-display, 'Oswald', sans-serif);
+  text-transform: uppercase; letter-spacing: 0.13em; font-size: 0.95rem;
+  color: #16140f; padding: 24px 0;
+  transition: color .3s ease;
+}
+.bk-n {
+  display: grid; place-content: center;
+  width: 26px; height: 26px; border-radius: 50%;
+  font-size: 0.62rem; color: #9a7b33; letter-spacing: 0;
+  border: 1px solid rgba(22,20,15,.14);
+  transition: background .3s ease, color .3s ease, border-color .3s ease;
+}
+.bk-step.is-open .bk-n { background: #c9a24b; color: #16140f; border-color: #c9a24b; }
+.bk-step.is-done .bk-n { background: #9a7b33; color: #fff; border-color: #9a7b33; font-size: 0; }
+.bk-step.is-done .bk-n::after { content: "✓"; font-size: 0.8rem; }
+.bk-pick { margin-left: auto; font-family: inherit; text-transform: none; letter-spacing: 0; font-size: 0.9rem; font-weight: 600; color: #9a7b33; }
+.bk-pick:empty { display: none; }
+
+/* Body animation */
+.bk-body {
+  overflow: hidden; max-height: 0; opacity: 0; transform: translateY(-6px);
+  transition: max-height .5s cubic-bezier(.22,1,.36,1), opacity .35s ease,
+              transform .45s cubic-bezier(.22,1,.36,1), padding .5s ease;
+  padding-bottom: 0;
+}
+.bk-step.is-open .bk-body { max-height: 800px; opacity: 1; transform: translateY(0); padding-bottom: 26px; }
+.bk-step.is-locked { opacity: .4; pointer-events: none; }
+.bk-step.is-locked .bk-h { color: #8a857b; }
+.bk-step.is-done .bk-h { cursor: pointer; }
+.bk-step.is-done .bk-h:hover { color: #9a7b33; }
+
+/* Mobile: open button + full-screen wizard */
+.bk-open-btn { display: none; }
+.bk-modalbar { display: none; }
+
+@media (max-width: 680px) {
+  .bk-open-btn {
+    display: inline-block;
+    margin-top: 28px;
+    font-family: var(--font-display, 'Oswald', sans-serif);
+    text-transform: uppercase; letter-spacing: .14em; font-size: .82rem; font-weight: 600;
+    background: #c9a24b; color: #1a160c; border: none; border-radius: 999px;
+    padding: 16px 30px; cursor: pointer;
+  }
+  .bk-open-btn:active { transform: scale(.98); }
+
+  .bk-card { display: none; }
+
+  body.bk-open { overflow: hidden; }
+  body.bk-open .bk-card {
+    display: flex !important; flex-direction: column;
+    position: fixed; inset: 0; z-index: 2000;
+    border-radius: 0; box-shadow: none; max-width: none;
+    background: #f6f1e7;
+  }
+  body.bk-open .bk-step:not(.is-open) { display: none; }
+  body.bk-open .bk-step.is-open .bk-body {
+    max-height: none !important; opacity: 1 !important;
+    transform: none !important; padding-bottom: 8px;
+  }
+  body.bk-open .bk-step { border: none; }
+  body.bk-open .bk-step.is-open .bk-h { padding-top: 14px; font-size: 1rem; }
+  body.bk-open .bk-h { border-bottom: none; }
+
+  .bk-modalbar {
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    padding: calc(16px + env(safe-area-inset-top, 18px)) 16px 14px;
+    border-bottom: 1px solid rgba(22,20,15,.14);
+    position: sticky; top: 0; background: #f6f1e7; z-index: 5;
+  }
+  .bk-flow { flex: 1; display: flex; flex-direction: column; overflow-y: auto; padding: 4px 20px 0; }
+  .bk-foot-mob { margin-top: auto; padding: 16px 20px calc(24px + env(safe-area-inset-bottom, 0px)); border-top: 1px solid rgba(22,20,15,.14); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bk-body { transition: none; }
+}

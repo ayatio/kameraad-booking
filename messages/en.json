@@ -7,23 +7,45 @@
     "switchLanguage": "Switch language"
   },
   "booking": {
+    "eyebrow": "Reserve",
     "title": "Book your chair.",
     "lead": "First your service, then the barber who performs it, then a moment that fits. Step by step — we handle the rest.",
+    "openButton": "Book your chair →",
+    "hoursLabel": "Hours",
+    "hours": "Tue–Sun · 10:00–20:00",
+    "placeLabel": "Location",
     "step": {
-      "service": "Service",
       "barber": "Barber",
+      "service": "Service",
+      "slot": "Time slot",
+      "details": "Details",
       "date": "Date",
       "time": "Time"
     },
     "confirm": "Confirm booking",
     "done": {
-      "heading": "See you soon, kameraad."
+      "heading": "See you soon, kameraad.",
+      "summary": "Confirmed: {service} with {barber} on {date} at {time}.",
+      "emailInfo": "Manage your appointment via the confirmation email."
     },
     "noPreference": "No preference",
     "noPreferenceLow": "no preference",
+    "noPreferenceHint": "The most available barber will be assigned to you.",
     "reset": "New booking",
     "barberNote": "Available for your service:",
     "chooseMore": "Still choose a",
+    "back": "Back",
+    "close": "Close",
+    "stepOf": "Step {current} of {total}",
+    "loading": "Loading…",
+    "submitting": "Confirming…",
+    "noSlots": "No available times for this day.",
+    "nextAvailableDay": "Go to the first available day",
+    "walkInBand": "Walk-ins welcome too — just come in.",
+    "walkIn": {
+      "title": "Walk-in",
+      "description": "Welcome without an appointment too — just walk in. First available if there's space."
+    },
     "summary": {
       "start": "Choose a service to begin.",
       "at": "with",
@@ -46,9 +68,27 @@
     },
     "dow": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
     "months": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    "form": {
+      "firstName": "First name",
+      "lastName": "Last name",
+      "email": "Email address",
+      "phone": "Phone number",
+      "note": "Note (optional)",
+      "notePlaceholder": "Message for your barber, max. 500 characters",
+      "phoneHelp": "E.g. 0479 12 34 56 or +32 2 123 45 67",
+      "required": "Required field",
+      "emailInvalid": "Invalid email address",
+      "phoneInvalid": "Invalid phone number — use a Belgian or international format",
+      "noteMaxLength": "Maximum 500 characters"
+    },
     "validation": {
       "cancellationPolicy": "I accept the cancellation policy (free cancellation up to {hours} hours before your appointment).",
       "privacyConsent": "I agree to the processing of my personal data for managing my appointment."
+    },
+    "privacyLinkText": "privacy policy",
+    "error": {
+      "slotTaken": "This time slot was just taken. Please choose another moment.",
+      "generic": "Something went wrong. Please try again."
     }
   },
   "emails": {

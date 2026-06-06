@@ -7,23 +7,45 @@
     "switchLanguage": "Taal wissel"
   },
   "booking": {
+    "eyebrow": "Reserveer",
     "title": "Boek a stoeleke.",
     "lead": "Êest a dienst, dan de barbier dieje da doet, en dan een momentsje da past. Stap veu stap — de res doeme wij.",
+    "openButton": "Boek a stoeleke →",
+    "hoursLabel": "Uren",
+    "hours": "Di–Zo · 10:00–20:00",
+    "placeLabel": "Plek",
     "step": {
-      "service": "Dienst",
       "barber": "Barbier",
+      "service": "Dienst",
+      "slot": "Tijdstip",
+      "details": "Gegevens",
       "date": "Datum",
       "time": "Ier"
     },
     "confirm": "Bevestig afsprak",
     "done": {
-      "heading": "Tot subiet, kameraad."
+      "heading": "Tot subiet, kameraad.",
+      "summary": "Bevestigd: {service} me {barber} op {date} om {time}.",
+      "emailInfo": "Beheer a afsprak via de bevestigingsmail."
     },
     "noPreference": "Maakt ni uit",
     "noPreferenceLow": "maakt ni uit",
+    "noPreferenceHint": "De meeste beschikbare barbier wordt veu jou gekozen.",
     "reset": "Nieiw afsprak",
     "barberNote": "Te kreige veu a dienst:",
     "chooseMore": "Kiest nog ne",
+    "back": "Terug",
+    "close": "Sluite",
+    "stepOf": "Stap {current} van {total}",
+    "loading": "Laden…",
+    "submitting": "Bevestige…",
+    "noSlots": "Gee beschikbare tije veu deze dag.",
+    "nextAvailableDay": "Naar de êeste beschikbare dag",
+    "walkInBand": "Ook walk-ins welkom — loop gewoon benne.",
+    "walkIn": {
+      "title": "Walk-in",
+      "description": "Ook welkom zunder afsprak — kom gewoon benne. Direkt an de beurt als er plek is."
+    },
     "summary": {
       "start": "Kiest êest a dienst.",
       "at": "bij",
@@ -46,9 +68,27 @@
     },
     "dow": ["Zo", "Mo", "Di", "Wo", "Do", "Vr", "Za"],
     "months": ["jan", "feb", "mrt", "apr", "mei", "jun", "jul", "aug", "sep", "okt", "nov", "dec"],
+    "form": {
+      "firstName": "Veunaom",
+      "lastName": "Naom",
+      "email": "E-mailadres",
+      "phone": "Telefone",
+      "note": "Notitie (optioneel)",
+      "notePlaceholder": "Opmerking veu a barbier, max. 500 tekens",
+      "phoneHelp": "Bijv. 0479 12 34 56 of +32 2 123 45 67",
+      "required": "Verplicht veld",
+      "emailInvalid": "Ongeldig e-mailadres",
+      "phoneInvalid": "Ongeldig telefoonnummer — gebruik een Belgisch of internationaal formaat",
+      "noteMaxLength": "Maximaal 500 tekens"
+    },
     "validation": {
       "cancellationPolicy": "Ik ga mee me het annuleringsbeleid (tot {hours} ier veu a afsprak kosteloos annulere).",
       "privacyConsent": "Ik ga akkoord me de verwerking van mijn gegevens veu het beheir van mijn afsprak."
+    },
+    "privacyLinkText": "privacybeleid",
+    "error": {
+      "slotTaken": "Dit tijdstip is net ingenome. Kiest en ander moment.",
+      "generic": "Er is iets misgelope. Probeer et opnief."
     }
   },
   "emails": {

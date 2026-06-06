@@ -7,23 +7,45 @@
     "switchLanguage": "Changer de langue"
   },
   "booking": {
+    "eyebrow": "Réserver",
     "title": "Réservez votre fauteuil.",
     "lead": "D'abord votre service, puis le barbier qui l'exécute, puis un moment qui vous convient. Étape par étape — on s'occupe du reste.",
+    "openButton": "Réservez votre fauteuil →",
+    "hoursLabel": "Heures",
+    "hours": "Mar–Dim · 10:00–20:00",
+    "placeLabel": "Lieu",
     "step": {
-      "service": "Service",
       "barber": "Barbier",
+      "service": "Service",
+      "slot": "Créneau",
+      "details": "Coordonnées",
       "date": "Date",
       "time": "Heure"
     },
     "confirm": "Confirmer le rendez-vous",
     "done": {
-      "heading": "À bientôt, kameraad."
+      "heading": "À bientôt, kameraad.",
+      "summary": "Confirmé : {service} avec {barber} le {date} à {time}.",
+      "emailInfo": "Gérez votre rendez-vous via l'e-mail de confirmation."
     },
     "noPreference": "Sans préférence",
     "noPreferenceLow": "sans préférence",
+    "noPreferenceHint": "Le barbier le plus disponible vous sera attribué.",
     "reset": "Nouveau rendez-vous",
     "barberNote": "Disponible pour votre service :",
     "chooseMore": "Choisissez encore",
+    "back": "Retour",
+    "close": "Fermer",
+    "stepOf": "Étape {current} sur {total}",
+    "loading": "Chargement…",
+    "submitting": "Confirmation…",
+    "noSlots": "Aucun horaire disponible pour ce jour.",
+    "nextAvailableDay": "Aller au premier jour disponible",
+    "walkInBand": "Walk-ins également les bienvenus — entrez directement.",
+    "walkIn": {
+      "title": "Walk-in",
+      "description": "Bienvenue sans rendez-vous aussi — entrez directement. Premier disponible s'il y a de la place."
+    },
     "summary": {
       "start": "Choisissez un service pour commencer.",
       "at": "avec",
@@ -46,9 +68,27 @@
     },
     "dow": ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam"],
     "months": ["janv", "févr", "mars", "avr", "mai", "juin", "juil", "août", "sept", "oct", "nov", "déc"],
+    "form": {
+      "firstName": "Prénom",
+      "lastName": "Nom",
+      "email": "Adresse e-mail",
+      "phone": "Numéro de téléphone",
+      "note": "Note (optionnel)",
+      "notePlaceholder": "Message pour votre barbier, max. 500 caractères",
+      "phoneHelp": "Ex. 0479 12 34 56 ou +32 2 123 45 67",
+      "required": "Champ obligatoire",
+      "emailInvalid": "Adresse e-mail invalide",
+      "phoneInvalid": "Numéro de téléphone invalide — utilisez un format belge ou international",
+      "noteMaxLength": "Maximum 500 caractères"
+    },
     "validation": {
       "cancellationPolicy": "J'accepte la politique d'annulation (annulation gratuite jusqu'à {hours} heures avant votre rendez-vous).",
       "privacyConsent": "J'accepte le traitement de mes données personnelles pour la gestion de mon rendez-vous."
+    },
+    "privacyLinkText": "politique de confidentialité",
+    "error": {
+      "slotTaken": "Ce créneau vient d'être réservé. Veuillez choisir un autre moment.",
+      "generic": "Une erreur s'est produite. Veuillez réessayer."
     }
   },
   "emails": {
