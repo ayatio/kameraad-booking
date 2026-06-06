@@ -49,5 +49,72 @@
       "cancellationPolicy": "Ik accepteer het annuleringsbeleid (tot {hours} uur voor je afspraak kosteloos annuleren).",
       "privacyConsent": "Ik ga akkoord met de verwerking van mijn persoonsgegevens voor het beheer van mijn afspraak."
     }
+  },
+  "emails": {
+    "confirmation": {
+      "subject": "Bevestiging — {service} op {date}",
+      "eyebrow": "AFSPRAAK BEVESTIGD",
+      "heading": "Tot snel, kameraad.",
+      "body": "Je afspraak bij Kameraad Haarsnijder staat vast. Hieronder vind je alle details.",
+      "calendarLabel": "Voeg toe aan agenda",
+      "cancelLabel": "Annuleer afspraak",
+      "rescheduleLabel": "Verzet afspraak"
+    },
+    "reminder_24h": {
+      "subject": "Morgen: {service} om {time}",
+      "eyebrow": "HERINNERING",
+      "heading": "Tot morgen, kameraad.",
+      "body": "Je afspraak is morgen om {time}. Gratis annuleren kan nog tot {hours} uur van tevoren.",
+      "cancelLabel": "Annuleer afspraak"
+    },
+    "reminder_2h": {
+      "subject": "Zo meteen: {service} om {time}",
+      "eyebrow": "HERINNERING",
+      "heading": "Tot zo, kameraad.",
+      "body": "Je afspraak begint over 2 uur. We zien je straks bij Kameraad Haarsnijder.",
+      "cancelLabel": "Annuleer afspraak"
+    },
+    "cancellation": {
+      "subject": "Afspraak geannuleerd — {service} op {date}",
+      "eyebrow": "AFSPRAAK GEANNULEERD",
+      "heading": "Je afspraak is geannuleerd.",
+      "body": "Je afspraak op {date} om {time} is geannuleerd. We hopen je snel opnieuw te mogen ontvangen.",
+      "rebookCta": "Nieuwe afspraak maken"
+    },
+    "reschedule": {
+      "subject": "Afspraak verzet — {service} op {date}",
+      "eyebrow": "AFSPRAAK VERZET",
+      "heading": "Nieuwe datum vastgelegd.",
+      "body": "Je afspraak is succesvol verzet. Hieronder vind je de nieuwe details.",
+      "calendarLabel": "Voeg toe aan agenda",
+      "cancelLabel": "Annuleer afspraak",
+      "rescheduleLabel": "Verzet opnieuw"
+    },
+    "rebooking": {
+      "subject": "Tijd voor je volgende beurt, {firstName}?",
+      "eyebrow": "TOT SNEL",
+      "heading": "Het is weer tijd, kameraad.",
+      "body": "Een tijdje geleden dat we je hebben gezien. Boek je volgende afspraak bij Kameraad Haarsnijder.",
+      "cta": "Boek nu"
+    },
+    "marketing": {
+      "subject": "Nieuws van Kameraad Haarsnijder",
+      "eyebrow": "KAMERAAD HAARSNIJDER",
+      "heading": "Nieuws en aanbiedingen.",
+      "body": "Blijf op de hoogte van het laatste nieuws en exclusieve aanbiedingen van je kapper.",
+      "cta": "Ontdek meer",
+      "unsubscribeText": "Afmelden voor marketinge-mails"
+    },
+    "card": {
+      "service": "Dienst",
+      "barber": "Barbier",
+      "date": "Datum",
+      "time": "Tijd",
+      "price": "Prijs"
+    },
+    "footer": {
+      "address": "Parijsstraat 29 · 3000 Leuven · België",
+      "unsubscribeLabel": "Afmelden"
+    }
   }
 }

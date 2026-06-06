@@ -9,6 +9,8 @@ export interface Barber {
   bio_nl: string | null
   bio_en: string | null
   bio_fr: string | null
+  bio_es: string | null
+  bio_le: string | null
   photo_url: string | null
   email: string | null
   is_active: boolean
@@ -22,6 +24,8 @@ export interface Service {
   name_nl: string
   name_en: string
   name_fr: string | null
+  name_es: string | null
+  name_le: string | null
   description_nl: string | null
   description_en: string | null
   description_fr: string | null
@@ -67,7 +71,7 @@ export interface Customer {
   marketing_opt_in: boolean
   rebooking_opt_in: boolean
   reminder_opt_in: boolean
-  preferred_language: 'nl' | 'en' | 'fr'
+  preferred_language: 'nl' | 'en' | 'fr' | 'es' | 'le'
   no_show_count: number
   consent_given_at: string | null
   unsubscribe_token: string | null

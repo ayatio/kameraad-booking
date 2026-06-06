@@ -50,5 +50,72 @@
       "cancellationPolicy": "I accept the cancellation policy (free cancellation up to {hours} hours before your appointment).",
       "privacyConsent": "I agree to the processing of my personal data for managing my appointment."
     }
+  },
+  "emails": {
+    "confirmation": {
+      "subject": "Confirmation — {service} on {date}",
+      "eyebrow": "APPOINTMENT CONFIRMED",
+      "heading": "See you soon, kameraad.",
+      "body": "Your appointment at Kameraad Haarsnijder is confirmed. Find all the details below.",
+      "calendarLabel": "Add to calendar",
+      "cancelLabel": "Cancel appointment",
+      "rescheduleLabel": "Reschedule"
+    },
+    "reminder_24h": {
+      "subject": "Tomorrow: {service} at {time}",
+      "eyebrow": "REMINDER",
+      "heading": "See you tomorrow, kameraad.",
+      "body": "Your appointment is tomorrow at {time}. Free cancellation is still possible up to {hours} hours before.",
+      "cancelLabel": "Cancel appointment"
+    },
+    "reminder_2h": {
+      "subject": "Coming up: {service} at {time}",
+      "eyebrow": "REMINDER",
+      "heading": "See you shortly, kameraad.",
+      "body": "Your appointment starts in 2 hours. We'll see you soon at Kameraad Haarsnijder.",
+      "cancelLabel": "Cancel appointment"
+    },
+    "cancellation": {
+      "subject": "Appointment cancelled — {service} on {date}",
+      "eyebrow": "APPOINTMENT CANCELLED",
+      "heading": "Your appointment has been cancelled.",
+      "body": "Your appointment on {date} at {time} has been cancelled. We hope to welcome you back soon.",
+      "rebookCta": "Book a new appointment"
+    },
+    "reschedule": {
+      "subject": "Appointment rescheduled — {service} on {date}",
+      "eyebrow": "APPOINTMENT RESCHEDULED",
+      "heading": "New date confirmed.",
+      "body": "Your appointment has been successfully rescheduled. Find the new details below.",
+      "calendarLabel": "Add to calendar",
+      "cancelLabel": "Cancel appointment",
+      "rescheduleLabel": "Reschedule again"
+    },
+    "rebooking": {
+      "subject": "Time for your next visit, {firstName}?",
+      "eyebrow": "SEE YOU SOON",
+      "heading": "Time for your next visit, kameraad.",
+      "body": "It's been a while since we've seen you. Book your next appointment at Kameraad Haarsnijder.",
+      "cta": "Book now"
+    },
+    "marketing": {
+      "subject": "News from Kameraad Haarsnijder",
+      "eyebrow": "KAMERAAD HAARSNIJDER",
+      "heading": "News and offers.",
+      "body": "Stay up to date with the latest news and exclusive offers from your barber.",
+      "cta": "Discover more",
+      "unsubscribeText": "Unsubscribe from marketing emails"
+    },
+    "card": {
+      "service": "Service",
+      "barber": "Barber",
+      "date": "Date",
+      "time": "Time",
+      "price": "Price"
+    },
+    "footer": {
+      "address": "Parijsstraat 29 · 3000 Leuven · Belgium",
+      "unsubscribeLabel": "Unsubscribe"
+    }
   }
 }
