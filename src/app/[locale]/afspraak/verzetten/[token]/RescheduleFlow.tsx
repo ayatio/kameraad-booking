@@ -10,18 +10,11 @@ interface Props {
   barberId: string
   serviceSlug: string
   horizonDays: number
-  newStartDateLabel: (utc: string) => string
 }
 
 type Phase = 'picking' | 'confirming' | 'submitting' | 'success' | 'error'
 
-export default function RescheduleFlow({
-  token,
-  locale,
-  barberId,
-  serviceSlug,
-  horizonDays,
-}: Props) {
+export default function RescheduleFlow({ token, locale, barberId, serviceSlug, horizonDays }: Props) {
   const t = useTranslations('manage')
 
   const [selectedDate, setSelectedDate] = useState<string | null>(null)

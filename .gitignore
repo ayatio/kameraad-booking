@@ -25,3 +25,7 @@ Thumbs.db
 
 # Email dry-run outbox
 .email-outbox/
+
+# Playwright
+test-results/
+playwright-report/

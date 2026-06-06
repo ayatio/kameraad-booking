@@ -154,7 +154,6 @@ export default async function VerzettentPage({ params: { locale, token } }: Prop
                 barberId={detail.barber.id}
                 serviceSlug={detail.service.slug}
                 horizonDays={bookingHorizonDays}
-                newStartDateLabel={() => ''}
               />
             </div>
           )}
