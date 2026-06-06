@@ -21,6 +21,27 @@ export interface UpsertCustomerInput {
   consentGivenAt: Date | null
 }
 
+export async function getCustomerByUnsubscribeToken(token: string): Promise<Customer | null> {
+  const rows = await db<Customer[]>`
+    SELECT * FROM customers WHERE unsubscribe_token = ${token} LIMIT 1
+  `
+  return rows[0] ?? null
+}
+
+export async function updateCustomerPreferences(
+  customerId: string,
+  prefs: { reminders: boolean; rebooking: boolean; marketing: boolean },
+): Promise<void> {
+  await db`
+    UPDATE customers SET
+      reminder_opt_in  = ${prefs.reminders},
+      rebooking_opt_in = ${prefs.rebooking},
+      marketing_opt_in = ${prefs.marketing},
+      updated_at       = now()
+    WHERE id = ${customerId}
+  `
+}
+
 export async function upsertCustomer(
   input: UpsertCustomerInput,
   sql: SqlClient,

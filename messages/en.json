@@ -91,6 +91,67 @@
       "generic": "Something went wrong. Please try again."
     }
   },
+  "manage": {
+    "invalidToken": "This link is invalid or has expired.",
+    "appointmentCard": {
+      "heading": "Your appointment",
+      "service": "Service",
+      "barber": "Barber",
+      "date": "Date",
+      "time": "Time",
+      "price": "Price"
+    },
+    "cancel": {
+      "eyebrow": "Cancel appointment",
+      "title": "Cancel your appointment.",
+      "confirmButton": "Cancel appointment",
+      "confirmQuestion": "Are you sure?",
+      "confirmDefinitive": "Yes, cancel permanently",
+      "keepButton": "No, keep my appointment",
+      "loading": "Processing…",
+      "successHeading": "Appointment cancelled.",
+      "successBody": "Your appointment has been cancelled. We hope to see you again soon, kameraad.",
+      "alreadyCancelledHeading": "Already cancelled",
+      "alreadyCancelledBody": "This appointment was already cancelled.",
+      "outsideWindowHeading": "Cancellation no longer possible",
+      "outsideWindowBody": "You can only cancel your appointment up to {hours} hours in advance. Please contact us at {phone}.",
+      "outsideWindowError": "Cancellation is no longer possible within the required timeframe.",
+      "genericError": "Something went wrong. Please try again."
+    },
+    "reschedule": {
+      "eyebrow": "Reschedule appointment",
+      "title": "Reschedule your appointment.",
+      "currentAppointment": "Current appointment",
+      "newSlotLabel": "Choose a new time slot",
+      "selectedLabel": "Selected",
+      "confirmButton": "Confirm new time",
+      "loading": "Processing…",
+      "successHeading": "Appointment rescheduled.",
+      "successBody": "Your appointment has been successfully rescheduled. See you soon, kameraad.",
+      "outsideWindowHeading": "Rescheduling no longer possible",
+      "outsideWindowBody": "You can only reschedule your appointment up to {hours} hours in advance. Please contact us at {phone}.",
+      "outsideWindowError": "Rescheduling is no longer possible within the required timeframe.",
+      "slotTakenError": "This time slot was just taken. Please choose another time.",
+      "tryAgainButton": "Choose again",
+      "genericError": "Something went wrong. Please try again."
+    }
+  },
+  "preferences": {
+    "invalidToken": "This link is invalid or has expired.",
+    "eyebrow": "Email preferences",
+    "title": "Manage your preferences.",
+    "lead": "Choose which emails you'd like to receive from us. We respect your choice, kameraad.",
+    "reminders": "Appointment reminders",
+    "remindersHint": "We'll send you a reminder 24 hours and 2 hours before your appointment.",
+    "rebooking": "Rebooking invitations",
+    "rebookingHint": "We'll let you know when it's time for your next visit.",
+    "marketing": "News and offers",
+    "marketingHint": "Stay up to date with the latest news from Kameraad Haarsnijder.",
+    "saveButton": "Save preferences",
+    "saving": "Saving…",
+    "savedMessage": "Preferences saved.",
+    "genericError": "Something went wrong. Please try again."
+  },
   "emails": {
     "confirmation": {
       "subject": "Confirmation — {service} on {date}",

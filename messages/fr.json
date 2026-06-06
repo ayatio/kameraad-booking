@@ -91,6 +91,68 @@
       "generic": "Une erreur s'est produite. Veuillez réessayer."
     }
   },
+  "manage": {
+    "invalidToken": "Ce lien est invalide ou a expiré.",
+    "appointmentCard": {
+      "heading": "Votre rendez-vous",
+      "service": "Service",
+      "barber": "Barbier",
+      "date": "Date",
+      "time": "Heure",
+      "price": "Prix"
+    },
+    "cancel": {
+      "eyebrow": "Annuler le rendez-vous",
+      "title": "Annulez votre rendez-vous.",
+      "confirmButton": "Annuler le rendez-vous",
+      "confirmQuestion": "Êtes-vous sûr(e) ?",
+      "confirmDefinitive": "Oui, annuler définitivement",
+      "keepButton": "Non, conserver mon rendez-vous",
+      "loading": "Traitement…",
+      "successHeading": "Rendez-vous annulé.",
+      "successBody": "Votre rendez-vous a été annulé. Nous espérons vous revoir bientôt, kameraad.",
+      "alreadyCancelledHeading": "Déjà annulé",
+      "alreadyCancelledBody": "Ce rendez-vous a déjà été annulé.",
+      "outsideWindowHeading": "Annulation impossible",
+      "outsideWindowBody": "Vous ne pouvez annuler votre rendez-vous que jusqu'à {hours} heures à l'avance. Contactez-nous au {phone}.",
+      "outsideWindowError": "L'annulation n'est plus possible dans le délai imparti.",
+      "genericError": "Une erreur s'est produite. Veuillez réessayer."
+    },
+    "reschedule": {
+      "eyebrow": "Reporter le rendez-vous",
+      "title": "Reportez votre rendez-vous.",
+      "currentAppointment": "Rendez-vous actuel",
+      "newSlotLabel": "Choisissez un nouveau créneau",
+      "selectedLabel": "Sélectionné",
+      "confirmButton": "Confirmer le nouveau créneau",
+      "loading": "Traitement…",
+      "successHeading": "Rendez-vous reporté.",
+      "successBody": "Votre rendez-vous a été reporté avec succès. À bientôt, kameraad.",
+      "outsideWindowHeading": "Report impossible",
+      "outsideWindowBody": "Vous ne pouvez reporter votre rendez-vous que jusqu'à {hours} heures à l'avance. Contactez-nous au {phone}.",
+      "outsideWindowError": "Le report n'est plus possible dans le délai imparti.",
+      "slotTakenError": "Ce créneau vient d'être réservé. Veuillez en choisir un autre.",
+      "tryAgainButton": "Choisir à nouveau",
+      "genericError": "Une erreur s'est produite. Veuillez réessayer."
+    }
+  },
+  "preferences": {
+    "_comment": "DRAFT — agent-drafted, pending client review (FR-094)",
+    "invalidToken": "Ce lien est invalide ou a expiré.",
+    "eyebrow": "Préférences e-mail",
+    "title": "Gérez vos préférences.",
+    "lead": "Choisissez les e-mails que vous souhaitez recevoir. Nous respectons votre choix, kameraad.",
+    "reminders": "Rappels de rendez-vous",
+    "remindersHint": "Nous vous envoyons un rappel 24 heures et 2 heures avant votre rendez-vous.",
+    "rebooking": "Invitations à reréserver",
+    "rebookingHint": "Nous vous informons quand il est temps pour votre prochaine visite.",
+    "marketing": "Actualités et offres",
+    "marketingHint": "Restez informé des dernières actualités de Kameraad Haarsnijder.",
+    "saveButton": "Enregistrer les préférences",
+    "saving": "Enregistrement…",
+    "savedMessage": "Préférences enregistrées.",
+    "genericError": "Une erreur s'est produite. Veuillez réessayer."
+  },
   "emails": {
     "confirmation": {
       "subject": "Confirmation — {service} le {date}",

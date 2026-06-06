@@ -90,6 +90,67 @@
       "generic": "Er is iets misgegaan. Probeer het opnieuw."
     }
   },
+  "manage": {
+    "invalidToken": "Deze link is ongeldig of verlopen.",
+    "appointmentCard": {
+      "heading": "Je afspraak",
+      "service": "Dienst",
+      "barber": "Barbier",
+      "date": "Datum",
+      "time": "Tijd",
+      "price": "Prijs"
+    },
+    "cancel": {
+      "eyebrow": "Afspraak annuleren",
+      "title": "Annuleer je afspraak.",
+      "confirmButton": "Annuleer afspraak",
+      "confirmQuestion": "Weet je het zeker?",
+      "confirmDefinitive": "Ja, definitief annuleren",
+      "keepButton": "Nee, behoud afspraak",
+      "loading": "Bezig…",
+      "successHeading": "Afspraak geannuleerd.",
+      "successBody": "Je afspraak is geannuleerd. We hopen je snel terug te zien, kameraad.",
+      "alreadyCancelledHeading": "Afspraak al geannuleerd",
+      "alreadyCancelledBody": "Deze afspraak was al eerder geannuleerd.",
+      "outsideWindowHeading": "Annulering niet meer mogelijk",
+      "outsideWindowBody": "Je kunt je afspraak alleen annuleren tot {hours} uur van tevoren. Neem contact op via {phone}.",
+      "outsideWindowError": "Annuleren is helaas niet meer mogelijk binnen de gestelde termijn.",
+      "genericError": "Er is iets misgegaan. Probeer het opnieuw."
+    },
+    "reschedule": {
+      "eyebrow": "Afspraak verzetten",
+      "title": "Verzet je afspraak.",
+      "currentAppointment": "Huidige afspraak",
+      "newSlotLabel": "Kies een nieuw tijdstip",
+      "selectedLabel": "Geselecteerd",
+      "confirmButton": "Bevestig nieuw tijdstip",
+      "loading": "Bezig…",
+      "successHeading": "Afspraak verzet.",
+      "successBody": "Je afspraak is succesvol verzet. Tot snel, kameraad.",
+      "outsideWindowHeading": "Verzetten niet meer mogelijk",
+      "outsideWindowBody": "Je kunt je afspraak alleen verzetten tot {hours} uur van tevoren. Neem contact op via {phone}.",
+      "outsideWindowError": "Verzetten is helaas niet meer mogelijk binnen de gestelde termijn.",
+      "slotTakenError": "Dit tijdstip is zojuist gereserveerd. Kies een ander moment.",
+      "tryAgainButton": "Kies opnieuw",
+      "genericError": "Er is iets misgegaan. Probeer het opnieuw."
+    }
+  },
+  "preferences": {
+    "invalidToken": "Deze link is ongeldig of verlopen.",
+    "eyebrow": "E-mailvoorkeuren",
+    "title": "Beheer je voorkeuren.",
+    "lead": "Kies welke e-mails je van ons wilt ontvangen. We respecteren je keuze, kameraad.",
+    "reminders": "Afspraakherinneringen",
+    "remindersHint": "We sturen je een herinnering 24 uur en 2 uur voor je afspraak.",
+    "rebooking": "Reboekingsuitnodigingen",
+    "rebookingHint": "We laten je weten wanneer het tijd is voor je volgende beurt.",
+    "marketing": "Nieuws en aanbiedingen",
+    "marketingHint": "Blijf op de hoogte van het laatste nieuws van Kameraad Haarsnijder.",
+    "saveButton": "Voorkeuren opslaan",
+    "saving": "Opslaan…",
+    "savedMessage": "Voorkeuren opgeslagen.",
+    "genericError": "Er is iets misgegaan. Probeer het opnieuw."
+  },
   "emails": {
     "confirmation": {
       "subject": "Bevestiging — {service} op {date}",

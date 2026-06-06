@@ -91,6 +91,69 @@
       "generic": "Er is iets misgelope. Probeer et opnief."
     }
   },
+  "manage": {
+    "_comment": "DRAFT Leuvens — Adil levert de definitieve vertaling (alle strings DRAFT)",
+    "invalidToken": "Dees link is ni geldig of verlope.",
+    "appointmentCard": {
+      "heading": "A afsprak",
+      "service": "Dienst",
+      "barber": "Barbier",
+      "date": "Datum",
+      "time": "Ier",
+      "price": "Prijs"
+    },
+    "cancel": {
+      "eyebrow": "Afsprak annulere",
+      "title": "Annuleer a afsprak.",
+      "confirmButton": "Annuleer afsprak",
+      "confirmQuestion": "Weet je et zeker?",
+      "confirmDefinitive": "Ja, definitief annulere",
+      "keepButton": "Nee, behouwe afsprak",
+      "loading": "Bezig…",
+      "successHeading": "Afsprak geannuleerd.",
+      "successBody": "A afsprak is geannuleerd. We houpe a snel weder te zien, kameraad.",
+      "alreadyCancelledHeading": "Afsprak al geannuleerd",
+      "alreadyCancelledBody": "Dees afsprak was al eerder geannuleerd.",
+      "outsideWindowHeading": "Annulere ni meer mogelijk",
+      "outsideWindowBody": "Je kunt a afsprak enkel annulere tot {hours} ier van tevore. Neem contact op via {phone}.",
+      "outsideWindowError": "Annulere is helaas ni meer mogelijk binne de gestelde termijn.",
+      "genericError": "Er is iets misgelope. Probeer et opnief."
+    },
+    "reschedule": {
+      "eyebrow": "Afsprak verzette",
+      "title": "Verzet a afsprak.",
+      "currentAppointment": "Huidige afsprak",
+      "newSlotLabel": "Kiest en nieuw tijdstip",
+      "selectedLabel": "Gekoze",
+      "confirmButton": "Bevestig nieuw tijdstip",
+      "loading": "Bezig…",
+      "successHeading": "Afsprak verzet.",
+      "successBody": "A afsprak is succesvol verzet. Tot subiet, kameraad.",
+      "outsideWindowHeading": "Verzette ni meer mogelijk",
+      "outsideWindowBody": "Je kunt a afsprak enkel verzette tot {hours} ier van tevore. Neem contact op via {phone}.",
+      "outsideWindowError": "Verzette is helaas ni meer mogelijk binne de gestelde termijn.",
+      "slotTakenError": "Dit tijdstip is net ingenome. Kiest en ander moment.",
+      "tryAgainButton": "Kiest opnief",
+      "genericError": "Er is iets misgelope. Probeer et opnief."
+    }
+  },
+  "preferences": {
+    "_comment": "DRAFT Leuvens — Adil levert de definitieve vertaling (alle strings DRAFT)",
+    "invalidToken": "Dees link is ni geldig of verlope.",
+    "eyebrow": "E-mailvoorkeure",
+    "title": "Beheer a voorkeure.",
+    "lead": "Kiest welke e-mails je van os wilt ontvange. We respectere a keuze, kameraad.",
+    "reminders": "Afsprakherinneringe",
+    "remindersHint": "We sture a een herinnering 24 ier en 2 ier veu a afsprak.",
+    "rebooking": "Reboekingsuitnodiginge",
+    "rebookingHint": "We late a wete wanneer et tieje is veu a volgende beurt.",
+    "marketing": "Nies en aanbiedinge",
+    "marketingHint": "Blijf op de hoogte van het lêeste nies van Kameraad Haarsnijder.",
+    "saveButton": "Voorkeure opslaan",
+    "saving": "Opslaan…",
+    "savedMessage": "Voorkeure opgeslaage.",
+    "genericError": "Er is iets misgelope. Probeer et opnief."
+  },
   "emails": {
     "_comment": "DRAFT Leuvens — Adil levert de definitieve vertaling (alle strings DRAFT)",
     "confirmation": {

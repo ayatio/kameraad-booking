@@ -91,6 +91,69 @@
       "generic": "Algo ha salido mal. Por favor, inténtalo de nuevo."
     }
   },
+  "manage": {
+    "_comment": "DRAFT — agent-drafted, pending client review (FR-094)",
+    "invalidToken": "Este enlace no es válido o ha caducado.",
+    "appointmentCard": {
+      "heading": "Tu cita",
+      "service": "Servicio",
+      "barber": "Barbero",
+      "date": "Fecha",
+      "time": "Hora",
+      "price": "Precio"
+    },
+    "cancel": {
+      "eyebrow": "Cancelar cita",
+      "title": "Cancela tu cita.",
+      "confirmButton": "Cancelar cita",
+      "confirmQuestion": "¿Estás seguro/a?",
+      "confirmDefinitive": "Sí, cancelar definitivamente",
+      "keepButton": "No, mantener mi cita",
+      "loading": "Procesando…",
+      "successHeading": "Cita cancelada.",
+      "successBody": "Tu cita ha sido cancelada. Esperamos verte pronto, kameraad.",
+      "alreadyCancelledHeading": "Ya cancelada",
+      "alreadyCancelledBody": "Esta cita ya había sido cancelada.",
+      "outsideWindowHeading": "Cancelación no disponible",
+      "outsideWindowBody": "Solo puedes cancelar tu cita hasta {hours} horas antes. Contáctanos en {phone}.",
+      "outsideWindowError": "La cancelación ya no es posible dentro del plazo establecido.",
+      "genericError": "Algo ha salido mal. Por favor, inténtalo de nuevo."
+    },
+    "reschedule": {
+      "eyebrow": "Cambiar fecha de cita",
+      "title": "Cambia tu cita.",
+      "currentAppointment": "Cita actual",
+      "newSlotLabel": "Elige un nuevo horario",
+      "selectedLabel": "Seleccionado",
+      "confirmButton": "Confirmar nuevo horario",
+      "loading": "Procesando…",
+      "successHeading": "Cita cambiada.",
+      "successBody": "Tu cita ha sido cambiada con éxito. Hasta pronto, kameraad.",
+      "outsideWindowHeading": "Cambio no disponible",
+      "outsideWindowBody": "Solo puedes cambiar tu cita hasta {hours} horas antes. Contáctanos en {phone}.",
+      "outsideWindowError": "El cambio ya no es posible dentro del plazo establecido.",
+      "slotTakenError": "Este horario acaba de ser reservado. Elige otro momento.",
+      "tryAgainButton": "Elegir de nuevo",
+      "genericError": "Algo ha salido mal. Por favor, inténtalo de nuevo."
+    }
+  },
+  "preferences": {
+    "_comment": "DRAFT — agent-drafted, pending client review (FR-094)",
+    "invalidToken": "Este enlace no es válido o ha caducado.",
+    "eyebrow": "Preferencias de correo",
+    "title": "Gestiona tus preferencias.",
+    "lead": "Elige qué correos quieres recibir de nosotros. Respetamos tu decisión, kameraad.",
+    "reminders": "Recordatorios de cita",
+    "remindersHint": "Te enviamos un recordatorio 24 horas y 2 horas antes de tu cita.",
+    "rebooking": "Invitaciones a reservar de nuevo",
+    "rebookingHint": "Te avisamos cuando es hora de tu próxima visita.",
+    "marketing": "Noticias y ofertas",
+    "marketingHint": "Mantente al día con las últimas noticias de Kameraad Haarsnijder.",
+    "saveButton": "Guardar preferencias",
+    "saving": "Guardando…",
+    "savedMessage": "Preferencias guardadas.",
+    "genericError": "Algo ha salido mal. Por favor, inténtalo de nuevo."
+  },
   "emails": {
     "_comment": "DRAFT translation — agent-drafted, pending client review",
     "confirmation": {
