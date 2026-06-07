@@ -331,6 +331,7 @@ describe('canModify boundary (pure, no DB)', () => {
       reschedule_token: null,
       cancelled_at: null,
       cancellation_reason: null,
+      ics_sequence: 0,
       created_at: '',
       updated_at: '',
     }

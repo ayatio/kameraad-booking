@@ -73,6 +73,7 @@ function makeAppointment(overrides: Partial<Appointment> = {}): Appointment {
     reschedule_token: 'tok-reschedule',
     cancelled_at: null,
     cancellation_reason: null,
+    ics_sequence: 0,
     created_at: new Date(NOW.getTime() - 72 * H).toISOString(),
     updated_at: new Date(NOW.getTime() - 72 * H).toISOString(),
     ...overrides,
@@ -94,6 +95,7 @@ function makeCustomer(): Customer {
     no_show_count: 0,
     consent_given_at: null,
     unsubscribe_token: null,
+    email_missing: false,
     created_at: NOW.toISOString(),
     updated_at: NOW.toISOString(),
   }
@@ -121,6 +123,7 @@ function makeService(): Service {
     name_en: 'Haircut',
     name_fr: null, name_es: null, name_le: null,
     description_nl: null, description_en: null, description_fr: null,
+    description_es: null, description_le: null,
     price_cents: 2500,
     duration_min: 30,
     color: '#C9A24B',

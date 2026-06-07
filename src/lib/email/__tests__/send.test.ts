@@ -29,6 +29,7 @@ const mockCustomer: Customer = {
   no_show_count: 0,
   consent_given_at: '2026-01-01T00:00:00Z',
   unsubscribe_token: 'unsub-token-xyz',
+  email_missing: false,
   created_at: '2026-01-01T00:00:00Z',
   updated_at: '2026-01-01T00:00:00Z',
 }
@@ -60,6 +61,8 @@ const mockService: Service = {
   description_nl: null,
   description_en: null,
   description_fr: null,
+  description_es: null,
+  description_le: null,
   price_cents: 2400,
   duration_min: 30,
   color: '#C9A24B',
@@ -83,6 +86,7 @@ const mockAppointment: Appointment = {
   reschedule_token: 'reschedule-token',
   cancelled_at: null,
   cancellation_reason: null,
+  ics_sequence: 0,
   created_at: '2026-06-09T10:00:00Z',
   updated_at: '2026-06-09T10:00:00Z',
 }
