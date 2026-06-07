@@ -477,6 +477,34 @@ export async function markCompleted(
   return { ok: true, appointment: rows[0] }
 }
 
+// ─── Admin notes (FR-050: edit admin-only notes) ────────────────────────────
+
+export type UpdateNotesResult =
+  | { ok: true; appointment: Appointment }
+  | { ok: false; code: 'NOT_FOUND' }
+
+export async function updateAdminNotes(
+  appointmentId: string,
+  notes: string | null,
+  actor: AdminActor,
+): Promise<UpdateNotesResult> {
+  const appt = await getAppointmentById(appointmentId)
+  if (!appt) return { ok: false, code: 'NOT_FOUND' }
+  assertCanManageBarber(actor, appt.barber_id)
+  const clean = notes && notes.trim().length > 0 ? notes : null
+  const rows = await db<Appointment[]>`
+    UPDATE appointments SET admin_notes = ${clean}, updated_at = now()
+    WHERE id = ${appt.id}
+    RETURNING *
+  `
+  await writeAudit({
+    actor: actor.email,
+    action: AUDIT.SETTINGS_UPDATE,
+    payload: { kind: 'admin_notes', appointment_id: appt.id }, // note text omitted (PII)
+  })
+  return { ok: true, appointment: rows[0] }
+}
+
 // ─── internal ───────────────────────────────────────────────────────────────
 
 async function getServiceForAppointment(serviceId: string): Promise<Service | null> {
