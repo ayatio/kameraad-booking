@@ -6,6 +6,168 @@
     "homeIntro": "Welkom bij Kameraad Haarsnijder. Boekt online a afsprak bij ene van os ervare barbiers.",
     "switchLanguage": "Taal wissel"
   },
+  "home": {
+    "_comment": "DRAFT — es/le copy pending review (FR-094)",
+    "meta": {
+      "title": "Kameraad Haarsnijder — Barbier in 't hartsje van Leuve",
+      "description": "De leste mannekesretraite in 't hartsje van Leuve. Vakkundige barbiers, tijdloês mêesterschap. Boek na a afsprak online."
+    },
+    "nav": {
+      "primary": "Hoofdnavigatie",
+      "services": "Diensten",
+      "about": "Over ons",
+      "contact": "Contact",
+      "book": "Boek na"
+    },
+    "footer": {
+      "address": "Parijsstraat 29 · 3000 Leuven · België",
+      "privacy": "Privacy",
+      "copyright": "© Kameraad Haarsnijder — Leuve"
+    },
+    "hero": {
+      "eyebrow": "Parijsstraat 29 · Leuve",
+      "headline": "De leste mannekesretraite.",
+      "tagline": "Tijdloês mêesterschap in 't hart van Leuve — veu manne van alle leeftijde.",
+      "cta": "Boek een afsprak"
+    },
+    "intro": {
+      "eyebrow": "Het ritueel",
+      "lead": "Er bestond zoiet as een mannekesretraite ni. Dus bouwde wij er ene.",
+      "body": "Kameraad is ontstoon uit e simpel idee — e plek woe manne efkes kunne pauzeire. Vandoog is Kameraad veruit de leste retraite veu manne van alle leeftijde. Zelfs as ge gên dienst afneemt, zijde altij welkom veu efkes te ontsnappe aan de drukte van alledag."
+    },
+    "team": {
+      "eyebrow": "Haarsnijder en barbier",
+      "title": "Het team",
+      "role": "Barbier",
+      "bookWith": "Boek bij {name}"
+    },
+    "services": {
+      "eyebrow": "De koart",
+      "title": "Diensten & prijze",
+      "durationLabel": "Duur",
+      "provisional": "Prijze veurlopig — onder veurbehoud.",
+      "walkInTitle": "Walk-ins welkom",
+      "walkInBody": "Gên afsprak? Komt gewoêon binne tijdens de openingsure — direct aan de beurt zodra er plek is.",
+      "viewAll": "Bekijk alle diensten"
+    },
+    "slots": {
+      "eyebrow": "Êestvolgende plekke",
+      "title": "Vandoog nog ne stoel?",
+      "lead": "De êestvolgende vrije momentsjes. Kiest er ene en ge springt direct in de boeking.",
+      "loading": "Beschikbaarheid lade…",
+      "empty": "Gên vrije momentsjes in de komende twei weke. Bekijk de volledige agenda bij 't boeke.",
+      "error": "Beschikbaarheid kon ni gelade worde. Probeer 't bij 't boeke.",
+      "serviceTabs": "Kiest a dienst",
+      "cta": "Nor de boeking"
+    },
+    "visit": {
+      "eyebrow": "Komt langs",
+      "title": "Komt ons bezoeke",
+      "addressLabel": "Adres",
+      "hoursLabel": "Opene",
+      "hoursValue": "Dinsdag — Zoaterdag · 10:00 – 20:00",
+      "hoursNote": "Mondag, zondag & feestdoge — checkt Instagram.",
+      "callNote": "Belt ons gerust — mor we zen wellicht ne klant aan 't bediene. Online boeke is 't zekerst.",
+      "cta": "Boek een afsprak"
+    }
+  },
+  "services": {
+    "_comment": "DRAFT — es/le copy pending review (FR-094)",
+    "meta": {
+      "title": "Diensten & prijze — Kameraad Haarsnijder",
+      "description": "Knippe, boord, hot towel wet-shave en mêer bij Kameraad Haarsnijder in Leuve. Bekijk diensten, duur en prijze en boek na online."
+    },
+    "eyebrow": "De koart",
+    "title": "Diensten & prijze",
+    "lead": "Vakwerk van begin tot eind. Kiest a dienst en boek in enkele stappe — de res doeme wij.",
+    "durationLabel": "Duur",
+    "priceLabel": "Prijs",
+    "provisional": "Prijze en duur zen veurlopig en onder veurbehoud tot bevestiging door de zoak.",
+    "walkInTitle": "Walk-ins welkom",
+    "walkInBody": "Gên afsprak nodig. We aanvaarde walk-ins tijdens de openingsure op beschikbare plekke — komt gewoêon binne.",
+    "cta": "Boek dezen dienst"
+  },
+  "about": {
+    "_comment": "DRAFT — es/le copy pending review (FR-094)",
+    "meta": {
+      "title": "Over ons — Kameraad Haarsnijder Leuve",
+      "description": "Het verhaal achter Kameraad Haarsnijder: een mannekesretraite in 't hartsje van Leuve, gedreve door mêesterschap en respect veu 't stiel."
+    },
+    "eyebrow": "Over ons",
+    "title": "Een mannekesretraite in 't hartsje van Leuve",
+    "lead": "Kameraad is mêer dan ne kappersstoel. 't Is e plek woe de tij vertroogt en de details telle.",
+    "body1": "Kameraad Haarsnijder is ontstoon uit het idee dat er zoiet as een mannekesretraite ni bestond. Vandoog is Kameraad veruit de leste retraite veu manne van alle leeftijde. Goa zitte, blijf efkes: e vers jatteke kaffe, de gazet van vandoog, e rustig momentsje — me of zonder afsprak.",
+    "body2": "Aan de Parijsstraat 29 in Leuve volge wij gên trends blindelings. We kieze ze, me zorg. Os barbiers zen vakmanne me diep respect veu 't stiel — elk me zen eige blik, verenigd door êen maatstaf: kwaliteit zonder compromis.",
+    "teamEyebrow": "Haarsnijder en barbier",
+    "teamTitle": "Het team",
+    "role": "Barbier",
+    "cta": "Boek a afsprak"
+  },
+  "contact": {
+    "_comment": "DRAFT — es/le copy pending review (FR-094)",
+    "meta": {
+      "title": "Contact — Kameraad Haarsnijder Leuve",
+      "description": "Bezoek Kameraad Haarsnijder aan de Parijsstraat 29 in Leuve. Adres, openingsure en contactgegevens."
+    },
+    "eyebrow": "Komt langs",
+    "title": "Contact & bezoek",
+    "lead": "Ge vindt ons in 't hartsje van Leuve. Boek na online of komt binne tijdens de openingsure.",
+    "addressLabel": "Adres",
+    "addressValue": "Parijsstraat 29\n3000 Leuven\nBelgië",
+    "emailLabel": "E-mail",
+    "phoneLabel": "Telefoon",
+    "vatLabel": "BTW",
+    "vatValue": "BE10 0842 3183",
+    "hoursLabel": "Opene",
+    "hoursValue": "Dinsdag — Zoaterdag · 10:00 – 20:00",
+    "hoursNote": "Mondag, zondag & feestdoge — checkt Instagram.",
+    "callNote": "Belt ons gerust — mor we zen wellicht net ne klant aan 't bediene. Online boeke is 't zekerst.",
+    "cta": "Boek een afsprak"
+  },
+  "legal": {
+    "_comment": "DRAFT — es/le copy pending review (FR-094)",
+    "meta": {
+      "title": "Privacy — Kameraad Haarsnijder",
+      "description": "Hoe Kameraad Haarsnijder a persoonsgegevens verwerkt en beschermt, conform de GDPR/AVG."
+    },
+    "eyebrow": "Juridisch",
+    "title": "Privacy",
+    "updated": "Leste keer bijgewerkt: juni 2026",
+    "intro": "Kameraad Haarsnijder respecteert a privacy. Dit beleid legt uit welke persoonsgegevens we verzamele as ge een afsprak boekt, woarveu we ze verwerke, hoelang we ze bewore en welke rechte ge hebt onder de Algemene Verordening Gegevensbescherming (AVG/GDPR).",
+    "controllerTitle": "Verwerkingsverantwoordelijke",
+    "controllerBody": "Kameraad Haarsnijder, Parijsstraat 29, 3000 Leuven, België. Veu alle vroge over a gegevens: info@kameraadhaarsnijder.be.",
+    "dataTitle": "Welke gegevens we verzamele",
+    "dataIntro": "As ge een afsprak boekt, verwerke we:",
+    "dataItems": [
+      "Veur- en achternaam",
+      "E-mailadres",
+      "Telefoonnummer",
+      "A taalveurkeur",
+      "Afsprakgegevens (dienst, barbier, datum en ier)",
+      "Een optionele notitie die ge zelf toevoegt"
+    ],
+    "purposeTitle": "Woarveu we ze gebruike",
+    "purposeBody": "We gebruike a gegevens enkel veu a afsprak te behere: het bevestige, herinnere, verzette of annulere en de bijhorende e-mails. Marketingberichte sture we enkel as ge doarveu uitdrukkelijk toestemming geeft; die toestemming kunde op elk moment intrekke via de afmeldlink in elke e-mail.",
+    "legalBasisTitle": "Rechtsgrond",
+    "legalBasisBody": "De verwerking veu a afsprak gebeurt op basis van de uitvoering van os dienstverlening op a verzoek. Marketingcommunicatie gebeurt op basis van a toestemming.",
+    "retentionTitle": "Hoelang we ze bewore",
+    "retentionBody": "We bewore a gegevens zolang da nodig is veu 't beheer van a afsprake en os wettelijke verplichtinge. Ge kunt op elk moment vroge veu a gegevens te verwijdere.",
+    "rightsTitle": "A rechte",
+    "rightsIntro": "Onder de AVG hebde 't recht op:",
+    "rightsItems": [
+      "Inzage in de gegevens die we over a bewore",
+      "Correctie van onjuiste gegevens",
+      "Verwijdering van a gegevens (recht om vergete te worde)",
+      "Een export van a gegevens (overdraagbaarheid)",
+      "Bezwaar tege bepoalde verwerkinge en intrekking van a toestemming"
+    ],
+    "rightsBody": "Veu ene van deze rechte uit te oefene, mailt ge ons op info@kameraadhaarsnijder.be. We voere a verzoek tot inzage, export of definitieve verwijdering door binne een redelijke termijn.",
+    "cookiesTitle": "Cookies",
+    "cookiesBody": "We gebruike enkel functionele cookies die nodig zen veu de website te lote werke, zoas het onthoude van a taalkeuze. We zette gên tracking- of advertentiecookies.",
+    "complaintTitle": "Klachte",
+    "complaintBody": "Hedde een klacht over hoe we me a gegevens omgoan, dan kunde terecht bij de Gegevensbeschermingsautoriteit (www.gegevensbeschermingsautoriteit.be).",
+    "provisional": "PROVISIONAL — opgesteld door 't ontwikkelteam, in afwachting van juridische toetsing."
+  },
   "booking": {
     "eyebrow": "Reserveer",
     "title": "Boek a stoeleke.",
@@ -579,6 +741,13 @@
       "sent": "{sent} verzonden, {failed} mislukt ({total} ontvangers).",
       "testSent": "Testmail verzonden.",
       "dryRunNote": "Zonder Resend-sleutel zijn dit dry-run sends (gelogd, niet echt verzonden)."
+    }
+  },
+  "seo": {
+    "booking": {
+      "_comment": "DRAFT (FR-091/FR-090): Leuvens dialect, rendered lang=nl, switcher-only.",
+      "title": "Online een afsproak boeke — Kameraad Haarsnijder",
+      "description": "Boek aan afsproak bij Kameraad Haarsnijder in t hartsje van Leuve. Kiest aan barbier, dienst en uur — gemekkelek online."
     }
   }
 }

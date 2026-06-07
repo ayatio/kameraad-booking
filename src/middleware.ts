@@ -4,11 +4,18 @@ import { pickLocale } from './lib/i18n/pick-locale'
 
 // All 5 locales registered for routing; localeDetection disabled so next-intl
 // never auto-selects 'le' from Accept-Language (FR-090 spec).
+// alternateLinks disabled: next-intl would otherwise emit an HTTP `Link: …;
+// rel="alternate"; hreflang="le"` header for every locale, but `hreflang="le"`
+// is invalid BCP-47 (Leuvens is a private Dutch dialect, switcher-only) and
+// fails Lighthouse's hreflang audit (FR-101/103). The correct hreflang set
+// (nl/en/fr/es + x-default) is emitted in each page's <head> via the SEO
+// metadata layer (src/lib/seo/site.ts), so the middleware header is redundant.
 const intlMiddleware = createMiddleware({
   locales: ['nl', 'en', 'fr', 'es', 'le'],
   defaultLocale: 'nl',
   localePrefix: 'always',
   localeDetection: false,
+  alternateLinks: false,
 })
 
 export default function middleware(request: NextRequest) {

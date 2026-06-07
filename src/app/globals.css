@@ -3,6 +3,347 @@
 @tailwind utilities;
 
 /* =====================================================================
+   KAMERAAD — Gate-A design system (ported from
+   docs/design/gate-a/colors_and_type.css). Tokens + .km-* typography.
+   Font families resolve to the next/font CSS variables wired in
+   src/app/[locale]/layout.tsx, so .km-* + the font-serif/display/body
+   Tailwind utilities render the real self-hosted webfonts.
+   ===================================================================== */
+:root {
+  /* ---- Brand gold ---- */
+  --gold: #c9a24b;
+  --gold-bright: #e1b34b;
+  --gold-pale: #e8d29f;
+  --gold-deep: #9a7b33;
+  /* ---- Ink / dark neutrals (warm black) ---- */
+  --ink: #16140f;
+  --ink-2: #211e18;
+  --ink-3: #2e2a22;
+  --charcoal: #2c2e33;
+  /* ---- Paper / light neutrals (warm cream) ---- */
+  --paper: #f6f1e7;
+  --paper-2: #ede6d6;
+  --white: #ffffff;
+  --smoke: #8a857b;
+  --stone: #b8b2a6;
+  /* ---- Hairlines ---- */
+  --line-on-paper: rgba(22, 20, 15, 0.14);
+  --line-on-ink: rgba(232, 210, 159, 0.18);
+  /* ---- Semantic (light context = default) ---- */
+  --bg: var(--paper);
+  --surface: var(--white);
+  --fg1: var(--ink);
+  --fg2: #4a453c;
+  /* Muted + accent-ink on PAPER are darkened from the raw brand tokens (smoke
+     #8a857b ≈3.4:1, gold-deep #9a7b33 ≈3.3:1 both fail WCAG AA 4.5:1 for small
+     text — FR-104). These AA-compliant tones (≥4.5:1 on --paper) are used for
+     km-small / km-eyebrow / captions; the raw tokens remain for hairlines and
+     the .on-ink dark context (which has its own light values below). */
+  --fg-muted: #6b655b;
+  --accent: var(--gold);
+  --accent-ink: #7a6228;
+  --border: var(--line-on-paper);
+  /* ---- Type families (mapped onto the next/font variables) ---- */
+  --font-serif: var(--font-playfair), Georgia, 'Times New Roman', serif;
+  --font-display: var(--font-oswald), 'Arial Narrow', sans-serif;
+  --font-body: var(--font-hanken), system-ui, sans-serif;
+  /* ---- Type scale (fluid) ---- */
+  --step--1: clamp(0.78rem, 0.74rem + 0.2vw, 0.86rem);
+  --step-0: clamp(1rem, 0.96rem + 0.2vw, 1.08rem);
+  --step-1: clamp(1.2rem, 1.1rem + 0.5vw, 1.4rem);
+  --step-2: clamp(1.6rem, 1.4rem + 1vw, 2.1rem);
+  --step-3: clamp(2.1rem, 1.7rem + 2vw, 3.2rem);
+  --step-4: clamp(3rem, 2.2rem + 4vw, 5.5rem);
+  --step-5: clamp(4rem, 2.6rem + 7vw, 9rem);
+  /* ---- Tracking ---- */
+  --track-display: 0.04em;
+  --track-eyebrow: 0.32em;
+  /* ---- Radius / shadow ---- */
+  --r-sm: 2px;
+  --r-md: 4px;
+  --r-lg: 8px;
+  --r-pill: 999px;
+  --shadow-1: 0 1px 2px rgba(22, 20, 15, 0.08), 0 1px 1px rgba(22, 20, 15, 0.04);
+  --shadow-2: 0 6px 18px rgba(22, 20, 15, 0.12);
+  --shadow-3: 0 18px 50px rgba(22, 20, 15, 0.22);
+}
+
+/* Dark context: drop .on-ink on a dark section */
+.on-ink,
+[data-theme='ink'] {
+  --bg: var(--ink);
+  --surface: var(--ink-2);
+  --fg1: var(--paper);
+  --fg2: #c8c1b2;
+  --fg-muted: #8f897c;
+  --accent: var(--gold-bright);
+  --accent-ink: var(--gold-pale);
+  --border: var(--line-on-ink);
+}
+
+/* Base page defaults — warm paper ground, Hanken body, ink text. */
+body {
+  background: var(--bg);
+  color: var(--fg2);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---- Typography components ---- */
+.km-eyebrow {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--step--1);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  color: var(--accent-ink);
+}
+.km-h1,
+.km-h2,
+.km-h3 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.04;
+  color: var(--fg1);
+  text-wrap: balance;
+  margin: 0;
+}
+.km-h1 {
+  font-size: var(--step-4);
+  line-height: 0.98;
+}
+.km-h2 {
+  font-size: var(--step-3);
+}
+.km-h3 {
+  font-size: var(--step-2);
+}
+.km-h1 em,
+.km-h2 em,
+.km-h3 em,
+.km-display em {
+  font-style: italic;
+  color: var(--accent-ink);
+}
+.km-display {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 0.92;
+  font-size: var(--step-5);
+  color: var(--fg1);
+}
+.km-label {
+  font-family: var(--font-display);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: var(--step--1);
+  color: var(--fg1);
+}
+.km-lead {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: var(--step-1);
+  line-height: 1.45;
+  color: var(--fg2);
+}
+.km-body,
+.km-prose p {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: var(--step-0);
+  line-height: 1.6;
+  color: var(--fg2);
+  text-wrap: pretty;
+}
+.km-small {
+  font-family: var(--font-body);
+  font-size: var(--step--1);
+  line-height: 1.5;
+  color: var(--fg-muted);
+}
+.km-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--accent);
+}
+.km-ornament::before,
+.km-ornament::after {
+  content: '';
+  height: 1px;
+  width: clamp(28px, 8vw, 90px);
+  background: linear-gradient(90deg, transparent, currentColor 40%, currentColor 60%, transparent);
+}
+.km-ornament > .dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+/* =====================================================================
+   PUBLIC MARKETING CHROME — header / footer / buttons / sections
+   ===================================================================== */
+
+/* Gold pill button (primary CTA). Ink text on gold = AA. */
+.pub-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 600;
+  font-size: 0.82rem;
+  line-height: 1;
+  border-radius: var(--r-pill);
+  padding: 15px 28px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition:
+    background 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.15s ease;
+  text-decoration: none;
+}
+.pub-btn-primary {
+  background: var(--gold);
+  color: var(--ink);
+}
+.pub-btn-primary:hover {
+  background: var(--gold-bright);
+}
+.pub-btn-primary:active {
+  transform: scale(0.98);
+}
+/* Ghost — gold outline on dark grounds. */
+.pub-btn-ghost {
+  background: transparent;
+  color: var(--gold-pale);
+  border-color: rgba(232, 210, 159, 0.4);
+}
+.pub-btn-ghost:hover {
+  border-color: var(--gold-pale);
+  color: var(--white);
+}
+.pub-btn-sm {
+  padding: 11px 20px;
+  font-size: 0.75rem;
+}
+
+/* Visible focus ring for all interactive public elements (FR-104). */
+.pub a:focus-visible,
+.pub button:focus-visible,
+.pub-btn:focus-visible,
+.pub-header a:focus-visible,
+.pub-header button:focus-visible {
+  outline: 2px solid var(--gold-bright);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Header — solid ink bar, gold logo + nav. */
+.pub-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(22, 20, 15, 0.96);
+  backdrop-filter: saturate(1.2) blur(8px);
+  border-bottom: 1px solid var(--line-on-ink);
+}
+.pub-header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.pub-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 2.5vw, 30px);
+  margin-left: auto;
+  flex-wrap: wrap;
+}
+.pub-nav-link {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--gold-pale);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.pub-nav-link:hover,
+.pub-nav-link[aria-current='page'] {
+  color: var(--white);
+}
+
+/* Footer — ink ground, address + privacy only (no socials, FR-100). */
+.pub-footer {
+  background: var(--ink);
+  border-top: 1px solid var(--line-on-ink);
+  color: #c8c1b2;
+  padding: clamp(48px, 7vw, 80px) 20px clamp(36px, 5vw, 56px);
+}
+.pub-footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  text-align: center;
+}
+
+/* Section rhythm */
+.pub-section {
+  padding: clamp(56px, 9vw, 120px) 20px;
+}
+.pub-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Slot-preview chips (reserve height to avoid CLS, FR-103) */
+.pub-slot-row {
+  min-height: 92px;
+}
+.pub-chip {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  border: 1px solid var(--line-on-ink);
+  background: var(--ink-2);
+  color: var(--paper);
+  border-radius: var(--r-md);
+  padding: 10px 16px;
+  text-decoration: none;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.15s ease;
+}
+.pub-chip:hover {
+  border-color: var(--gold);
+  background: #29251d;
+  transform: translateY(-2px);
+}
+.pub-chip:active {
+  transform: translateY(0);
+}
+
+
+/* =====================================================================
    BOOKING FLOW — gate-a interaction patterns
    Mirrors Kameraad Homepage.html §booking CSS approach.
    ===================================================================== */

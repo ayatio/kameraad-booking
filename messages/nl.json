@@ -5,6 +5,163 @@
     "homeIntro": "Welkom bij Kameraad Haarsnijder. Boek online uw afspraak bij een van onze ervaren barbiers.",
     "switchLanguage": "Taal wijzigen"
   },
+  "home": {
+    "meta": {
+      "title": "Kameraad Haarsnijder — Barbier in hartje Leuven",
+      "description": "De laatste herenretraite in hartje Leuven. Vakkundige barbiers, tijdloos vakmanschap. Boek vandaag nog online je afspraak."
+    },
+    "nav": {
+      "primary": "Hoofdnavigatie",
+      "services": "Diensten",
+      "about": "Over ons",
+      "contact": "Contact",
+      "book": "Boek nu"
+    },
+    "footer": {
+      "address": "Parijsstraat 29 · 3000 Leuven · België",
+      "privacy": "Privacybeleid",
+      "copyright": "© Kameraad Haarsnijder — Leuven"
+    },
+    "hero": {
+      "eyebrow": "Parijsstraat 29 · Leuven",
+      "headline": "De laatste herenretraite.",
+      "tagline": "Tijdloos vakmanschap in het hart van Leuven — voor mannen van alle leeftijden.",
+      "cta": "Boek een afspraak"
+    },
+    "intro": {
+      "eyebrow": "Het ritueel",
+      "lead": "Er bestond niet zoiets als een herenretraite. Dus bouwden we er een.",
+      "body": "Kameraad ontstond uit een eenvoudig idee — een plek waar mannen even kunnen pauzeren. Vandaag is Kameraad veruit de laatste retraite voor mannen van alle leeftijden. Zelfs wie geen dienst afneemt, is altijd welkom om even te ontsnappen aan de drukte van alledag."
+    },
+    "team": {
+      "eyebrow": "Haarsnijder en barbier",
+      "title": "Het team",
+      "role": "Barbier",
+      "bookWith": "Boek bij {name}"
+    },
+    "services": {
+      "eyebrow": "De kaart",
+      "title": "Diensten & prijzen",
+      "durationLabel": "Duur",
+      "provisional": "Prijzen voorlopig — onder voorbehoud.",
+      "walkInTitle": "Walk-ins welkom",
+      "walkInBody": "Geen afspraak? Spring gewoon binnen tijdens de openingsuren — direct aan de beurt zodra er plek is.",
+      "viewAll": "Bekijk alle diensten"
+    },
+    "slots": {
+      "eyebrow": "Eerstvolgende plekken",
+      "title": "Vandaag nog een stoel?",
+      "lead": "De eerstvolgende vrije momenten. Kies er een en je springt meteen in de boeking.",
+      "loading": "Beschikbaarheid laden…",
+      "empty": "Geen vrije momenten in de komende twee weken. Bekijk de volledige agenda bij het boeken.",
+      "error": "Beschikbaarheid kon niet geladen worden. Probeer het bij het boeken.",
+      "serviceTabs": "Kies een dienst",
+      "cta": "Naar de boeking"
+    },
+    "visit": {
+      "eyebrow": "Kom langs",
+      "title": "Bezoek ons",
+      "addressLabel": "Adres",
+      "hoursLabel": "Openingsuren",
+      "hoursValue": "Dinsdag — Zaterdag · 10:00 – 20:00",
+      "hoursNote": "Maandag, zondag & feestdagen — check Instagram.",
+      "callNote": "Bel ons gerust — maar wellicht zijn we een klant aan het bedienen. Online boeken is het zekerst.",
+      "cta": "Boek een afspraak"
+    }
+  },
+  "services": {
+    "meta": {
+      "title": "Diensten & prijzen — Kameraad Haarsnijder",
+      "description": "Knippen, baard, hot towel wet-shave en meer bij Kameraad Haarsnijder in Leuven. Bekijk diensten, duur en prijzen en boek online."
+    },
+    "eyebrow": "De kaart",
+    "title": "Diensten & prijzen",
+    "lead": "Vakwerk van begin tot eind. Kies je dienst en boek in enkele stappen — de rest doen wij.",
+    "durationLabel": "Duur",
+    "priceLabel": "Prijs",
+    "provisional": "Prijzen en duur zijn voorlopig en onder voorbehoud tot bevestiging door de zaak.",
+    "walkInTitle": "Walk-ins welkom",
+    "walkInBody": "Geen afspraak nodig. We aanvaarden walk-ins tijdens de openingsuren op beschikbare plaatsen — kom gewoon binnen.",
+    "cta": "Boek deze dienst"
+  },
+  "about": {
+    "meta": {
+      "title": "Over ons — Kameraad Haarsnijder Leuven",
+      "description": "Het verhaal achter Kameraad Haarsnijder: een herenretraite in hartje Leuven, gedreven door vakmanschap en respect voor het métier."
+    },
+    "eyebrow": "Over ons",
+    "title": "Een herenretraite in hartje Leuven",
+    "lead": "Kameraad is meer dan een kappersstoel. Het is een plek waar de tijd vertraagt en details ertoe doen.",
+    "body1": "Kameraad Haarsnijder ontstond uit het idee dat er niet zoiets bestond als een herenretraite. Vandaag is Kameraad veruit de laatste retraite voor mannen van alle leeftijden. Ga zitten, blijf even: een vers jatteke kaffe, de krant van vandaag, een rustig moment — met of zonder afspraak.",
+    "body2": "Aan de Parijsstraat 29 in Leuven volgen we geen trends blindelings. We kiezen ze, met zorg. Onze barbiers zijn vaklui met diep respect voor het métier — elk met een eigen blik, verenigd door één maatstaf: kwaliteit zonder compromis.",
+    "teamEyebrow": "Haarsnijder en barbier",
+    "teamTitle": "Het team",
+    "role": "Barbier",
+    "cta": "Boek je afspraak"
+  },
+  "contact": {
+    "meta": {
+      "title": "Contact — Kameraad Haarsnijder Leuven",
+      "description": "Bezoek Kameraad Haarsnijder aan de Parijsstraat 29 in Leuven. Adres, openingsuren en contactgegevens."
+    },
+    "eyebrow": "Kom langs",
+    "title": "Contact & bezoek",
+    "lead": "Je vindt ons in hartje Leuven. Boek online of spring binnen tijdens de openingsuren.",
+    "addressLabel": "Adres",
+    "addressValue": "Parijsstraat 29\n3000 Leuven\nBelgië",
+    "emailLabel": "E-mail",
+    "phoneLabel": "Telefoon",
+    "vatLabel": "BTW",
+    "vatValue": "BE10 0842 3183",
+    "hoursLabel": "Openingsuren",
+    "hoursValue": "Dinsdag — Zaterdag · 10:00 – 20:00",
+    "hoursNote": "Maandag, zondag & feestdagen — check Instagram.",
+    "callNote": "Bel ons gerust — maar wellicht bedienen we net een klant. Online boeken is het zekerst.",
+    "cta": "Boek een afspraak"
+  },
+  "legal": {
+    "meta": {
+      "title": "Privacybeleid — Kameraad Haarsnijder",
+      "description": "Hoe Kameraad Haarsnijder je persoonsgegevens verwerkt en beschermt, conform de GDPR/AVG."
+    },
+    "eyebrow": "Juridisch",
+    "title": "Privacybeleid",
+    "updated": "Laatst bijgewerkt: juni 2026",
+    "intro": "Kameraad Haarsnijder respecteert je privacy. Dit beleid legt uit welke persoonsgegevens we verzamelen wanneer je een afspraak boekt, waarom we ze verwerken, hoelang we ze bewaren en welke rechten je hebt onder de Algemene Verordening Gegevensbescherming (AVG/GDPR).",
+    "controllerTitle": "Verwerkingsverantwoordelijke",
+    "controllerBody": "Kameraad Haarsnijder, Parijsstraat 29, 3000 Leuven, België. Voor alle vragen over je gegevens: info@kameraadhaarsnijder.be.",
+    "dataTitle": "Welke gegevens we verzamelen",
+    "dataIntro": "Wanneer je een afspraak boekt, verwerken we:",
+    "dataItems": [
+      "Voor- en achternaam",
+      "E-mailadres",
+      "Telefoonnummer",
+      "Je taalvoorkeur",
+      "Afspraakgegevens (dienst, barbier, datum en tijd)",
+      "Een optionele notitie die je zelf toevoegt"
+    ],
+    "purposeTitle": "Waarvoor we ze gebruiken",
+    "purposeBody": "We gebruiken je gegevens uitsluitend om je afspraak te beheren: het bevestigen, herinneren, verzetten of annuleren ervan en de bijhorende e-mails. Marketingberichten sturen we enkel als je daar uitdrukkelijk toestemming voor geeft; die toestemming kun je op elk moment intrekken via de afmeldlink in elke e-mail.",
+    "legalBasisTitle": "Rechtsgrond",
+    "legalBasisBody": "De verwerking voor je afspraak gebeurt op basis van de uitvoering van onze dienstverlening op jouw verzoek. Marketingcommunicatie gebeurt op basis van je toestemming.",
+    "retentionTitle": "Hoelang we ze bewaren",
+    "retentionBody": "We bewaren je gegevens zolang dat nodig is voor het beheer van je afspraken en onze wettelijke verplichtingen. Je kunt op elk moment vragen om je gegevens te verwijderen.",
+    "rightsTitle": "Je rechten",
+    "rightsIntro": "Onder de AVG heb je het recht op:",
+    "rightsItems": [
+      "Inzage in de gegevens die we over je bewaren",
+      "Correctie van onjuiste gegevens",
+      "Verwijdering van je gegevens (recht om vergeten te worden)",
+      "Een export van je gegevens (overdraagbaarheid)",
+      "Bezwaar tegen bepaalde verwerkingen en intrekking van je toestemming"
+    ],
+    "rightsBody": "Om een van deze rechten uit te oefenen, mail je ons op info@kameraadhaarsnijder.be. We voeren je verzoek tot inzage, export of definitieve verwijdering door binnen een redelijke termijn.",
+    "cookiesTitle": "Cookies",
+    "cookiesBody": "We gebruiken enkel functionele cookies die nodig zijn om de website te laten werken, zoals het onthouden van je taalkeuze. We zetten geen tracking- of advertentiecookies.",
+    "complaintTitle": "Klachten",
+    "complaintBody": "Heb je een klacht over hoe we met je gegevens omgaan, dan kun je terecht bij de Gegevensbeschermingsautoriteit (www.gegevensbeschermingsautoriteit.be).",
+    "provisional": "PROVISIONAL — opgesteld door het ontwikkelteam, in afwachting van juridische toetsing."
+  },
   "booking": {
     "eyebrow": "Reserveer",
     "title": "Boek je stoel.",
@@ -574,6 +731,12 @@
       "sent": "{sent} verzonden, {failed} mislukt ({total} ontvangers).",
       "testSent": "Testmail verzonden.",
       "dryRunNote": "Zonder Resend-sleutel zijn dit dry-run sends (gelogd, niet echt verzonden)."
+    }
+  },
+  "seo": {
+    "booking": {
+      "title": "Online afspraak boeken — Kameraad Haarsnijder",
+      "description": "Boek je afspraak bij Kameraad Haarsnijder in hartje Leuven. Kies je barbier, dienst en tijdslot — eenvoudig online geregeld."
     }
   }
 }
