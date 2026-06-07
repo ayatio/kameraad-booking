@@ -34,9 +34,10 @@ export function LanguageSwitcher() {
             href={href}
             aria-current={isCurrent ? 'page' : undefined}
             className={
-              isCurrent
+              'inline-flex min-h-[28px] min-w-[28px] items-center justify-center rounded px-1.5 py-1 ' +
+              (isCurrent
                 ? 'font-semibold text-white'
-                : 'text-gold-pale/70 transition-colors hover:text-white'
+                : 'text-gold-pale/80 transition-colors hover:text-white')
             }
           >
             {label}

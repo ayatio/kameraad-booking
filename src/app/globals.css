@@ -34,9 +34,14 @@
   --surface: var(--white);
   --fg1: var(--ink);
   --fg2: #4a453c;
-  --fg-muted: var(--smoke);
+  /* Muted + accent-ink on PAPER are darkened from the raw brand tokens (smoke
+     #8a857b ≈3.4:1, gold-deep #9a7b33 ≈3.3:1 both fail WCAG AA 4.5:1 for small
+     text — FR-104). These AA-compliant tones (≥4.5:1 on --paper) are used for
+     km-small / km-eyebrow / captions; the raw tokens remain for hairlines and
+     the .on-ink dark context (which has its own light values below). */
+  --fg-muted: #6b655b;
   --accent: var(--gold);
-  --accent-ink: var(--gold-deep);
+  --accent-ink: #7a6228;
   --border: var(--line-on-paper);
   /* ---- Type families (mapped onto the next/font variables) ---- */
   --font-serif: var(--font-playfair), Georgia, 'Times New Roman', serif;

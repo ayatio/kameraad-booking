@@ -106,6 +106,7 @@ export default async function HomePage({ params: { locale } }: { params: { local
           alt=""
           fill
           priority
+          quality={55}
           sizes="100vw"
           className="-z-10 object-cover"
         />
