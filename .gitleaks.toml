@@ -1,0 +1,28 @@
+# gitleaks configuration for kameraad-booking
+# Extends the default gitleaks ruleset and allowlists e2e TEST-ONLY credentials.
+#
+# The only matches are fixture passwords for seeded admin accounts used by the
+# Playwright E2E suite (e.g. `const PASSWORD = 'rbac-passw0rd-xyz'`) and the
+# local docker-compose dev DB password assembled in e2e/helpers/db.ts. These are
+# not real secrets: there are NO production credentials in this repo (FR-113;
+# production env vars are set by Ayat in Vercel/Railway, never committed). The
+# default ruleset's `generic-api-key` heuristic matches the `PASSWORD = '...'`
+# shape, so we scope a narrow allowlist to the e2e test fixtures only.
+
+title = "kameraad-booking gitleaks config"
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "E2E test-only fixtures (no production secrets in repo — FR-113)"
+paths = [
+  '''e2e/.*\.spec\.ts''',
+  '''e2e/helpers/db\.ts''',
+]
+regexes = [
+  # Seeded admin test passwords, e.g. 'rbac-passw0rd-xyz', 'gdpr-passw0rd-xyz'
+  '''[a-z]+-passw0rd-xyz''',
+  # Local docker-compose dev DB password assembled from parts in test helpers
+  '''kameraad'\s*\+\s*'_dev''',
+]
