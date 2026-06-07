@@ -1,4 +1,4 @@
-# Kameraad Haarsnijder — Booking Platform
+# Kameraad Haarsnijder — Booking Platformm
 
 Custom booking platform for Kameraad Haarsnijder (Haarlem), replacing Calendly and the existing Webflow site. Customers book, cancel, and reschedule haircut appointments across three locales (NL · EN · FR) without creating an account.
 
