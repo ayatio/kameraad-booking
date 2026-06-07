@@ -63,6 +63,117 @@ jobs:
       - name: Build
         run: npm run build
 
+  # ── Full Playwright regression (Phases 2–4): booking, manage, mobile,
+  #    admin-*, public-*, seo, redirects. The playwright webServer starts the
+  #    prod build itself (scripts/start-local-prod.sh on :3911), so we only
+  #    build + migrate + seed here. Staging posture (no NEXT_PUBLIC_ALLOW_INDEXING)
+  #    is what the seo.spec.ts noindex/Disallow assertions expect.
+  e2e:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: kameraad
+          POSTGRES_PASSWORD: kameraad_dev
+          POSTGRES_DB: kameraad
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    env:
+      DATABASE_URL: postgresql://kameraad:kameraad_dev@localhost:5432/kameraad
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright (chromium)
+        run: npx playwright install --with-deps chromium
+
+      - name: Run migrations
+        run: npm run db:migrate
+
+      - name: Seed database
+        run: npm run db:seed
+
+      - name: Build
+        run: npm run build
+
+      - name: E2E (full Phases 2–4 regression)
+        run: npm run test:e2e
+
+      - name: Upload Playwright report
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 7
+
+  # ── Lighthouse CI (FR-103). MOBILE audit of home (/nl) + booking (/nl/boeken).
+  #    Built with NEXT_PUBLIC_ALLOW_INDEXING=true so the SEO category reflects the
+  #    real PRODUCTION (indexable) posture — the deployed staging default stays
+  #    noindex. Budgets: perf ≥0.90, seo ≥0.95, a11y ≥0.95 (asserted by lhci).
+  lighthouse:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: kameraad
+          POSTGRES_PASSWORD: kameraad_dev
+          POSTGRES_DB: kameraad
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    env:
+      DATABASE_URL: postgresql://kameraad:kameraad_dev@localhost:5432/kameraad
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run migrations
+        run: npm run db:migrate
+
+      - name: Seed database
+        run: npm run db:seed
+
+      - name: Lighthouse CI (build indexable + audit budgets)
+        run: npm run lhci
+
+      - name: Upload Lighthouse reports
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-report
+          path: .lighthouseci/
+          retention-days: 7
+
   gitleaks:
     runs-on: ubuntu-latest
     steps:
