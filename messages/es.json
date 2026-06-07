@@ -1,0 +1,225 @@
+{
+  "_comment": "PROVISIONAL: agent-drafted translations pending client review (FR-094)",
+  "common": {
+    "appName": "Kameraad Haarsnijder",
+    "tagline": "Artesanía en cada corte",
+    "homeIntro": "Bienvenido a Kameraad Haarsnijder. Reserva tu cita online con uno de nuestros barberos experimentados.",
+    "switchLanguage": "Cambiar idioma"
+  },
+  "booking": {
+    "eyebrow": "Reservar",
+    "title": "Reserva tu silla.",
+    "lead": "Primero tu servicio, luego el barbero que lo realiza, después un momento que te encaje. Paso a paso — del resto nos encargamos nosotros.",
+    "openButton": "Reserva tu silla →",
+    "hoursLabel": "Horario",
+    "hours": "Mar–Dom · 10:00–20:00",
+    "placeLabel": "Lugar",
+    "step": {
+      "barber": "Barbero",
+      "service": "Servicio",
+      "slot": "Horario",
+      "details": "Datos",
+      "date": "Fecha",
+      "time": "Hora"
+    },
+    "confirm": "Confirmar cita",
+    "done": {
+      "heading": "Hasta pronto, kameraad.",
+      "summary": "Confirmado: {service} con {barber} el {date} a las {time}.",
+      "emailInfo": "Gestiona tu cita desde el correo de confirmación."
+    },
+    "noPreference": "Sin preferencia",
+    "noPreferenceLow": "sin preferencia",
+    "noPreferenceHint": "Se te asignará el barbero más disponible.",
+    "reset": "Nueva cita",
+    "barberNote": "Disponible para tu servicio:",
+    "chooseMore": "Elige aún",
+    "back": "Atrás",
+    "close": "Cerrar",
+    "stepOf": "Paso {current} de {total}",
+    "loading": "Cargando…",
+    "submitting": "Confirmando…",
+    "noSlots": "No hay horarios disponibles para este día.",
+    "nextAvailableDay": "Ir al primer día disponible",
+    "walkInBand": "Walk-ins también bienvenidos — entra directamente.",
+    "walkIn": {
+      "title": "Walk-in",
+      "description": "También bienvenido sin cita — entra directamente. Primero disponible si hay sitio."
+    },
+    "summary": {
+      "start": "Elige un servicio para empezar.",
+      "at": "con",
+      "on": "el",
+      "atTime": "a las",
+      "with": "con",
+      "yourBarber": "tu barbero",
+      "confirmMessage": "Te enviaremos una confirmación."
+    },
+    "label": {
+      "barber": "un barbero",
+      "date": "una fecha",
+      "time": "una hora"
+    },
+    "service": {
+      "haircut": "Corte",
+      "beard": "Barba",
+      "combo": "Corte + Barba",
+      "child": "Niño (–12 años)"
+    },
+    "dow": ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"],
+    "months": ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"],
+    "form": {
+      "firstName": "Nombre",
+      "lastName": "Apellido",
+      "email": "Correo electrónico",
+      "phone": "Número de teléfono",
+      "note": "Nota (opcional)",
+      "notePlaceholder": "Mensaje para tu barbero, máx. 500 caracteres",
+      "phoneHelp": "Ej. 0479 12 34 56 o +32 2 123 45 67",
+      "required": "Campo obligatorio",
+      "emailInvalid": "Dirección de correo inválida",
+      "phoneInvalid": "Número de teléfono inválido — usa formato belga o internacional",
+      "noteMaxLength": "Máximo 500 caracteres"
+    },
+    "validation": {
+      "cancellationPolicy": "Acepto la política de cancelación (cancelación gratuita hasta {hours} horas antes de tu cita).",
+      "privacyConsent": "Acepto el tratamiento de mis datos personales para la gestión de mi cita."
+    },
+    "privacyLinkText": "política de privacidad",
+    "error": {
+      "slotTaken": "Este horario acaba de ser reservado. Elige otro momento.",
+      "generic": "Algo ha salido mal. Por favor, inténtalo de nuevo."
+    }
+  },
+  "manage": {
+    "_comment": "DRAFT — agent-drafted, pending client review (FR-094)",
+    "invalidToken": "Este enlace no es válido o ha caducado.",
+    "appointmentCard": {
+      "heading": "Tu cita",
+      "service": "Servicio",
+      "barber": "Barbero",
+      "date": "Fecha",
+      "time": "Hora",
+      "price": "Precio"
+    },
+    "cancel": {
+      "eyebrow": "Cancelar cita",
+      "title": "Cancela tu cita.",
+      "confirmButton": "Cancelar cita",
+      "confirmQuestion": "¿Estás seguro/a?",
+      "confirmDefinitive": "Sí, cancelar definitivamente",
+      "keepButton": "No, mantener mi cita",
+      "loading": "Procesando…",
+      "successHeading": "Cita cancelada.",
+      "successBody": "Tu cita ha sido cancelada. Esperamos verte pronto, kameraad.",
+      "alreadyCancelledHeading": "Ya cancelada",
+      "alreadyCancelledBody": "Esta cita ya había sido cancelada.",
+      "outsideWindowHeading": "Cancelación no disponible",
+      "outsideWindowBody": "Solo puedes cancelar tu cita hasta {hours} horas antes. Contáctanos en {phone}.",
+      "outsideWindowError": "La cancelación ya no es posible dentro del plazo establecido.",
+      "genericError": "Algo ha salido mal. Por favor, inténtalo de nuevo."
+    },
+    "reschedule": {
+      "eyebrow": "Cambiar fecha de cita",
+      "title": "Cambia tu cita.",
+      "currentAppointment": "Cita actual",
+      "newSlotLabel": "Elige un nuevo horario",
+      "selectedLabel": "Seleccionado",
+      "confirmButton": "Confirmar nuevo horario",
+      "loading": "Procesando…",
+      "successHeading": "Cita cambiada.",
+      "successBody": "Tu cita ha sido cambiada con éxito. Hasta pronto, kameraad.",
+      "outsideWindowHeading": "Cambio no disponible",
+      "outsideWindowBody": "Solo puedes cambiar tu cita hasta {hours} horas antes. Contáctanos en {phone}.",
+      "outsideWindowError": "El cambio ya no es posible dentro del plazo establecido.",
+      "slotTakenError": "Este horario acaba de ser reservado. Elige otro momento.",
+      "tryAgainButton": "Elegir de nuevo",
+      "genericError": "Algo ha salido mal. Por favor, inténtalo de nuevo."
+    }
+  },
+  "preferences": {
+    "_comment": "DRAFT — agent-drafted, pending client review (FR-094)",
+    "invalidToken": "Este enlace no es válido o ha caducado.",
+    "eyebrow": "Preferencias de correo",
+    "title": "Gestiona tus preferencias.",
+    "lead": "Elige qué correos quieres recibir de nosotros. Respetamos tu decisión, kameraad.",
+    "reminders": "Recordatorios de cita",
+    "remindersHint": "Te enviamos un recordatorio 24 horas y 2 horas antes de tu cita.",
+    "rebooking": "Invitaciones a reservar de nuevo",
+    "rebookingHint": "Te avisamos cuando es hora de tu próxima visita.",
+    "marketing": "Noticias y ofertas",
+    "marketingHint": "Mantente al día con las últimas noticias de Kameraad Haarsnijder.",
+    "saveButton": "Guardar preferencias",
+    "saving": "Guardando…",
+    "savedMessage": "Preferencias guardadas.",
+    "genericError": "Algo ha salido mal. Por favor, inténtalo de nuevo."
+  },
+  "emails": {
+    "_comment": "DRAFT translation — agent-drafted, pending client review",
+    "confirmation": {
+      "subject": "Confirmación — {service} el {date}",
+      "eyebrow": "CITA CONFIRMADA",
+      "heading": "Hasta pronto, kameraad.",
+      "body": "Tu cita en Kameraad Haarsnijder está confirmada. Encuentra todos los detalles a continuación.",
+      "calendarLabel": "Añadir al calendario",
+      "cancelLabel": "Cancelar cita",
+      "rescheduleLabel": "Cambiar fecha"
+    },
+    "reminder_24h": {
+      "subject": "Mañana: {service} a las {time}",
+      "eyebrow": "RECORDATORIO",
+      "heading": "Hasta mañana, kameraad.",
+      "body": "Tu cita es mañana a las {time}. La cancelación gratuita sigue siendo posible hasta {hours} horas antes.",
+      "cancelLabel": "Cancelar cita"
+    },
+    "reminder_2h": {
+      "subject": "Ahora: {service} a las {time}",
+      "eyebrow": "RECORDATORIO",
+      "heading": "Hasta ahora, kameraad.",
+      "body": "Tu cita empieza en 2 horas. Te esperamos en Kameraad Haarsnijder.",
+      "cancelLabel": "Cancelar cita"
+    },
+    "cancellation": {
+      "subject": "Cita cancelada — {service} el {date}",
+      "eyebrow": "CITA CANCELADA",
+      "heading": "Tu cita ha sido cancelada.",
+      "body": "Tu cita del {date} a las {time} ha sido cancelada. Esperamos volverte a ver pronto.",
+      "rebookCta": "Reservar nueva cita"
+    },
+    "reschedule": {
+      "subject": "Cita cambiada — {service} el {date}",
+      "eyebrow": "CITA CAMBIADA",
+      "heading": "Nueva fecha confirmada.",
+      "body": "Tu cita ha sido cambiada con éxito. Encuentra los nuevos detalles a continuación.",
+      "calendarLabel": "Añadir al calendario",
+      "cancelLabel": "Cancelar cita",
+      "rescheduleLabel": "Cambiar de nuevo"
+    },
+    "rebooking": {
+      "subject": "¿Hora de tu próxima visita, {firstName}?",
+      "eyebrow": "HASTA PRONTO",
+      "heading": "Es hora de volver, kameraad.",
+      "body": "Hace tiempo que no te vemos. Reserva tu próxima cita en Kameraad Haarsnijder.",
+      "cta": "Reservar ahora"
+    },
+    "marketing": {
+      "subject": "Noticias de Kameraad Haarsnijder",
+      "eyebrow": "KAMERAAD HAARSNIJDER",
+      "heading": "Noticias y ofertas.",
+      "body": "Mantente al día con las últimas noticias y ofertas exclusivas de tu barbero.",
+      "cta": "Descubrir más",
+      "unsubscribeText": "Darse de baja de emails de marketing"
+    },
+    "card": {
+      "service": "Servicio",
+      "barber": "Barbero",
+      "date": "Fecha",
+      "time": "Hora",
+      "price": "Precio"
+    },
+    "footer": {
+      "address": "Parijsstraat 29 · 3000 Leuven · Bélgica",
+      "unsubscribeLabel": "Darse de baja"
+    }
+  }
+}

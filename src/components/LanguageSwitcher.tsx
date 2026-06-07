@@ -8,9 +8,11 @@ const LOCALES = [
   { code: 'nl', label: 'NL' },
   { code: 'en', label: 'EN' },
   { code: 'fr', label: 'FR' },
+  { code: 'es', label: 'ES' },
+  { code: 'le', label: 'Leuvens' },
 ] as const
 
-// FR-093 stub: switches locale while preserving the current path segment.
+// FR-093: switches locale while preserving the current path segment.
 export function LanguageSwitcher() {
   const locale = useLocale()
   const pathname = usePathname()

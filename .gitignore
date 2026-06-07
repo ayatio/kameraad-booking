@@ -22,3 +22,10 @@ next-env.d.ts
 # OS
 .DS_Store
 Thumbs.db
+
+# Email dry-run outbox
+.email-outbox/
+
+# Playwright
+test-results/
+playwright-report/

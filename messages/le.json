@@ -1,0 +1,225 @@
+{
+  "_comment": "DRAFT Leuvens — Adil levert de definitieve vertaling (alle strings DRAFT)",
+  "common": {
+    "appName": "Kameraad Haarsnijder",
+    "tagline": "Mêesterschap in iedere knip",
+    "homeIntro": "Welkom bij Kameraad Haarsnijder. Boekt online a afsprak bij ene van os ervare barbiers.",
+    "switchLanguage": "Taal wissel"
+  },
+  "booking": {
+    "eyebrow": "Reserveer",
+    "title": "Boek a stoeleke.",
+    "lead": "Êest a dienst, dan de barbier dieje da doet, en dan een momentsje da past. Stap veu stap — de res doeme wij.",
+    "openButton": "Boek a stoeleke →",
+    "hoursLabel": "Uren",
+    "hours": "Di–Zo · 10:00–20:00",
+    "placeLabel": "Plek",
+    "step": {
+      "barber": "Barbier",
+      "service": "Dienst",
+      "slot": "Tijdstip",
+      "details": "Gegevens",
+      "date": "Datum",
+      "time": "Ier"
+    },
+    "confirm": "Bevestig afsprak",
+    "done": {
+      "heading": "Tot subiet, kameraad.",
+      "summary": "Bevestigd: {service} me {barber} op {date} om {time}.",
+      "emailInfo": "Beheer a afsprak via de bevestigingsmail."
+    },
+    "noPreference": "Maakt ni uit",
+    "noPreferenceLow": "maakt ni uit",
+    "noPreferenceHint": "De meeste beschikbare barbier wordt veu jou gekozen.",
+    "reset": "Nieiw afsprak",
+    "barberNote": "Te kreige veu a dienst:",
+    "chooseMore": "Kiest nog ne",
+    "back": "Terug",
+    "close": "Sluite",
+    "stepOf": "Stap {current} van {total}",
+    "loading": "Laden…",
+    "submitting": "Bevestige…",
+    "noSlots": "Gee beschikbare tije veu deze dag.",
+    "nextAvailableDay": "Naar de êeste beschikbare dag",
+    "walkInBand": "Ook walk-ins welkom — loop gewoon benne.",
+    "walkIn": {
+      "title": "Walk-in",
+      "description": "Ook welkom zunder afsprak — kom gewoon benne. Direkt an de beurt als er plek is."
+    },
+    "summary": {
+      "start": "Kiest êest a dienst.",
+      "at": "bij",
+      "on": "op",
+      "atTime": "om",
+      "with": "me",
+      "yourBarber": "a barbier",
+      "confirmMessage": "We sture a een bevestiging."
+    },
+    "label": {
+      "barber": "barbier",
+      "date": "datum",
+      "time": "ier"
+    },
+    "service": {
+      "haircut": "Knippe",
+      "beard": "Boord",
+      "combo": "Knippe + Boord",
+      "child": "Manneke (–12 j.)"
+    },
+    "dow": ["Zo", "Mo", "Di", "Wo", "Do", "Vr", "Za"],
+    "months": ["jan", "feb", "mrt", "apr", "mei", "jun", "jul", "aug", "sep", "okt", "nov", "dec"],
+    "form": {
+      "firstName": "Veunaom",
+      "lastName": "Naom",
+      "email": "E-mailadres",
+      "phone": "Telefone",
+      "note": "Notitie (optioneel)",
+      "notePlaceholder": "Opmerking veu a barbier, max. 500 tekens",
+      "phoneHelp": "Bijv. 0479 12 34 56 of +32 2 123 45 67",
+      "required": "Verplicht veld",
+      "emailInvalid": "Ongeldig e-mailadres",
+      "phoneInvalid": "Ongeldig telefoonnummer — gebruik een Belgisch of internationaal formaat",
+      "noteMaxLength": "Maximaal 500 tekens"
+    },
+    "validation": {
+      "cancellationPolicy": "Ik ga mee me het annuleringsbeleid (tot {hours} ier veu a afsprak kosteloos annulere).",
+      "privacyConsent": "Ik ga akkoord me de verwerking van mijn gegevens veu het beheir van mijn afsprak."
+    },
+    "privacyLinkText": "privacybeleid",
+    "error": {
+      "slotTaken": "Dit tijdstip is net ingenome. Kiest en ander moment.",
+      "generic": "Er is iets misgelope. Probeer et opnief."
+    }
+  },
+  "manage": {
+    "_comment": "DRAFT Leuvens — Adil levert de definitieve vertaling (alle strings DRAFT)",
+    "invalidToken": "Dees link is ni geldig of verlope.",
+    "appointmentCard": {
+      "heading": "A afsprak",
+      "service": "Dienst",
+      "barber": "Barbier",
+      "date": "Datum",
+      "time": "Ier",
+      "price": "Prijs"
+    },
+    "cancel": {
+      "eyebrow": "Afsprak annulere",
+      "title": "Annuleer a afsprak.",
+      "confirmButton": "Annuleer afsprak",
+      "confirmQuestion": "Weet je et zeker?",
+      "confirmDefinitive": "Ja, definitief annulere",
+      "keepButton": "Nee, behouwe afsprak",
+      "loading": "Bezig…",
+      "successHeading": "Afsprak geannuleerd.",
+      "successBody": "A afsprak is geannuleerd. We houpe a snel weder te zien, kameraad.",
+      "alreadyCancelledHeading": "Afsprak al geannuleerd",
+      "alreadyCancelledBody": "Dees afsprak was al eerder geannuleerd.",
+      "outsideWindowHeading": "Annulere ni meer mogelijk",
+      "outsideWindowBody": "Je kunt a afsprak enkel annulere tot {hours} ier van tevore. Neem contact op via {phone}.",
+      "outsideWindowError": "Annulere is helaas ni meer mogelijk binne de gestelde termijn.",
+      "genericError": "Er is iets misgelope. Probeer et opnief."
+    },
+    "reschedule": {
+      "eyebrow": "Afsprak verzette",
+      "title": "Verzet a afsprak.",
+      "currentAppointment": "Huidige afsprak",
+      "newSlotLabel": "Kiest en nieuw tijdstip",
+      "selectedLabel": "Gekoze",
+      "confirmButton": "Bevestig nieuw tijdstip",
+      "loading": "Bezig…",
+      "successHeading": "Afsprak verzet.",
+      "successBody": "A afsprak is succesvol verzet. Tot subiet, kameraad.",
+      "outsideWindowHeading": "Verzette ni meer mogelijk",
+      "outsideWindowBody": "Je kunt a afsprak enkel verzette tot {hours} ier van tevore. Neem contact op via {phone}.",
+      "outsideWindowError": "Verzette is helaas ni meer mogelijk binne de gestelde termijn.",
+      "slotTakenError": "Dit tijdstip is net ingenome. Kiest en ander moment.",
+      "tryAgainButton": "Kiest opnief",
+      "genericError": "Er is iets misgelope. Probeer et opnief."
+    }
+  },
+  "preferences": {
+    "_comment": "DRAFT Leuvens — Adil levert de definitieve vertaling (alle strings DRAFT)",
+    "invalidToken": "Dees link is ni geldig of verlope.",
+    "eyebrow": "E-mailvoorkeure",
+    "title": "Beheer a voorkeure.",
+    "lead": "Kiest welke e-mails je van os wilt ontvange. We respectere a keuze, kameraad.",
+    "reminders": "Afsprakherinneringe",
+    "remindersHint": "We sture a een herinnering 24 ier en 2 ier veu a afsprak.",
+    "rebooking": "Reboekingsuitnodiginge",
+    "rebookingHint": "We late a wete wanneer et tieje is veu a volgende beurt.",
+    "marketing": "Nies en aanbiedinge",
+    "marketingHint": "Blijf op de hoogte van het lêeste nies van Kameraad Haarsnijder.",
+    "saveButton": "Voorkeure opslaan",
+    "saving": "Opslaan…",
+    "savedMessage": "Voorkeure opgeslaage.",
+    "genericError": "Er is iets misgelope. Probeer et opnief."
+  },
+  "emails": {
+    "_comment": "DRAFT Leuvens — Adil levert de definitieve vertaling (alle strings DRAFT)",
+    "confirmation": {
+      "subject": "Bevestiging — {service} op {date}",
+      "eyebrow": "AFSPRAK BEVESTIGD",
+      "heading": "Tot subiet, kameraad.",
+      "body": "A afsprak bij Kameraad Haarsnijder staat vast. Hieronde vins je alle details.",
+      "calendarLabel": "Zet op agenda",
+      "cancelLabel": "Annuleer afsprak",
+      "rescheduleLabel": "Verzet afsprak"
+    },
+    "reminder_24h": {
+      "subject": "Morre: {service} om {time}",
+      "eyebrow": "HERINNERING",
+      "heading": "Tot morre, kameraad.",
+      "body": "A afsprak is morre om {time}. Gratis annulere kan nog tot {hours} ier van tevore.",
+      "cancelLabel": "Annuleer afsprak"
+    },
+    "reminder_2h": {
+      "subject": "Zo mê: {service} om {time}",
+      "eyebrow": "HERINNERING",
+      "heading": "Tot direkts, kameraad.",
+      "body": "A afsprak begint over 2 ier. We zien je straks bij Kameraad Haarsnijder.",
+      "cancelLabel": "Annuleer afsprak"
+    },
+    "cancellation": {
+      "subject": "Afsprak geannuleerd — {service} op {date}",
+      "eyebrow": "AFSPRAK GEANNULEERD",
+      "heading": "A afsprak is geannuleerd.",
+      "body": "A afsprak op {date} om {time} is geannuleerd. We houpe a snel opnief te moge ontvange.",
+      "rebookCta": "Nieiwe afsprak make"
+    },
+    "reschedule": {
+      "subject": "Afsprak verzet — {service} op {date}",
+      "eyebrow": "AFSPRAK VERZET",
+      "heading": "Nieiwe datum vastgelegd.",
+      "body": "A afsprak is succesvol verzet. Hieronde vins je de nieiwe details.",
+      "calendarLabel": "Zet op agenda",
+      "cancelLabel": "Annuleer afsprak",
+      "rescheduleLabel": "Verzet opnief"
+    },
+    "rebooking": {
+      "subject": "Tieje veu a volgende keer, {firstName}?",
+      "eyebrow": "TOT SUBIET",
+      "heading": "Het is weder tieje, kameraad.",
+      "body": "Een tijdje geleide dat we a gezien hebbe. Boekt a volgende afsprak bij Kameraad Haarsnijder.",
+      "cta": "Boek na"
+    },
+    "marketing": {
+      "subject": "Nies van Kameraad Haarsnijder",
+      "eyebrow": "KAMERAAD HAARSNIJDER",
+      "heading": "Nies en aanbiedinge.",
+      "body": "Blijf op de hoogte van het lêeste nies en exclusieve aanbiedinge van a kapper.",
+      "cta": "Ontdek meer",
+      "unsubscribeText": "Afmelde veu marketinge-mails"
+    },
+    "card": {
+      "service": "Dienst",
+      "barber": "Barbier",
+      "date": "Datum",
+      "time": "Ier",
+      "price": "Prijs"
+    },
+    "footer": {
+      "address": "Parijsstraat 29 · 3000 Leuven · België",
+      "unsubscribeLabel": "Afmelde"
+    }
+  }
+}

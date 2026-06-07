@@ -10,7 +10,13 @@ export const metadata: Metadata = {
 }
 
 export function generateStaticParams() {
-  return [{ locale: 'nl' }, { locale: 'en' }, { locale: 'fr' }]
+  return [
+    { locale: 'nl' },
+    { locale: 'en' },
+    { locale: 'fr' },
+    { locale: 'es' },
+    { locale: 'le' },
+  ]
 }
 
 type Props = {
@@ -21,8 +27,11 @@ type Props = {
 export default async function LocaleLayout({ children, params: { locale } }: Props) {
   const messages = await getMessages()
 
+  // 'le' is the Leuvens dialect — render lang="nl" per HTML spec and design i18n.js behaviour.
+  const htmlLang = locale === 'le' ? 'nl' : locale
+
   return (
-    <html lang={locale}>
+    <html lang={htmlLang}>
       <body className="bg-dark-950 text-gold-400">
         <NextIntlClientProvider messages={messages}>
           {children}

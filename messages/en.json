@@ -5,5 +5,218 @@
     "tagline": "Craftsmanship in every cut",
     "homeIntro": "Welcome to Kameraad Haarsnijder. Book your appointment online with one of our experienced barbers.",
     "switchLanguage": "Switch language"
+  },
+  "booking": {
+    "eyebrow": "Reserve",
+    "title": "Book your chair.",
+    "lead": "First your service, then the barber who performs it, then a moment that fits. Step by step — we handle the rest.",
+    "openButton": "Book your chair →",
+    "hoursLabel": "Hours",
+    "hours": "Tue–Sun · 10:00–20:00",
+    "placeLabel": "Location",
+    "step": {
+      "barber": "Barber",
+      "service": "Service",
+      "slot": "Time slot",
+      "details": "Details",
+      "date": "Date",
+      "time": "Time"
+    },
+    "confirm": "Confirm booking",
+    "done": {
+      "heading": "See you soon, kameraad.",
+      "summary": "Confirmed: {service} with {barber} on {date} at {time}.",
+      "emailInfo": "Manage your appointment via the confirmation email."
+    },
+    "noPreference": "No preference",
+    "noPreferenceLow": "no preference",
+    "noPreferenceHint": "The most available barber will be assigned to you.",
+    "reset": "New booking",
+    "barberNote": "Available for your service:",
+    "chooseMore": "Still choose a",
+    "back": "Back",
+    "close": "Close",
+    "stepOf": "Step {current} of {total}",
+    "loading": "Loading…",
+    "submitting": "Confirming…",
+    "noSlots": "No available times for this day.",
+    "nextAvailableDay": "Go to the first available day",
+    "walkInBand": "Walk-ins welcome too — just come in.",
+    "walkIn": {
+      "title": "Walk-in",
+      "description": "Welcome without an appointment too — just walk in. First available if there's space."
+    },
+    "summary": {
+      "start": "Choose a service to begin.",
+      "at": "with",
+      "on": "on",
+      "atTime": "at",
+      "with": "with",
+      "yourBarber": "your barber",
+      "confirmMessage": "We'll send you a confirmation."
+    },
+    "label": {
+      "barber": "barber",
+      "date": "date",
+      "time": "time"
+    },
+    "service": {
+      "haircut": "Haircut",
+      "beard": "Beard",
+      "combo": "Cut + Beard",
+      "child": "Child (–12 yrs)"
+    },
+    "dow": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+    "months": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    "form": {
+      "firstName": "First name",
+      "lastName": "Last name",
+      "email": "Email address",
+      "phone": "Phone number",
+      "note": "Note (optional)",
+      "notePlaceholder": "Message for your barber, max. 500 characters",
+      "phoneHelp": "E.g. 0479 12 34 56 or +32 2 123 45 67",
+      "required": "Required field",
+      "emailInvalid": "Invalid email address",
+      "phoneInvalid": "Invalid phone number — use a Belgian or international format",
+      "noteMaxLength": "Maximum 500 characters"
+    },
+    "validation": {
+      "cancellationPolicy": "I accept the cancellation policy (free cancellation up to {hours} hours before your appointment).",
+      "privacyConsent": "I agree to the processing of my personal data for managing my appointment."
+    },
+    "privacyLinkText": "privacy policy",
+    "error": {
+      "slotTaken": "This time slot was just taken. Please choose another moment.",
+      "generic": "Something went wrong. Please try again."
+    }
+  },
+  "manage": {
+    "invalidToken": "This link is invalid or has expired.",
+    "appointmentCard": {
+      "heading": "Your appointment",
+      "service": "Service",
+      "barber": "Barber",
+      "date": "Date",
+      "time": "Time",
+      "price": "Price"
+    },
+    "cancel": {
+      "eyebrow": "Cancel appointment",
+      "title": "Cancel your appointment.",
+      "confirmButton": "Cancel appointment",
+      "confirmQuestion": "Are you sure?",
+      "confirmDefinitive": "Yes, cancel permanently",
+      "keepButton": "No, keep my appointment",
+      "loading": "Processing…",
+      "successHeading": "Appointment cancelled.",
+      "successBody": "Your appointment has been cancelled. We hope to see you again soon, kameraad.",
+      "alreadyCancelledHeading": "Already cancelled",
+      "alreadyCancelledBody": "This appointment was already cancelled.",
+      "outsideWindowHeading": "Cancellation no longer possible",
+      "outsideWindowBody": "You can only cancel your appointment up to {hours} hours in advance. Please contact us at {phone}.",
+      "outsideWindowError": "Cancellation is no longer possible within the required timeframe.",
+      "genericError": "Something went wrong. Please try again."
+    },
+    "reschedule": {
+      "eyebrow": "Reschedule appointment",
+      "title": "Reschedule your appointment.",
+      "currentAppointment": "Current appointment",
+      "newSlotLabel": "Choose a new time slot",
+      "selectedLabel": "Selected",
+      "confirmButton": "Confirm new time",
+      "loading": "Processing…",
+      "successHeading": "Appointment rescheduled.",
+      "successBody": "Your appointment has been successfully rescheduled. See you soon, kameraad.",
+      "outsideWindowHeading": "Rescheduling no longer possible",
+      "outsideWindowBody": "You can only reschedule your appointment up to {hours} hours in advance. Please contact us at {phone}.",
+      "outsideWindowError": "Rescheduling is no longer possible within the required timeframe.",
+      "slotTakenError": "This time slot was just taken. Please choose another time.",
+      "tryAgainButton": "Choose again",
+      "genericError": "Something went wrong. Please try again."
+    }
+  },
+  "preferences": {
+    "invalidToken": "This link is invalid or has expired.",
+    "eyebrow": "Email preferences",
+    "title": "Manage your preferences.",
+    "lead": "Choose which emails you'd like to receive from us. We respect your choice, kameraad.",
+    "reminders": "Appointment reminders",
+    "remindersHint": "We'll send you a reminder 24 hours and 2 hours before your appointment.",
+    "rebooking": "Rebooking invitations",
+    "rebookingHint": "We'll let you know when it's time for your next visit.",
+    "marketing": "News and offers",
+    "marketingHint": "Stay up to date with the latest news from Kameraad Haarsnijder.",
+    "saveButton": "Save preferences",
+    "saving": "Saving…",
+    "savedMessage": "Preferences saved.",
+    "genericError": "Something went wrong. Please try again."
+  },
+  "emails": {
+    "confirmation": {
+      "subject": "Confirmation — {service} on {date}",
+      "eyebrow": "APPOINTMENT CONFIRMED",
+      "heading": "See you soon, kameraad.",
+      "body": "Your appointment at Kameraad Haarsnijder is confirmed. Find all the details below.",
+      "calendarLabel": "Add to calendar",
+      "cancelLabel": "Cancel appointment",
+      "rescheduleLabel": "Reschedule"
+    },
+    "reminder_24h": {
+      "subject": "Tomorrow: {service} at {time}",
+      "eyebrow": "REMINDER",
+      "heading": "See you tomorrow, kameraad.",
+      "body": "Your appointment is tomorrow at {time}. Free cancellation is still possible up to {hours} hours before.",
+      "cancelLabel": "Cancel appointment"
+    },
+    "reminder_2h": {
+      "subject": "Coming up: {service} at {time}",
+      "eyebrow": "REMINDER",
+      "heading": "See you shortly, kameraad.",
+      "body": "Your appointment starts in 2 hours. We'll see you soon at Kameraad Haarsnijder.",
+      "cancelLabel": "Cancel appointment"
+    },
+    "cancellation": {
+      "subject": "Appointment cancelled — {service} on {date}",
+      "eyebrow": "APPOINTMENT CANCELLED",
+      "heading": "Your appointment has been cancelled.",
+      "body": "Your appointment on {date} at {time} has been cancelled. We hope to welcome you back soon.",
+      "rebookCta": "Book a new appointment"
+    },
+    "reschedule": {
+      "subject": "Appointment rescheduled — {service} on {date}",
+      "eyebrow": "APPOINTMENT RESCHEDULED",
+      "heading": "New date confirmed.",
+      "body": "Your appointment has been successfully rescheduled. Find the new details below.",
+      "calendarLabel": "Add to calendar",
+      "cancelLabel": "Cancel appointment",
+      "rescheduleLabel": "Reschedule again"
+    },
+    "rebooking": {
+      "subject": "Time for your next visit, {firstName}?",
+      "eyebrow": "SEE YOU SOON",
+      "heading": "Time for your next visit, kameraad.",
+      "body": "It's been a while since we've seen you. Book your next appointment at Kameraad Haarsnijder.",
+      "cta": "Book now"
+    },
+    "marketing": {
+      "subject": "News from Kameraad Haarsnijder",
+      "eyebrow": "KAMERAAD HAARSNIJDER",
+      "heading": "News and offers.",
+      "body": "Stay up to date with the latest news and exclusive offers from your barber.",
+      "cta": "Discover more",
+      "unsubscribeText": "Unsubscribe from marketing emails"
+    },
+    "card": {
+      "service": "Service",
+      "barber": "Barber",
+      "date": "Date",
+      "time": "Time",
+      "price": "Price"
+    },
+    "footer": {
+      "address": "Parijsstraat 29 · 3000 Leuven · Belgium",
+      "unsubscribeLabel": "Unsubscribe"
+    }
   }
 }

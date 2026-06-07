@@ -5,5 +5,219 @@
     "tagline": "L'artisanat à chaque coupe",
     "homeIntro": "Bienvenue chez Kameraad Haarsnijder. Réservez votre rendez-vous en ligne avec l'un de nos barbiers expérimentés.",
     "switchLanguage": "Changer de langue"
+  },
+  "booking": {
+    "eyebrow": "Réserver",
+    "title": "Réservez votre fauteuil.",
+    "lead": "D'abord votre service, puis le barbier qui l'exécute, puis un moment qui vous convient. Étape par étape — on s'occupe du reste.",
+    "openButton": "Réservez votre fauteuil →",
+    "hoursLabel": "Heures",
+    "hours": "Mar–Dim · 10:00–20:00",
+    "placeLabel": "Lieu",
+    "step": {
+      "barber": "Barbier",
+      "service": "Service",
+      "slot": "Créneau",
+      "details": "Coordonnées",
+      "date": "Date",
+      "time": "Heure"
+    },
+    "confirm": "Confirmer le rendez-vous",
+    "done": {
+      "heading": "À bientôt, kameraad.",
+      "summary": "Confirmé : {service} avec {barber} le {date} à {time}.",
+      "emailInfo": "Gérez votre rendez-vous via l'e-mail de confirmation."
+    },
+    "noPreference": "Sans préférence",
+    "noPreferenceLow": "sans préférence",
+    "noPreferenceHint": "Le barbier le plus disponible vous sera attribué.",
+    "reset": "Nouveau rendez-vous",
+    "barberNote": "Disponible pour votre service :",
+    "chooseMore": "Choisissez encore",
+    "back": "Retour",
+    "close": "Fermer",
+    "stepOf": "Étape {current} sur {total}",
+    "loading": "Chargement…",
+    "submitting": "Confirmation…",
+    "noSlots": "Aucun horaire disponible pour ce jour.",
+    "nextAvailableDay": "Aller au premier jour disponible",
+    "walkInBand": "Walk-ins également les bienvenus — entrez directement.",
+    "walkIn": {
+      "title": "Walk-in",
+      "description": "Bienvenue sans rendez-vous aussi — entrez directement. Premier disponible s'il y a de la place."
+    },
+    "summary": {
+      "start": "Choisissez un service pour commencer.",
+      "at": "avec",
+      "on": "le",
+      "atTime": "à",
+      "with": "avec",
+      "yourBarber": "votre barbier",
+      "confirmMessage": "Nous vous enverrons une confirmation."
+    },
+    "label": {
+      "barber": "un barbier",
+      "date": "une date",
+      "time": "une heure"
+    },
+    "service": {
+      "haircut": "Coupe",
+      "beard": "Barbe",
+      "combo": "Coupe + Barbe",
+      "child": "Enfant (–12 ans)"
+    },
+    "dow": ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam"],
+    "months": ["janv", "févr", "mars", "avr", "mai", "juin", "juil", "août", "sept", "oct", "nov", "déc"],
+    "form": {
+      "firstName": "Prénom",
+      "lastName": "Nom",
+      "email": "Adresse e-mail",
+      "phone": "Numéro de téléphone",
+      "note": "Note (optionnel)",
+      "notePlaceholder": "Message pour votre barbier, max. 500 caractères",
+      "phoneHelp": "Ex. 0479 12 34 56 ou +32 2 123 45 67",
+      "required": "Champ obligatoire",
+      "emailInvalid": "Adresse e-mail invalide",
+      "phoneInvalid": "Numéro de téléphone invalide — utilisez un format belge ou international",
+      "noteMaxLength": "Maximum 500 caractères"
+    },
+    "validation": {
+      "cancellationPolicy": "J'accepte la politique d'annulation (annulation gratuite jusqu'à {hours} heures avant votre rendez-vous).",
+      "privacyConsent": "J'accepte le traitement de mes données personnelles pour la gestion de mon rendez-vous."
+    },
+    "privacyLinkText": "politique de confidentialité",
+    "error": {
+      "slotTaken": "Ce créneau vient d'être réservé. Veuillez choisir un autre moment.",
+      "generic": "Une erreur s'est produite. Veuillez réessayer."
+    }
+  },
+  "manage": {
+    "invalidToken": "Ce lien est invalide ou a expiré.",
+    "appointmentCard": {
+      "heading": "Votre rendez-vous",
+      "service": "Service",
+      "barber": "Barbier",
+      "date": "Date",
+      "time": "Heure",
+      "price": "Prix"
+    },
+    "cancel": {
+      "eyebrow": "Annuler le rendez-vous",
+      "title": "Annulez votre rendez-vous.",
+      "confirmButton": "Annuler le rendez-vous",
+      "confirmQuestion": "Êtes-vous sûr(e) ?",
+      "confirmDefinitive": "Oui, annuler définitivement",
+      "keepButton": "Non, conserver mon rendez-vous",
+      "loading": "Traitement…",
+      "successHeading": "Rendez-vous annulé.",
+      "successBody": "Votre rendez-vous a été annulé. Nous espérons vous revoir bientôt, kameraad.",
+      "alreadyCancelledHeading": "Déjà annulé",
+      "alreadyCancelledBody": "Ce rendez-vous a déjà été annulé.",
+      "outsideWindowHeading": "Annulation impossible",
+      "outsideWindowBody": "Vous ne pouvez annuler votre rendez-vous que jusqu'à {hours} heures à l'avance. Contactez-nous au {phone}.",
+      "outsideWindowError": "L'annulation n'est plus possible dans le délai imparti.",
+      "genericError": "Une erreur s'est produite. Veuillez réessayer."
+    },
+    "reschedule": {
+      "eyebrow": "Reporter le rendez-vous",
+      "title": "Reportez votre rendez-vous.",
+      "currentAppointment": "Rendez-vous actuel",
+      "newSlotLabel": "Choisissez un nouveau créneau",
+      "selectedLabel": "Sélectionné",
+      "confirmButton": "Confirmer le nouveau créneau",
+      "loading": "Traitement…",
+      "successHeading": "Rendez-vous reporté.",
+      "successBody": "Votre rendez-vous a été reporté avec succès. À bientôt, kameraad.",
+      "outsideWindowHeading": "Report impossible",
+      "outsideWindowBody": "Vous ne pouvez reporter votre rendez-vous que jusqu'à {hours} heures à l'avance. Contactez-nous au {phone}.",
+      "outsideWindowError": "Le report n'est plus possible dans le délai imparti.",
+      "slotTakenError": "Ce créneau vient d'être réservé. Veuillez en choisir un autre.",
+      "tryAgainButton": "Choisir à nouveau",
+      "genericError": "Une erreur s'est produite. Veuillez réessayer."
+    }
+  },
+  "preferences": {
+    "_comment": "DRAFT — agent-drafted, pending client review (FR-094)",
+    "invalidToken": "Ce lien est invalide ou a expiré.",
+    "eyebrow": "Préférences e-mail",
+    "title": "Gérez vos préférences.",
+    "lead": "Choisissez les e-mails que vous souhaitez recevoir. Nous respectons votre choix, kameraad.",
+    "reminders": "Rappels de rendez-vous",
+    "remindersHint": "Nous vous envoyons un rappel 24 heures et 2 heures avant votre rendez-vous.",
+    "rebooking": "Invitations à reréserver",
+    "rebookingHint": "Nous vous informons quand il est temps pour votre prochaine visite.",
+    "marketing": "Actualités et offres",
+    "marketingHint": "Restez informé des dernières actualités de Kameraad Haarsnijder.",
+    "saveButton": "Enregistrer les préférences",
+    "saving": "Enregistrement…",
+    "savedMessage": "Préférences enregistrées.",
+    "genericError": "Une erreur s'est produite. Veuillez réessayer."
+  },
+  "emails": {
+    "confirmation": {
+      "subject": "Confirmation — {service} le {date}",
+      "eyebrow": "RENDEZ-VOUS CONFIRMÉ",
+      "heading": "À bientôt, kameraad.",
+      "body": "Votre rendez-vous chez Kameraad Haarsnijder est confirmé. Retrouvez tous les détails ci-dessous.",
+      "calendarLabel": "Ajouter au calendrier",
+      "cancelLabel": "Annuler le rendez-vous",
+      "rescheduleLabel": "Reporter"
+    },
+    "reminder_24h": {
+      "subject": "Demain : {service} à {time}",
+      "eyebrow": "RAPPEL",
+      "heading": "À demain, kameraad.",
+      "body": "Votre rendez-vous est demain à {time}. L'annulation gratuite reste possible jusqu'à {hours} heures avant.",
+      "cancelLabel": "Annuler le rendez-vous"
+    },
+    "reminder_2h": {
+      "subject": "Dans peu de temps : {service} à {time}",
+      "eyebrow": "RAPPEL",
+      "heading": "À tout à l'heure, kameraad.",
+      "body": "Votre rendez-vous commence dans 2 heures. On vous attend chez Kameraad Haarsnijder.",
+      "cancelLabel": "Annuler le rendez-vous"
+    },
+    "cancellation": {
+      "subject": "Rendez-vous annulé — {service} le {date}",
+      "eyebrow": "RENDEZ-VOUS ANNULÉ",
+      "heading": "Votre rendez-vous est annulé.",
+      "body": "Votre rendez-vous du {date} à {time} a été annulé. Nous espérons vous accueillir à nouveau bientôt.",
+      "rebookCta": "Prendre un nouveau rendez-vous"
+    },
+    "reschedule": {
+      "subject": "Rendez-vous reporté — {service} le {date}",
+      "eyebrow": "RENDEZ-VOUS REPORTÉ",
+      "heading": "Nouvelle date confirmée.",
+      "body": "Votre rendez-vous a été reporté avec succès. Retrouvez les nouveaux détails ci-dessous.",
+      "calendarLabel": "Ajouter au calendrier",
+      "cancelLabel": "Annuler le rendez-vous",
+      "rescheduleLabel": "Reporter à nouveau"
+    },
+    "rebooking": {
+      "subject": "L'heure de votre prochaine visite, {firstName} ?",
+      "eyebrow": "À BIENTÔT",
+      "heading": "Il est temps de revenir, kameraad.",
+      "body": "Cela fait un moment qu'on ne vous a pas vu. Réservez votre prochain rendez-vous chez Kameraad Haarsnijder.",
+      "cta": "Réserver maintenant"
+    },
+    "marketing": {
+      "subject": "Actualités de Kameraad Haarsnijder",
+      "eyebrow": "KAMERAAD HAARSNIJDER",
+      "heading": "Actualités et offres.",
+      "body": "Restez informé des dernières actualités et des offres exclusives de votre barbier.",
+      "cta": "Découvrir",
+      "unsubscribeText": "Se désabonner des e-mails marketing"
+    },
+    "card": {
+      "service": "Service",
+      "barber": "Barbier",
+      "date": "Date",
+      "time": "Heure",
+      "price": "Prix"
+    },
+    "footer": {
+      "address": "Parijsstraat 29 · 3000 Leuven · Belgique",
+      "unsubscribeLabel": "Se désabonner"
+    }
   }
 }
