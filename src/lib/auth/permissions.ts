@@ -79,6 +79,17 @@ export class ForbiddenError extends Error {
   }
 }
 
+// Thrown when a request carries no admin session. `.status = 401` so JSON API
+// route handlers can map it directly (unlike `requireAdmin` which redirects —
+// the wrong behaviour for a JSON endpoint, see `requireAdminApi`).
+export class UnauthorizedError extends Error {
+  readonly status = 401
+  constructor(message = 'Unauthorized') {
+    super(message)
+    this.name = 'UnauthorizedError'
+  }
+}
+
 // Per-action server-side check (FR-044). Throws ForbiddenError when not allowed.
 export function assertCan(role: Role, permission: Permission): void {
   if (!can(role, permission)) {
