@@ -2,11 +2,12 @@ import db from '../db/index'
 import type { Appointment, Barber, Customer, Service } from '../db/types'
 import { sendAppointmentEmail } from '../email/send'
 
-// SEQUENCE simplification: we do not store a sequence counter in the schema.
-// confirmation → SEQUENCE:0 (initial REQUEST)
-// reschedule   → SEQUENCE:1 (METHOD:REQUEST, bumped once)
-// cancellation → SEQUENCE:1 (METHOD:CANCEL)
-// This is sufficient for RFC 5545 §3.7.4 — calendar clients accept monotonic bumps.
+// SEQUENCE (FR-071): the counter is persisted on appointments.ics_sequence
+// (migration 004). confirmation → 0 (initial REQUEST); every reschedule does
+// `ics_sequence = ics_sequence + 1` (manage.ts / admin-bookings.ts) and the
+// reschedule/cancel email reads the CURRENT row value — so a second reschedule
+// correctly emits SEQUENCE:2 and a later CANCEL never regresses below the last
+// REQUEST (RFC 5545 §3.8.7.4).
 
 async function fetchDeps(
   appointment: Appointment,
@@ -32,11 +33,23 @@ export async function onBookingConfirmed(appointment: Appointment): Promise<void
 export async function onBookingCancelled(appointment: Appointment): Promise<void> {
   const deps = await fetchDeps(appointment)
   if (!deps) return
-  await sendAppointmentEmail({ type: 'cancellation', appointment, ...deps })
+  // CANCEL carries the current persisted sequence (no further bump).
+  await sendAppointmentEmail({
+    type: 'cancellation',
+    appointment,
+    ...deps,
+    sequence: appointment.ics_sequence,
+  })
 }
 
 export async function onBookingRescheduled(appointment: Appointment): Promise<void> {
   const deps = await fetchDeps(appointment)
   if (!deps) return
-  await sendAppointmentEmail({ type: 'reschedule', appointment, ...deps, sequence: 1 })
+  // The reschedule already bumped ics_sequence; read the new value off the row.
+  await sendAppointmentEmail({
+    type: 'reschedule',
+    appointment,
+    ...deps,
+    sequence: appointment.ics_sequence,
+  })
 }

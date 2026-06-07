@@ -187,9 +187,10 @@ export async function rescheduleAppointment(
   try {
     const rows = await db<Appointment[]>`
       UPDATE appointments SET
-        start_at   = ${newStartAtUtc.toISOString()},
-        end_at     = ${newEndAt.toISOString()},
-        updated_at = now()
+        start_at     = ${newStartAtUtc.toISOString()},
+        end_at       = ${newEndAt.toISOString()},
+        ics_sequence = ics_sequence + 1,
+        updated_at   = now()
       WHERE id = ${appointment.id}
       RETURNING *
     `
