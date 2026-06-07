@@ -735,5 +735,11 @@
       "testSent": "Testmail verzonden.",
       "dryRunNote": "Zonder Resend-sleutel zijn dit dry-run sends (gelogd, niet echt verzonden)."
     }
+  },
+  "seo": {
+    "booking": {
+      "title": "Prendre rendez-vous — Kameraad Haarsnijder",
+      "description": "Réservez votre rendez-vous chez Kameraad Haarsnijder au cœur de Louvain. Choisissez votre barbier, votre prestation et votre créneau — en ligne."
+    }
   }
 }

@@ -1,8 +1,27 @@
+import type { Metadata } from 'next'
 import { getTranslations } from 'next-intl/server'
 import { getActiveBarbersWithServices } from '@/lib/db/queries/barbers'
 import { getActiveServices } from '@/lib/db/queries/services'
 import { getSettings } from '@/lib/db/queries/settings'
 import { BookingFlow } from '@/components/booking/BookingFlow'
+import { buildMetadata } from '@/lib/seo/metadata'
+import type { Locale } from '@/lib/seo/site'
+
+// The booking namespace (Delegation A) carries no meta keys, so this page's SEO
+// strings live in the `seo` namespace (Delegation B owns it).
+export async function generateMetadata({
+  params: { locale },
+}: {
+  params: { locale: string }
+}): Promise<Metadata> {
+  const t = await getTranslations({ locale, namespace: 'seo' })
+  return buildMetadata({
+    locale: locale as Locale,
+    pathKey: 'booking',
+    title: t('booking.title'),
+    description: t('booking.description'),
+  })
+}
 
 // FR-008 / Phase-2 acceptance: settings (incl. cancellation_window_hours) are
 // read at request time — changing them in SQL must change the rendered copy

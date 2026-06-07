@@ -5,6 +5,8 @@ import { getTranslations } from 'next-intl/server'
 import { getActiveBarbers } from '@/lib/db/queries/barbers'
 import { PublicShell } from '@/components/public/PublicShell'
 import { localizeBarberBio } from '@/components/public/localize'
+import { buildMetadata } from '@/lib/seo/metadata'
+import type { Locale } from '@/lib/seo/site'
 
 // Reads the live team (active barbers + bios are admin-editable) → request-time.
 export const dynamic = 'force-dynamic'
@@ -22,7 +24,12 @@ export async function generateMetadata({
   params: { locale: string }
 }): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: 'about' })
-  return { title: t('meta.title'), description: t('meta.description') }
+  return buildMetadata({
+    locale: locale as Locale,
+    pathKey: 'about',
+    title: t('meta.title'),
+    description: t('meta.description'),
+  })
 }
 
 export default async function AboutPage({ params: { locale } }: { params: { locale: string } }) {

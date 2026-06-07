@@ -9,6 +9,8 @@ import {
   formatPrice,
   formatDuration,
 } from '@/components/public/localize'
+import { buildMetadata } from '@/lib/seo/metadata'
+import type { Locale } from '@/lib/seo/site'
 
 // Reads live services (prices/duration are admin-editable, FR-061) so this
 // renders at request time rather than being frozen into the build.
@@ -20,7 +22,12 @@ export async function generateMetadata({
   params: { locale: string }
 }): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: 'services' })
-  return { title: t('meta.title'), description: t('meta.description') }
+  return buildMetadata({
+    locale: locale as Locale,
+    pathKey: 'services',
+    title: t('meta.title'),
+    description: t('meta.description'),
+  })
 }
 
 export default async function ServicesPage({

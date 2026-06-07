@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { getTranslations } from 'next-intl/server'
 import { PublicShell } from '@/components/public/PublicShell'
+import { buildMetadata } from '@/lib/seo/metadata'
+import type { Locale } from '@/lib/seo/site'
 
 // Static marketing/legal page (no DB reads) — prerendered per locale. This is
 // the page the footer + booking privacy-consent (FR-024) link to.
@@ -11,7 +13,12 @@ export async function generateMetadata({
   params: { locale: string }
 }): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: 'legal' })
-  return { title: t('meta.title'), description: t('meta.description') }
+  return buildMetadata({
+    locale: locale as Locale,
+    pathKey: 'privacy',
+    title: t('meta.title'),
+    description: t('meta.description'),
+  })
 }
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {

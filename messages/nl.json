@@ -732,5 +732,11 @@
       "testSent": "Testmail verzonden.",
       "dryRunNote": "Zonder Resend-sleutel zijn dit dry-run sends (gelogd, niet echt verzonden)."
     }
+  },
+  "seo": {
+    "booking": {
+      "title": "Online afspraak boeken — Kameraad Haarsnijder",
+      "description": "Boek je afspraak bij Kameraad Haarsnijder in hartje Leuven. Kies je barbier, dienst en tijdslot — eenvoudig online geregeld."
+    }
   }
 }

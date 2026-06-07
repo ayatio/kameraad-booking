@@ -2,6 +2,8 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 import { getTranslations } from 'next-intl/server'
 import { PublicShell } from '@/components/public/PublicShell'
+import { buildMetadata } from '@/lib/seo/metadata'
+import type { Locale } from '@/lib/seo/site'
 
 // Static marketing page (no DB reads) — safe to prerender per locale.
 
@@ -11,7 +13,12 @@ export async function generateMetadata({
   params: { locale: string }
 }): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: 'contact' })
-  return { title: t('meta.title'), description: t('meta.description') }
+  return buildMetadata({
+    locale: locale as Locale,
+    pathKey: 'contact',
+    title: t('meta.title'),
+    description: t('meta.description'),
+  })
 }
 
 export default async function ContactPage({

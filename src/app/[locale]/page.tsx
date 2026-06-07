@@ -6,6 +6,9 @@ import { getActiveBarbers } from '@/lib/db/queries/barbers'
 import { getActiveServices } from '@/lib/db/queries/services'
 import { getActiveBanner, type BannerLocale } from '@/lib/services/admin-content'
 import { PublicShell } from '@/components/public/PublicShell'
+import { JsonLd } from '@/components/seo/JsonLd'
+import { buildMetadata } from '@/lib/seo/metadata'
+import type { Locale } from '@/lib/seo/site'
 import { SlotPreview, type PreviewService } from '@/components/public/SlotPreview'
 import {
   localizeBarberBio,
@@ -42,8 +45,15 @@ export async function generateMetadata({
 }: {
   params: { locale: string }
 }): Promise<Metadata> {
+  // Reuses Delegation A's already-localized home meta strings (single source of
+  // truth) and wraps them with canonical/hreflang/OG/twitter/robots.
   const t = await getTranslations({ locale, namespace: 'home' })
-  return { title: t('meta.title'), description: t('meta.description') }
+  return buildMetadata({
+    locale: locale as Locale,
+    pathKey: 'home',
+    title: t('meta.title'),
+    description: t('meta.description'),
+  })
 }
 
 export default async function HomePage({ params: { locale } }: { params: { locale: string } }) {
@@ -65,6 +75,8 @@ export default async function HomePage({ params: { locale } }: { params: { local
 
   return (
     <PublicShell locale={locale}>
+      {/* FR-101: HairSalon/LocalBusiness structured data (server-rendered) */}
+      <JsonLd />
       {/* FR-100: seasonal banner — rendered ONLY when an active banner exists */}
       {banner && (banner.title || banner.text) && (
         <aside

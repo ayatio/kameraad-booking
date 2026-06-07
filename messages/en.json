@@ -734,5 +734,11 @@
       "testSent": "Testmail verzonden.",
       "dryRunNote": "Zonder Resend-sleutel zijn dit dry-run sends (gelogd, niet echt verzonden)."
     }
+  },
+  "seo": {
+    "booking": {
+      "title": "Book an appointment — Kameraad Haarsnijder",
+      "description": "Book your appointment at Kameraad Haarsnijder in the heart of Leuven. Choose your barber, service and time slot — quick and easy online."
+    }
   }
 }

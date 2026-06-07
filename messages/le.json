@@ -742,5 +742,12 @@
       "testSent": "Testmail verzonden.",
       "dryRunNote": "Zonder Resend-sleutel zijn dit dry-run sends (gelogd, niet echt verzonden)."
     }
+  },
+  "seo": {
+    "booking": {
+      "_comment": "DRAFT (FR-091/FR-090): Leuvens dialect, rendered lang=nl, switcher-only.",
+      "title": "Online een afsproak boeke — Kameraad Haarsnijder",
+      "description": "Boek aan afsproak bij Kameraad Haarsnijder in t hartsje van Leuve. Kiest aan barbier, dienst en uur — gemekkelek online."
+    }
   }
 }

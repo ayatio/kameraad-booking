@@ -742,5 +742,12 @@
       "testSent": "Testmail verzonden.",
       "dryRunNote": "Zonder Resend-sleutel zijn dit dry-run sends (gelogd, niet echt verzonden)."
     }
+  },
+  "seo": {
+    "booking": {
+      "_comment": "DRAFT (FR-091): ES SEO strings pending native review.",
+      "title": "Reserva tu cita — Kameraad Haarsnijder",
+      "description": "Reserva tu cita en Kameraad Haarsnijder en el centro de Lovaina. Elige tu barbero, servicio y franja horaria — fácil y en línea."
+    }
   }
 }

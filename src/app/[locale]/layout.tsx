@@ -3,6 +3,8 @@ import type { Metadata } from 'next'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 import { Playfair_Display, Oswald, Hanken_Grotesk } from 'next/font/google'
+import { SITE_URL, IS_INDEXABLE } from '@/lib/seo/site'
+import { SITE_NAME } from '@/lib/seo/metadata'
 import '../globals.css'
 
 // Gate-A type system (docs/design/gate-a/colors_and_type.css):
@@ -33,9 +35,25 @@ const hanken = Hanken_Grotesk({
   variable: '--font-hanken',
 })
 
+// Site-level <head> defaults. `metadataBase` resolves all relative canonical/
+// OG URLs against the deploy origin. Per-page generateMetadata (via
+// buildMetadata) overrides title/description/alternates/robots; pages WITHOUT
+// their own metadata (e.g. the /afspraak + /voorkeuren token pages) inherit the
+// noindex default below, which is exactly what those private pages need.
 export const metadata: Metadata = {
-  title: 'Kameraad Haarsnijder',
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: SITE_NAME,
+    template: `%s`,
+  },
   description: 'Online afsprakensysteem voor Kameraad Haarsnijder',
+  applicationName: SITE_NAME,
+  openGraph: {
+    siteName: SITE_NAME,
+    type: 'website',
+  },
+  // FR-101: default everything to noindex unless infra explicitly opts in.
+  robots: IS_INDEXABLE ? { index: true, follow: true } : { index: false, follow: false },
 }
 
 export function generateStaticParams() {
