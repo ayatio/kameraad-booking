@@ -127,26 +127,29 @@ export async function sendAppointmentEmail(
     ...urls,
   })
 
-  // Build ICS attachment
+  // Build ICS attachment. SEQUENCE now comes from the persistent
+  // appointments.ics_sequence (migration 004 / FR-071): confirmation is always 0,
+  // each reschedule increments it, and the cancellation carries whatever the
+  // current value is so a CANCEL never regresses below the last REQUEST
+  // (RFC 5545 §3.8.7.4). The caller passes the row's `ics_sequence` via `sequence`.
   const icsSummary = `${serviceName} — Kameraad Haarsnijder`
   let ics: OutgoingEmail['ics'] | undefined
   if (type === 'confirmation') {
     ics = {
       filename: 'kameraad-afspraak.ics',
-      content: buildIcs({ method: 'REQUEST', sequence: 0, uid: appointment.id, summary: icsSummary, dtstart: appointment.start_at, dtend: appointment.end_at }),
+      content: buildIcs({ method: 'REQUEST', sequence, uid: appointment.id, summary: icsSummary, dtstart: appointment.start_at, dtend: appointment.end_at }),
       method: 'REQUEST',
     }
   } else if (type === 'reschedule') {
     ics = {
       filename: 'kameraad-afspraak.ics',
-      // sequence=1: rescheduled. See send.ts comment: SEQUENCE derived from context, not schema.
-      content: buildIcs({ method: 'REQUEST', sequence: 1, uid: appointment.id, summary: icsSummary, dtstart: appointment.start_at, dtend: appointment.end_at }),
+      content: buildIcs({ method: 'REQUEST', sequence, uid: appointment.id, summary: icsSummary, dtstart: appointment.start_at, dtend: appointment.end_at }),
       method: 'REQUEST',
     }
   } else if (type === 'cancellation') {
     ics = {
       filename: 'kameraad-annulering.ics',
-      content: buildIcs({ method: 'CANCEL', sequence: 1, uid: appointment.id, summary: icsSummary, dtstart: appointment.start_at, dtend: appointment.end_at }),
+      content: buildIcs({ method: 'CANCEL', sequence, uid: appointment.id, summary: icsSummary, dtstart: appointment.start_at, dtend: appointment.end_at }),
       method: 'CANCEL',
     }
   }

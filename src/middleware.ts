@@ -24,5 +24,7 @@ export default function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/((?!api|_next|_vercel|.*\\..*).*)'],
+  // Exclude api, admin (NL-only back-office outside [locale]), Next internals and
+  // any file with an extension. `/admin/**` must NOT be locale-rewritten.
+  matcher: ['/((?!api|admin|_next|_vercel|.*\\..*).*)'],
 }

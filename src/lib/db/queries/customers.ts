@@ -21,6 +21,25 @@ export interface UpsertCustomerInput {
   consentGivenAt: Date | null
 }
 
+// Candidates for a bulk/marketing send (FR-063). Returns every customer; the
+// service applies the opt-in + email_missing filtering (kept pure + testable).
+export interface BulkCandidate {
+  id: string
+  email: string
+  first_name: string
+  preferred_language: Customer['preferred_language']
+  marketing_opt_in: boolean
+  email_missing: boolean
+  unsubscribe_token: string | null
+}
+
+export async function getBulkCandidates(): Promise<BulkCandidate[]> {
+  return db<BulkCandidate[]>`
+    SELECT id, email, first_name, preferred_language, marketing_opt_in, email_missing, unsubscribe_token
+    FROM customers
+  `
+}
+
 export async function getCustomerByUnsubscribeToken(token: string): Promise<Customer | null> {
   const rows = await db<Customer[]>`
     SELECT * FROM customers WHERE unsubscribe_token = ${token} LIMIT 1
@@ -40,6 +59,35 @@ export async function updateCustomerPreferences(
       updated_at       = now()
     WHERE id = ${customerId}
   `
+}
+
+// FR-052: a manual (walk-in / phone) booking may have no email. We still need a
+// customer row (email is NOT NULL UNIQUE), so we mint a synthetic unique
+// placeholder address server-side and flag email_missing = true. ALL email
+// dispatch (cron + bulk) excludes these rows.
+export interface ManualCustomerInput {
+  firstName: string
+  lastName: string
+  phone: string | null
+  preferredLanguage: string
+}
+
+export async function createManualCustomer(
+  input: ManualCustomerInput,
+  sql: SqlClient,
+): Promise<Customer> {
+  const { firstName, lastName, phone, preferredLanguage } = input
+  const rows = await sql<Customer[]>`
+    INSERT INTO customers
+      (first_name, last_name, email, phone, preferred_language, email_missing)
+    VALUES (
+      ${firstName}, ${lastName},
+      'manual+' || gen_random_uuid() || '@no-email.kameraad.local',
+      ${phone}, ${preferredLanguage}, true
+    )
+    RETURNING *
+  `
+  return rows[0]
 }
 
 export async function upsertCustomer(

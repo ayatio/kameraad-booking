@@ -29,6 +29,8 @@ export interface Service {
   description_nl: string | null
   description_en: string | null
   description_fr: string | null
+  description_es: string | null
+  description_le: string | null
   price_cents: number
   duration_min: number
   color: string
@@ -75,6 +77,7 @@ export interface Customer {
   no_show_count: number
   consent_given_at: string | null
   unsubscribe_token: string | null
+  email_missing: boolean
   created_at: string
   updated_at: string
 }
@@ -93,6 +96,7 @@ export interface Appointment {
   reschedule_token: string | null
   cancelled_at: string | null
   cancellation_reason: string | null
+  ics_sequence: number
   created_at: string
   updated_at: string
 }
@@ -133,6 +137,25 @@ export interface AdminUser {
   set_password_expires_at: string | null
   failed_login_count: number
   locked_until: string | null
+  last_failed_login_at: string | null
   created_at: string
   updated_at: string
+}
+
+export interface Content {
+  id: string
+  key: string
+  title_nl: string | null
+  title_en: string | null
+  title_fr: string | null
+  title_es: string | null
+  title_le: string | null
+  text_nl: string | null
+  text_en: string | null
+  text_fr: string | null
+  text_es: string | null
+  text_le: string | null
+  is_active: boolean
+  updated_at: string
+  updated_by: string | null
 }

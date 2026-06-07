@@ -106,4 +106,20 @@ describe('buildIcs', () => {
     const ics = buildIcs({ ...BASE, dtstart: '2026-01-05T09:00:00Z', dtend: '2026-01-05T09:30:00Z' })
     expect(ics).toContain('DTSTART;TZID=Europe/Brussels:20260105T100000')
   })
+
+  // FR-071: the persistent appointments.ics_sequence is passed straight through,
+  // so a SECOND reschedule (ics_sequence bumped 0→1→2) emits SEQUENCE:2 — the
+  // Phase-2 hardcoded "1" would have regressed here.
+  it('honors an arbitrary bumped sequence (second reschedule → SEQUENCE:2)', () => {
+    const ics = buildIcs({ ...BASE, method: 'REQUEST', sequence: 2 })
+    expect(ics).toContain('SEQUENCE:2')
+    expect(ics).not.toContain('SEQUENCE:1')
+  })
+
+  it('a CANCEL carries the current sequence (never regresses below last REQUEST)', () => {
+    const ics = buildIcs({ ...BASE, method: 'CANCEL', sequence: 2 })
+    expect(ics).toContain('METHOD:CANCEL')
+    expect(ics).toContain('SEQUENCE:2')
+    expect(ics).toContain('STATUS:CANCELLED')
+  })
 })

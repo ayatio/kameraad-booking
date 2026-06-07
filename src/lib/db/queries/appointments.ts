@@ -28,6 +28,11 @@ export async function insertAppointment(
   return rows[0]
 }
 
+export async function getAppointmentById(id: string): Promise<Appointment | null> {
+  const rows = await db<Appointment[]>`SELECT * FROM appointments WHERE id = ${id} LIMIT 1`
+  return rows[0] ?? null
+}
+
 export async function getAppointmentsByBarberAndDay(
   barberId: string,
   localDate: string,
