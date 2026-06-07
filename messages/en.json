@@ -6,6 +6,163 @@
     "homeIntro": "Welcome to Kameraad Haarsnijder. Book your appointment online with one of our experienced barbers.",
     "switchLanguage": "Switch language"
   },
+  "home": {
+    "meta": {
+      "title": "Kameraad Haarsnijder — Barber in the heart of Leuven",
+      "description": "The last gentlemen's retreat in the heart of Leuven. Skilled barbers, timeless craftsmanship. Book your appointment online today."
+    },
+    "nav": {
+      "primary": "Main navigation",
+      "services": "Services",
+      "about": "About",
+      "contact": "Contact",
+      "book": "Book now"
+    },
+    "footer": {
+      "address": "Parijsstraat 29 · 3000 Leuven · Belgium",
+      "privacy": "Privacy policy",
+      "copyright": "© Kameraad Haarsnijder — Leuven"
+    },
+    "hero": {
+      "eyebrow": "Parijsstraat 29 · Leuven",
+      "headline": "The last gentlemen's retreat.",
+      "tagline": "Timeless craftsmanship in the heart of Leuven — for men of all ages.",
+      "cta": "Book an appointment"
+    },
+    "intro": {
+      "eyebrow": "The ritual",
+      "lead": "There was no such thing as a gentlemen's retreat. So we built one.",
+      "body": "Kameraad grew out of a simple idea — a place where men can pause for a moment. Today Kameraad is by far the last retreat for men of all ages. Even those who don't book a service are always welcome to escape the bustle of everyday life."
+    },
+    "team": {
+      "eyebrow": "Hair cutter and barber",
+      "title": "The team",
+      "role": "Barber",
+      "bookWith": "Book with {name}"
+    },
+    "services": {
+      "eyebrow": "The menu",
+      "title": "Services & prices",
+      "durationLabel": "Duration",
+      "provisional": "Prices provisional — subject to change.",
+      "walkInTitle": "Walk-ins welcome",
+      "walkInBody": "No appointment? Just drop by during opening hours — served right away as soon as there's space.",
+      "viewAll": "View all services"
+    },
+    "slots": {
+      "eyebrow": "Next available slots",
+      "title": "A chair today?",
+      "lead": "The next free moments. Pick one and you jump straight into the booking.",
+      "loading": "Loading availability…",
+      "empty": "No free moments in the coming two weeks. View the full calendar when booking.",
+      "error": "Availability could not be loaded. Please try again when booking.",
+      "serviceTabs": "Choose a service",
+      "cta": "To the booking"
+    },
+    "visit": {
+      "eyebrow": "Drop by",
+      "title": "Visit us",
+      "addressLabel": "Address",
+      "hoursLabel": "Opening hours",
+      "hoursValue": "Tuesday — Saturday · 10:00 – 20:00",
+      "hoursNote": "Monday, Sunday & public holidays — check Instagram.",
+      "callNote": "Feel free to call us — but we may be serving a customer. Booking online is the surest way.",
+      "cta": "Book an appointment"
+    }
+  },
+  "services": {
+    "meta": {
+      "title": "Services & prices — Kameraad Haarsnijder",
+      "description": "Haircuts, beard, hot towel wet shave and more at Kameraad Haarsnijder in Leuven. View services, duration and prices and book online."
+    },
+    "eyebrow": "The menu",
+    "title": "Services & prices",
+    "lead": "Craftsmanship from start to finish. Choose your service and book in a few steps — we do the rest.",
+    "durationLabel": "Duration",
+    "priceLabel": "Price",
+    "provisional": "Prices and durations are provisional and subject to change until confirmed by the shop.",
+    "walkInTitle": "Walk-ins welcome",
+    "walkInBody": "No appointment needed. We accept walk-ins during opening hours on available slots — just step in.",
+    "cta": "Book this service"
+  },
+  "about": {
+    "meta": {
+      "title": "About us — Kameraad Haarsnijder Leuven",
+      "description": "The story behind Kameraad Haarsnijder: a gentlemen's retreat in the heart of Leuven, driven by craftsmanship and respect for the trade."
+    },
+    "eyebrow": "About us",
+    "title": "A gentlemen's retreat in the heart of Leuven",
+    "lead": "Kameraad is more than a barber's chair. It's a place where time slows down and details matter.",
+    "body1": "Kameraad Haarsnijder grew out of the idea that there was no such thing as a gentlemen's retreat. Today Kameraad is by far the last retreat for men of all ages. Sit down, stay a while: a fresh cup of coffee, today's paper, a quiet moment — with or without an appointment.",
+    "body2": "At Parijsstraat 29 in Leuven we don't follow trends blindly. We choose them, with care. Our barbers are craftsmen with deep respect for the trade — each with his own eye, united by one standard: quality without compromise.",
+    "teamEyebrow": "Hair cutter and barber",
+    "teamTitle": "The team",
+    "role": "Barber",
+    "cta": "Book your appointment"
+  },
+  "contact": {
+    "meta": {
+      "title": "Contact — Kameraad Haarsnijder Leuven",
+      "description": "Visit Kameraad Haarsnijder at Parijsstraat 29 in Leuven. Address, opening hours and contact details."
+    },
+    "eyebrow": "Drop by",
+    "title": "Contact & visit",
+    "lead": "You'll find us in the heart of Leuven. Book online or drop by during opening hours.",
+    "addressLabel": "Address",
+    "addressValue": "Parijsstraat 29\n3000 Leuven\nBelgium",
+    "emailLabel": "Email",
+    "phoneLabel": "Phone",
+    "vatLabel": "VAT",
+    "vatValue": "BE10 0842 3183",
+    "hoursLabel": "Opening hours",
+    "hoursValue": "Tuesday — Saturday · 10:00 – 20:00",
+    "hoursNote": "Monday, Sunday & public holidays — check Instagram.",
+    "callNote": "Feel free to call us — but we may just be serving a customer. Booking online is the surest way.",
+    "cta": "Book an appointment"
+  },
+  "legal": {
+    "meta": {
+      "title": "Privacy policy — Kameraad Haarsnijder",
+      "description": "How Kameraad Haarsnijder processes and protects your personal data, in accordance with the GDPR."
+    },
+    "eyebrow": "Legal",
+    "title": "Privacy policy",
+    "updated": "Last updated: June 2026",
+    "intro": "Kameraad Haarsnijder respects your privacy. This policy explains which personal data we collect when you book an appointment, why we process it, how long we keep it and which rights you have under the General Data Protection Regulation (GDPR).",
+    "controllerTitle": "Data controller",
+    "controllerBody": "Kameraad Haarsnijder, Parijsstraat 29, 3000 Leuven, Belgium. For any questions about your data: info@kameraadhaarsnijder.be.",
+    "dataTitle": "What data we collect",
+    "dataIntro": "When you book an appointment, we process:",
+    "dataItems": [
+      "First and last name",
+      "Email address",
+      "Phone number",
+      "Your language preference",
+      "Appointment details (service, barber, date and time)",
+      "An optional note you add yourself"
+    ],
+    "purposeTitle": "What we use it for",
+    "purposeBody": "We use your data solely to manage your appointment: confirming, reminding, rescheduling or cancelling it and the related emails. We only send marketing messages if you give explicit consent for them; you can withdraw that consent at any time via the unsubscribe link in every email.",
+    "legalBasisTitle": "Legal basis",
+    "legalBasisBody": "Processing for your appointment is based on the performance of our service at your request. Marketing communication is based on your consent.",
+    "retentionTitle": "How long we keep it",
+    "retentionBody": "We keep your data as long as necessary to manage your appointments and meet our legal obligations. You can request deletion of your data at any time.",
+    "rightsTitle": "Your rights",
+    "rightsIntro": "Under the GDPR you have the right to:",
+    "rightsItems": [
+      "Access to the data we hold about you",
+      "Correction of inaccurate data",
+      "Deletion of your data (right to be forgotten)",
+      "An export of your data (portability)",
+      "Object to certain processing and withdraw your consent"
+    ],
+    "rightsBody": "To exercise any of these rights, email us at info@kameraadhaarsnijder.be. We carry out your request for access, export or permanent deletion within a reasonable period.",
+    "cookiesTitle": "Cookies",
+    "cookiesBody": "We only use functional cookies needed to make the website work, such as remembering your language choice. We do not set tracking or advertising cookies.",
+    "complaintTitle": "Complaints",
+    "complaintBody": "If you have a complaint about how we handle your data, you can contact the Data Protection Authority (www.gegevensbeschermingsautoriteit.be).",
+    "provisional": "PROVISIONAL — drafted by the development team, pending legal review."
+  },
   "booking": {
     "eyebrow": "Reserve",
     "title": "Book your chair.",

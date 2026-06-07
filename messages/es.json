@@ -6,6 +6,168 @@
     "homeIntro": "Bienvenido a Kameraad Haarsnijder. Reserva tu cita online con uno de nuestros barberos experimentados.",
     "switchLanguage": "Cambiar idioma"
   },
+  "home": {
+    "_comment": "DRAFT — es/le copy pending review (FR-094)",
+    "meta": {
+      "title": "Kameraad Haarsnijder — Barbero en el corazón de Lovaina",
+      "description": "El último refugio de caballeros en el corazón de Lovaina. Barberos cualificados, oficio atemporal. Reserva tu cita online hoy mismo."
+    },
+    "nav": {
+      "primary": "Navegación principal",
+      "services": "Servicios",
+      "about": "Nosotros",
+      "contact": "Contacto",
+      "book": "Reservar"
+    },
+    "footer": {
+      "address": "Parijsstraat 29 · 3000 Leuven · Bélgica",
+      "privacy": "Política de privacidad",
+      "copyright": "© Kameraad Haarsnijder — Lovaina"
+    },
+    "hero": {
+      "eyebrow": "Parijsstraat 29 · Lovaina",
+      "headline": "El último refugio de caballeros.",
+      "tagline": "Oficio atemporal en el corazón de Lovaina — para hombres de todas las edades.",
+      "cta": "Reservar una cita"
+    },
+    "intro": {
+      "eyebrow": "El ritual",
+      "lead": "No existía algo así como un refugio de caballeros. Así que construimos uno.",
+      "body": "Kameraad nació de una idea sencilla — un lugar donde los hombres pueden hacer una pausa. Hoy Kameraad es, con diferencia, el último refugio para hombres de todas las edades. Incluso quien no contrata ningún servicio es siempre bienvenido para escapar un momento del ajetreo diario."
+    },
+    "team": {
+      "eyebrow": "Peluquero y barbero",
+      "title": "El equipo",
+      "role": "Barbero",
+      "bookWith": "Reserva con {name}"
+    },
+    "services": {
+      "eyebrow": "La carta",
+      "title": "Servicios y precios",
+      "durationLabel": "Duración",
+      "provisional": "Precios provisionales — sujetos a cambios.",
+      "walkInTitle": "Sin cita, bienvenido",
+      "walkInBody": "¿Sin cita? Pásate sin más durante el horario de apertura — atendido en cuanto haya sitio.",
+      "viewAll": "Ver todos los servicios"
+    },
+    "slots": {
+      "eyebrow": "Próximas disponibilidades",
+      "title": "¿Una silla hoy?",
+      "lead": "Los próximos momentos libres. Elige uno y pasas directamente a la reserva.",
+      "loading": "Cargando disponibilidad…",
+      "empty": "No hay momentos libres en las próximas dos semanas. Consulta la agenda completa al reservar.",
+      "error": "No se ha podido cargar la disponibilidad. Inténtalo al reservar.",
+      "serviceTabs": "Elige un servicio",
+      "cta": "A la reserva"
+    },
+    "visit": {
+      "eyebrow": "Pásate",
+      "title": "Visítanos",
+      "addressLabel": "Dirección",
+      "hoursLabel": "Horario de apertura",
+      "hoursValue": "Martes — Sábado · 10:00 – 20:00",
+      "hoursNote": "Lunes, domingo y festivos — consulta Instagram.",
+      "callNote": "Llámanos sin problema — pero puede que estemos atendiendo a un cliente. Reservar online es lo más seguro.",
+      "cta": "Reservar una cita"
+    }
+  },
+  "services": {
+    "_comment": "DRAFT — es/le copy pending review (FR-094)",
+    "meta": {
+      "title": "Servicios y precios — Kameraad Haarsnijder",
+      "description": "Corte, barba, afeitado con toalla caliente y más en Kameraad Haarsnijder en Lovaina. Consulta servicios, duración y precios y reserva online."
+    },
+    "eyebrow": "La carta",
+    "title": "Servicios y precios",
+    "lead": "Oficio de principio a fin. Elige tu servicio y reserva en unos pasos — del resto nos encargamos nosotros.",
+    "durationLabel": "Duración",
+    "priceLabel": "Precio",
+    "provisional": "Los precios y duraciones son provisionales y están sujetos a cambios hasta su confirmación por el establecimiento.",
+    "walkInTitle": "Sin cita, bienvenido",
+    "walkInBody": "No hace falta cita. Aceptamos visitas sin cita durante el horario de apertura según disponibilidad — solo tienes que entrar.",
+    "cta": "Reservar este servicio"
+  },
+  "about": {
+    "_comment": "DRAFT — es/le copy pending review (FR-094)",
+    "meta": {
+      "title": "Nosotros — Kameraad Haarsnijder Lovaina",
+      "description": "La historia detrás de Kameraad Haarsnijder: un refugio de caballeros en el corazón de Lovaina, impulsado por el oficio y el respeto por la profesión."
+    },
+    "eyebrow": "Nosotros",
+    "title": "Un refugio de caballeros en el corazón de Lovaina",
+    "lead": "Kameraad es más que una silla de barbero. Es un lugar donde el tiempo se ralentiza y los detalles importan.",
+    "body1": "Kameraad Haarsnijder nació de la idea de que no existía algo así como un refugio de caballeros. Hoy Kameraad es, con diferencia, el último refugio para hombres de todas las edades. Siéntate, quédate un rato: un café recién hecho, el periódico de hoy, un momento de calma — con o sin cita.",
+    "body2": "En el Parijsstraat 29 de Lovaina no seguimos las tendencias a ciegas. Las elegimos, con cuidado. Nuestros barberos son artesanos con profundo respeto por el oficio — cada uno con su propia mirada, unidos por un mismo criterio: calidad sin concesiones.",
+    "teamEyebrow": "Peluquero y barbero",
+    "teamTitle": "El equipo",
+    "role": "Barbero",
+    "cta": "Reserva tu cita"
+  },
+  "contact": {
+    "_comment": "DRAFT — es/le copy pending review (FR-094)",
+    "meta": {
+      "title": "Contacto — Kameraad Haarsnijder Lovaina",
+      "description": "Visita Kameraad Haarsnijder en el Parijsstraat 29 de Lovaina. Dirección, horario de apertura y datos de contacto."
+    },
+    "eyebrow": "Pásate",
+    "title": "Contacto y visita",
+    "lead": "Nos encuentras en el corazón de Lovaina. Reserva online o pásate durante el horario de apertura.",
+    "addressLabel": "Dirección",
+    "addressValue": "Parijsstraat 29\n3000 Leuven\nBélgica",
+    "emailLabel": "Correo electrónico",
+    "phoneLabel": "Teléfono",
+    "vatLabel": "IVA",
+    "vatValue": "BE10 0842 3183",
+    "hoursLabel": "Horario de apertura",
+    "hoursValue": "Martes — Sábado · 10:00 – 20:00",
+    "hoursNote": "Lunes, domingo y festivos — consulta Instagram.",
+    "callNote": "Llámanos sin problema — pero puede que estemos justo atendiendo a un cliente. Reservar online es lo más seguro.",
+    "cta": "Reservar una cita"
+  },
+  "legal": {
+    "_comment": "DRAFT — es/le copy pending review (FR-094)",
+    "meta": {
+      "title": "Política de privacidad — Kameraad Haarsnijder",
+      "description": "Cómo Kameraad Haarsnijder trata y protege tus datos personales, conforme al RGPD."
+    },
+    "eyebrow": "Legal",
+    "title": "Política de privacidad",
+    "updated": "Última actualización: junio de 2026",
+    "intro": "Kameraad Haarsnijder respeta tu privacidad. Esta política explica qué datos personales recopilamos cuando reservas una cita, por qué los tratamos, cuánto tiempo los conservamos y qué derechos tienes en virtud del Reglamento General de Protección de Datos (RGPD).",
+    "controllerTitle": "Responsable del tratamiento",
+    "controllerBody": "Kameraad Haarsnijder, Parijsstraat 29, 3000 Leuven, Bélgica. Para cualquier consulta sobre tus datos: info@kameraadhaarsnijder.be.",
+    "dataTitle": "Qué datos recopilamos",
+    "dataIntro": "Cuando reservas una cita, tratamos:",
+    "dataItems": [
+      "Nombre y apellidos",
+      "Dirección de correo electrónico",
+      "Número de teléfono",
+      "Tu preferencia de idioma",
+      "Datos de la cita (servicio, barbero, fecha y hora)",
+      "Una nota opcional que añadas tú mismo"
+    ],
+    "purposeTitle": "Para qué los usamos",
+    "purposeBody": "Usamos tus datos únicamente para gestionar tu cita: confirmarla, recordarla, reprogramarla o cancelarla y los correos relacionados. Solo enviamos mensajes de marketing si das tu consentimiento explícito; puedes retirar ese consentimiento en cualquier momento mediante el enlace de baja en cada correo.",
+    "legalBasisTitle": "Base jurídica",
+    "legalBasisBody": "El tratamiento para tu cita se basa en la ejecución de nuestro servicio a petición tuya. La comunicación de marketing se basa en tu consentimiento.",
+    "retentionTitle": "Cuánto tiempo los conservamos",
+    "retentionBody": "Conservamos tus datos durante el tiempo necesario para la gestión de tus citas y nuestras obligaciones legales. Puedes solicitar la eliminación de tus datos en cualquier momento.",
+    "rightsTitle": "Tus derechos",
+    "rightsIntro": "En virtud del RGPD tienes derecho a:",
+    "rightsItems": [
+      "Acceder a los datos que conservamos sobre ti",
+      "Corregir datos inexactos",
+      "Eliminar tus datos (derecho al olvido)",
+      "Una exportación de tus datos (portabilidad)",
+      "Oponerte a determinados tratamientos y retirar tu consentimiento"
+    ],
+    "rightsBody": "Para ejercer cualquiera de estos derechos, escríbenos a info@kameraadhaarsnijder.be. Tramitamos tu solicitud de acceso, exportación o eliminación definitiva en un plazo razonable.",
+    "cookiesTitle": "Cookies",
+    "cookiesBody": "Solo usamos cookies funcionales necesarias para que el sitio web funcione, como recordar tu elección de idioma. No colocamos cookies de seguimiento ni de publicidad.",
+    "complaintTitle": "Reclamaciones",
+    "complaintBody": "Si tienes una reclamación sobre cómo tratamos tus datos, puedes dirigirte a la Autoridad de Protección de Datos (www.gegevensbeschermingsautoriteit.be).",
+    "provisional": "PROVISIONAL — redactado por el equipo de desarrollo, a la espera de revisión jurídica."
+  },
   "booking": {
     "eyebrow": "Reservar",
     "title": "Reserva tu silla.",
